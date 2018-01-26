@@ -33,10 +33,10 @@ License: You must have a valid license purchased only from themeforest(the above
 		</script>
 		<!--end::Web font -->
         <!--begin::Base Styles -->
-		<link th:href="@{/assets" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
-		<link th:href="@{/assets" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/vendors/base/vendors.bundle.css}" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/demo/default/base/style.bundle.css}" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" />
+		<link th:href="@{/assets/demo/default/media/img/logo/favicon.ico}" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" rel="shortcut icon" />
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
@@ -50,7 +50,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-login__wrapper">
 								<div class="m-login__logo">
 									<a href="#">
-										<img src="../../../../static/assets/app/media/img//logos/logo-2.png">
+										<img th:src="@{/assets/app/media/img/logos/logo-2.png}" src="../../../../static/assets/app/media/img/logos/logo-2.png" />
 									</a>
 								</div>
 								<div class="m-login__signin">
@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											Sign In To Admin
 										</h3>
 									</div>
-									<form class="m-login__form m-form" action="">
+									<form class="m-login__form m-form" action="" />
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" autocomplete="off">
 										</div>
@@ -96,7 +96,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											Enter your details to create your account:
 										</div>
 									</div>
-									<form class="m-login__form m-form" action="">
+									<form class="m-login__form m-form" action="" />
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Fullname" name="fullname">
 										</div>
@@ -142,7 +142,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											Enter your email to reset your password:
 										</div>
 									</div>
-									<form class="m-login__form m-form" action="">
+									<form class="m-login__form m-form" action="" />
 										<div class="form-group m-form__group">
 											<input class="form-control m-input" type="text" placeholder="Email" name="email" id="m_email" autocomplete="off">
 										</div>
@@ -171,7 +171,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 					</div>
 				</div>
-				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" style="background-image: url(../../../../static/assets/app/media/img//bg/bg-4.jpg)">
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" th:style="'background-image: url(' + @{/assets/app/media/img/bg/bg-4.jpg} + ');'" style="background-image: url(../../../../static/assets/app/media/img/bg/bg-4.jpg);">
 					<div class="m-grid__item m-grid__item--middle">
 						<h3 class="m-login__welcome">
 							Join Our Community

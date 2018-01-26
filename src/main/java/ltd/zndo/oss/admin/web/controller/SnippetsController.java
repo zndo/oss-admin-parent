@@ -4,117 +4,87 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/components")
+@RequestMapping("/snippets")
 public class SnippetsController {
-	
-	@RequestMapping("/base/tabs/bootstrap.html")
-	public String bootstrap() {
-		return "/components/base/tabs/bootstrap";
+
+	@RequestMapping("/faq/faq-1.html")
+	public String faq1() {
+		return "/snippets/faq/faq-1";
 	}
-	
-	@RequestMapping("/base/tabs/line.html")
-	public String line() {
-		return "/components/base/tabs/line";
+
+	@RequestMapping("/general/pricing-tables/pricing-table-1.html")
+	public String pricingTable1() {
+		return "/snippets/general/pricing-tables/pricing-table-1";
 	}
-	
-	@RequestMapping("/base/accordions.html")
-	public String accordions() {
-		return "/components/base/accordions";
+
+	@RequestMapping("/general/pricing-tables/pricing-table-2.html")
+	public String pricingTable2() {
+		return "/snippets/general/pricing-tables/pricing-table-2";
 	}
-	
-	@RequestMapping("/base/alerts.html")
-	public String alerts() {
-		return "/components/base/alerts";
+
+	@RequestMapping("/general/pricing-tables/pricing-table-3.html")
+	public String pricingTable3() {
+		return "/snippets/general/pricing-tables/pricing-table-3";
 	}
-	
-	@RequestMapping("/base/blockui.html")
-	public String blockui() {
-		return "/components/base/blockui";
+
+	@RequestMapping("/general/pricing-tables/pricing-table-4.html")
+	public String pricingTable4() {
+		return "/snippets/general/pricing-tables/pricing-table-4";
 	}
-	
-	@RequestMapping("/base/bootstrap-notify.html")
-	public String bootstrapNotify() {
-		return "/components/base/bootstrap-notify";
+
+	@RequestMapping("/pages/errors/error-1.html")
+	public String error1() {
+		return "/snippets/pages/errors/error-1";
 	}
-	
-	@RequestMapping("/base/dropdown.html")
-	public String dropdown() {
-		return "/components/base/dropdown";
+
+	@RequestMapping("/pages/errors/error-2.html")
+	public String error2() {
+		return "/snippets/pages/errors/error-2";
 	}
-	
-	@RequestMapping("/base/lists.html")
-	public String lists() {
-		return "/components/base/lists";
+
+	@RequestMapping("/pages/errors/error-3.html")
+	public String error3() {
+		return "/snippets/pages/errors/error-3";
 	}
-	
-	@RequestMapping("/base/modal.html")
-	public String modal() {
-		return "/components/base/modal";
+
+	@RequestMapping("/pages/errors/error-4.html")
+	public String error4() {
+		return "/snippets/pages/errors/error-4";
 	}
-	
-	@RequestMapping("/base/navs.html")
-	public String navs() {
-		return "/components/base/navs";
+
+	@RequestMapping("/pages/errors/error-5.html")
+	public String error5() {
+		return "/snippets/pages/errors/error-5";
 	}
-	
-	@RequestMapping("/base/popover.html")
-	public String popover() {
-		return "/components/base/popover";
+
+	@RequestMapping("/pages/errors/error-6.html")
+	public String error6() {
+		return "/snippets/pages/errors/error-6";
 	}
-	
-	@RequestMapping("/base/progress.html")
-	public String progress() {
-		return "/components/base/progress";
+
+	@RequestMapping("/pages/user/login-1.html")
+	public String login1() {
+		return "/snippets/pages/user/login-1";
 	}
-	
-	@RequestMapping("/base/scrollable.html")
-	public String scrollable() {
-		return "/components/base/scrollable";
+
+	@RequestMapping("/pages/user/login-2.html")
+	public String login2() {
+		return "/snippets/pages/user/login-2";
 	}
-	
-	@RequestMapping("/base/spinners.html")
-	public String spinners() {
-		return "/components/base/spinners";
+
+	@RequestMapping("/pages/user/login-3.html")
+	public String login3() {
+		return "/snippets/pages/user/login-3";
 	}
-	
-	@RequestMapping("/base/stack.html")
-	public String stack() {
-		return "/components/base/stack";
+
+	@RequestMapping("/pages/user/login-4.html")
+	public String login4() {
+		return "/snippets/pages/user/login-4";
 	}
-	
-	@RequestMapping("/base/state.html")
-	public String state() {
-		return "/components/base/state";
-	}
-	
-	@RequestMapping("/base/sweetalert2.html")
-	public String sweetalert2() {
-		return "/components/base/sweetalert2";
-	}
-	
-	@RequestMapping("/base/tables.html")
-	public String tables() {
-		return "/components/base/tables";
-	}
-	
-	@RequestMapping("/base/toastr.html")
-	public String toastr() {
-		return "/components/base/toastr";
-	}
-	
-	@RequestMapping("/base/tooltip.html")
-	public String tooltip() {
-		return "/components/base/tooltip";
-	}
-	
-	@RequestMapping("/base/treeview.html")
-	public String treeview() {
-		return "/components/base/treeview";
-	}
-	
-	@RequestMapping("/base/typography.html")
-	public String typography() {
-		return "/components/base/typography";
+
+	@RequestMapping("/pages/user/login-5.html")
+	public String login5() {
+		return "/snippets/pages/user/login-5";
 	}
 
 }

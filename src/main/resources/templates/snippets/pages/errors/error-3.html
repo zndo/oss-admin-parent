@@ -33,17 +33,17 @@ License: You must have a valid license purchased only from themeforest(the above
 		</script>
 		<!--end::Web font -->
         <!--begin::Base Styles -->
-		<link th:href="@{/assets" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
-		<link th:href="@{/assets" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/vendors/base/vendors.bundle.css}" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/demo/default/base/style.bundle.css}" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" />
+		<link th:href="@{/assets/demo/default/media/img/logo/favicon.ico}" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" rel="shortcut icon" />
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
 	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
-			<div class="m-grid__item m-grid__item--fluid m-grid  m-error-3" style="background-image: url(../../../../static/assets/app/media/img//error/bg3.jpg);">
+			<div class="m-grid__item m-grid__item--fluid m-grid m-error-3" th:style="'background-image: url(' + @{/assets/app/media/img/error/bg3.jpg} + ');'" style="background-image: url(../../../../static/assets/app/media/img/error/bg3.jpg);">
 				<div class="m-error_container">
 					<span class="m-error_number">
 						<h1>

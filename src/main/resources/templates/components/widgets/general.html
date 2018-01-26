@@ -52,7 +52,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="../../index.html" class="m-brand__logo-wrapper">
-										<img alt="" src="../../../static/assets/demo/default/media/img/logo/logo_default_dark.png"/>
+										<img th:src="@{/assets/demo/default/media/img/logo/logo_default_dark.png}" src="../../../static/assets/demo/default/media/img/logo/logo_default_dark.png" alt="" />
 									</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -717,7 +717,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../static/assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/notification_bg.jpg} + '); background-size: cover;'" style="background: url(../../../static/assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
 														<span class="m-dropdown__header-title">
 															9 New
 														</span>
@@ -902,7 +902,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
 																	<div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
 																		<div class="m-stack__item m-stack__item--center m-stack__item--middle">
-																			<span class="">
+																			<span class="" />
 																				All caught up!
 																				<br>
 																				No new logs.
@@ -926,7 +926,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../static/assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/quick_actions_bg.jpg} + '); background-size: cover;'" style="background: url(../../../static/assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
 														<span class="m-dropdown__header-title">
 															Quick Actions
 														</span>
@@ -976,7 +976,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+													<img th:src="@{/assets/app/media/img/users/user4.jpg}" class="m--img-rounded m--marginless m--img-centered" src="../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
 												</span>
 												<span class="m-topbar__username m--hide">
 													Nick
@@ -985,10 +985,10 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../static/assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/user_profile_bg.jpg} + '); background-size: cover;'" style="background: url(../../../static/assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
 														<div class="m-card-user m-card-user--skin-dark">
 															<div class="m-card-user__pic">
-																<img src="../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt=""/>
+																<img th:src="@{/assets/app/media/img/users/user4.jpg}" src="../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
 															</div>
 															<div class="m-card-user__details">
 																<span class="m-card-user__name m--font-weight-500">
@@ -4007,7 +4007,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-widget3__item">
 												<div class="m-widget3__header">
 													<div class="m-widget3__user-img">
-														<img class="m-widget3__img" src="../../../static/assets/app/media/img/users/user1.jpg" alt="">
+														<img th:src="@{/assets/app/media/img/users/user1.jpg}" src="../../../static/assets/app/media/img/users/user1.jpg" class="m-widget3__img" alt="" />
 													</div>
 													<div class="m-widget3__info">
 														<span class="m-widget3__username">
@@ -4031,7 +4031,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-widget3__item">
 												<div class="m-widget3__header">
 													<div class="m-widget3__user-img">
-														<img class="m-widget3__img" src="../../../static/assets/app/media/img/users/user4.jpg" alt="">
+														<img th:src="@{/assets/app/media/img/users/user4.jpg}" src="../../../static/assets/app/media/img/users/user4.jpg" class="m-widget3__img" alt="" />
 													</div>
 													<div class="m-widget3__info">
 														<span class="m-widget3__username">
@@ -4055,7 +4055,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-widget3__item">
 												<div class="m-widget3__header">
 													<div class="m-widget3__user-img">
-														<img class="m-widget3__img" src="../../../static/assets/app/media/img/users/user5.jpg" alt="">
+														<img th:src="@{/assets/app/media/img/users/user5.jpg}" src="../../../static/assets/app/media/img/users/user5.jpg" class="m-widget3__img" alt="" />
 													</div>
 													<div class="m-widget3__info">
 														<span class="m-widget3__username">
@@ -4165,7 +4165,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="m-widget4">
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/doc.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/doc.svg}" src="../../../static/assets/app/media/img/files/doc.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4180,7 +4180,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/jpg.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/jpg.svg}" src="../../../static/assets/app/media/img/files/jpg.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4195,7 +4195,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/pdf.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/pdf.svg}" src="../../../static/assets/app/media/img/files/pdf.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4210,7 +4210,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/javascript.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/javascript.svg}" src="../../../static/assets/app/media/img/files/javascript.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4225,7 +4225,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/zip.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/zip.svg}" src="../../../static/assets/app/media/img/files/zip.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4240,7 +4240,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--icon">
-													<img src="../../../static/assets/app/media/img/files/pdf.svg" alt="">
+													<img th:src="@{/assets/app/media/img/files/pdf.svg}" src="../../../static/assets/app/media/img/files/pdf.svg" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__text">
@@ -4293,7 +4293,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_4.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_4.jpg}" src="../../../static/assets/app/media/img/users/100_4.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4314,7 +4314,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_14.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_14.jpg}" src="../../../static/assets/app/media/img/users/100_14.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4335,7 +4335,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_11.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_11.jpg}" src="../../../static/assets/app/media/img/users/100_11.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4356,7 +4356,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_1.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_1.jpg}" src="../../../static/assets/app/media/img/users/100_1.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4377,7 +4377,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_5.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_5.jpg}" src="../../../static/assets/app/media/img/users/100_5.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4404,7 +4404,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_2.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_2.jpg}" src="../../../static/assets/app/media/img/users/100_2.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4425,7 +4425,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_13.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_13.jpg}" src="../../../static/assets/app/media/img/users/100_13.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4446,7 +4446,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_9.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_9.jpg}" src="../../../static/assets/app/media/img/users/100_9.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4467,7 +4467,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_2.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_2.jpg}" src="../../../static/assets/app/media/img/users/100_2.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4489,7 +4489,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Widget 14 Item-->
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_8.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_8.jpg}" src="../../../static/assets/app/media/img/users/100_8.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -4733,7 +4733,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="m-widget5">
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product6.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product6.jpg}" src="../../../static/assets/app/media/img/products/product6.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -4781,7 +4781,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product10.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product10.jpg}" src="../../../static/assets/app/media/img/products/product10.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -4826,7 +4826,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product11.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product11.jpg}" src="../../../static/assets/app/media/img/products/product11.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -4877,7 +4877,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="m-widget5">
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product11.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product11.jpg}" src="../../../static/assets/app/media/img/products/product11.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -4922,7 +4922,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product6.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product6.jpg}" src="../../../static/assets/app/media/img/products/product6.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -4967,7 +4967,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product10.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product10.jpg}" src="../../../static/assets/app/media/img/products/product10.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -5018,7 +5018,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="m-widget5">
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product10.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product10.jpg}" src="../../../static/assets/app/media/img/products/product10.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -5063,7 +5063,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product11.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product11.jpg}" src="../../../static/assets/app/media/img/products/product11.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -5108,7 +5108,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget5__item">
 														<div class="m-widget5__pic">
-															<img class="m-widget7__img" src="../../../static/assets/app/media/img//products/product6.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/products/product6.jpg}" src="../../../static/assets/app/media/img/products/product6.jpg" class="m-widget7__img" alt="" />
 														</div>
 														<div class="m-widget5__content">
 															<h4 class="m-widget5__title">
@@ -5239,7 +5239,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<div class="m-widget4">
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--logo">
-													<img src="../../../static/assets/app/media/img/client-logos/logo5.png" alt="">
+													<img th:src="@{/assets/app/media/img/client-logos/logo5.png}" src="../../../static/assets/app/media/img/client-logos/logo5.png" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__title">
@@ -5258,7 +5258,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--logo">
-													<img src="../../../static/assets/app/media/img/client-logos/logo4.png" alt="">
+													<img th:src="@{/assets/app/media/img/client-logos/logo4.png}" src="../../../static/assets/app/media/img/client-logos/logo4.png" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__title">
@@ -5277,7 +5277,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--logo">
-													<img src="../../../static/assets/app/media/img/client-logos/logo3.png" alt="">
+													<img th:src="@{/assets/app/media/img/client-logos/logo3.png}" src="../../../static/assets/app/media/img/client-logos/logo3.png" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__title">
@@ -5296,7 +5296,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--logo">
-													<img src="../../../static/assets/app/media/img/client-logos/logo2.png" alt="">
+													<img th:src="@{/assets/app/media/img/client-logos/logo2.png}" src="../../../static/assets/app/media/img/client-logos/logo2.png" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__title">
@@ -5315,7 +5315,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget4__item">
 												<div class="m-widget4__img m-widget4__img--logo">
-													<img src="../../../static/assets/app/media/img/client-logos/logo1.png" alt="">
+													<img th:src="@{/assets/app/media/img/client-logos/logo1.png}" src="../../../static/assets/app/media/img/client-logos/logo1.png" alt="" />
 												</div>
 												<div class="m-widget4__info">
 													<span class="m-widget4__title">
@@ -5424,7 +5424,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget7__user">
 												<div class="m-widget7__user-img">
-													<img class="m-widget7__img" src="../../../static/assets/app/media/img//users/100_3.jpg" alt="">
+													<img th:src="@{/assets/app/media/img/users/100_3.jpg}" src="../../../static/assets/app/media/img/users/100_3.jpg" class="m-widget7__img" alt="" />
 												</div>
 												<div class="m-widget7__info">
 													<span class="m-widget7__username">
@@ -5462,7 +5462,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<div class="m-portlet__body">
 										<div class="m-widget19">
 											<div class="m-widget19__pic m-portlet-fit--top m-portlet-fit--sides" style="min-height-: 286px">
-												<img src="../../../static/assets/app/media/img//blog/blog1.jpg" alt="">
+												<img th:src="@{/assets/app/media/img/blog/blog1.jpg}" src="../../../static/assets/app/media/img/blog/blog1.jpg" alt="" />
 												<h3 class="m-widget19__title m--font-light">
 													Introducing New Feature
 												</h3>
@@ -5471,7 +5471,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-widget19__content">
 												<div class="m-widget19__header">
 													<div class="m-widget19__user-img">
-														<img class="m-widget19__img" src="../../../static/assets/app/media/img//users/user1.jpg" alt="">
+														<img th:src="@{/assets/app/media/img/users/user1.jpg}" src="../../../static/assets/app/media/img/users/user1.jpg" class="m-widget19__img" alt="" />
 													</div>
 													<div class="m-widget19__info">
 														<span class="m-widget19__username">
@@ -5588,7 +5588,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-widget7__user">
 												<div class="m-widget7__user-img">
-													<img class="m-widget7__img" src="../../../static/assets/app/media/img//users/100_5.jpg" alt="">
+													<img th:src="@{/assets/app/media/img/users/100_5.jpg}" src="../../../static/assets/app/media/img/users/100_5.jpg" class="m-widget7__img" alt="" />
 												</div>
 												<div class="m-widget7__info">
 													<span class="m-widget7__username">
@@ -5822,7 +5822,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<div class="m-widget4 m-widget4--progress">
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_4.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_4.jpg}" src="../../../static/assets/app/media/img/users/100_4.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -5854,7 +5854,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_14.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_14.jpg}" src="../../../static/assets/app/media/img/users/100_14.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -5886,7 +5886,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_11.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_11.jpg}" src="../../../static/assets/app/media/img/users/100_11.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -5918,7 +5918,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_1.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_1.jpg}" src="../../../static/assets/app/media/img/users/100_1.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -5950,7 +5950,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</div>
 													<div class="m-widget4__item">
 														<div class="m-widget4__img m-widget4__img--pic">
-															<img src="../../../static/assets/app/media/img/users/100_6.jpg" alt="">
+															<img th:src="@{/assets/app/media/img/users/100_6.jpg}" src="../../../static/assets/app/media/img/users/100_6.jpg" alt="" />
 														</div>
 														<div class="m-widget4__info">
 															<span class="m-widget4__title">
@@ -6822,7 +6822,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../static/assets/app/media/img//users/user3.jpg" alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -6852,7 +6852,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../static/assets/app/media/img//users/user3.jpg" alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -6885,7 +6885,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../static/assets/app/media/img//users/user3.jpg"  alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -6962,7 +6962,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../static/assets/app/media/img//users/user3.jpg"  alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -7004,7 +7004,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7017,7 +7017,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7030,7 +7030,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7043,7 +7043,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7056,7 +7056,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7074,7 +7074,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7087,7 +7087,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7100,7 +7100,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7113,7 +7113,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7126,7 +7126,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -7403,7 +7403,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<ul class="m-nav-sticky" style="margin-top: 30px;">
 			<!--
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
-				<a href="">
+				<a href="" />
 					<i class="la la-eye"></i>
 				</a>
 			</li>

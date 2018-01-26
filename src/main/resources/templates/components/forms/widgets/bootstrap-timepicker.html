@@ -33,10 +33,10 @@ License: You must have a valid license purchased only from themeforest(the above
 		</script>
 		<!--end::Web font -->
         <!--begin::Base Styles -->
-		<link th:href="@{/assets" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
-		<link th:href="@{/assets" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/vendors/base/vendors.bundle.css}" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/demo/default/base/style.bundle.css}" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Base Styles -->
-		<link rel="shortcut icon" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" />
+		<link th:href="@{/assets/demo/default/media/img/logo/favicon.ico}" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" rel="shortcut icon" />
 	</head>
 	<!-- end::Head -->
     <!-- end::Body -->
@@ -52,7 +52,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="../../../index.html" class="m-brand__logo-wrapper">
-										<img alt="" src="../../../../static/assets/demo/default/media/img/logo/logo_default_dark.png"/>
+										<img th:src="@{/assets/demo/default/media/img/logo/logo_default_dark.png}" src="../../../../static/assets/demo/default/media/img/logo/logo_default_dark.png" alt="" />
 									</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -717,7 +717,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../../static/assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/notification_bg.jpg} + '); background-size: cover;'" style="background: url(../../../../static/assets/app/media/img/misc/notification_bg.jpg); background-size: cover;">
 														<span class="m-dropdown__header-title">
 															9 New
 														</span>
@@ -902,7 +902,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
 																	<div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
 																		<div class="m-stack__item m-stack__item--center m-stack__item--middle">
-																			<span class="">
+																			<span class="" />
 																				All caught up!
 																				<br>
 																				No new logs.
@@ -926,7 +926,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../../static/assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/quick_actions_bg.jpg} + '); background-size: cover;'" style="background: url(../../../../static/assets/app/media/img/misc/quick_actions_bg.jpg); background-size: cover;">
 														<span class="m-dropdown__header-title">
 															Quick Actions
 														</span>
@@ -976,7 +976,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										<li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" data-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="../../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt=""/>
+													<img th:src="@{/assets/app/media/img/users/user4.jpg}" src="../../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
 												</span>
 												<span class="m-topbar__username m--hide">
 													Nick
@@ -985,10 +985,10 @@ License: You must have a valid license purchased only from themeforest(the above
 											<div class="m-dropdown__wrapper">
 												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
 												<div class="m-dropdown__inner">
-													<div class="m-dropdown__header m--align-center" style="background: url(../../../../static/assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
+													<div class="m-dropdown__header m--align-center" th:style="'background: url(' + @{/assets/app/media/img/misc/user_profile_bg.jpg} + '); background-size: cover;'" style="background: url(../../../../static/assets/app/media/img/misc/user_profile_bg.jpg); background-size: cover;">
 														<div class="m-card-user m-card-user--skin-dark">
 															<div class="m-card-user__pic">
-																<img src="../../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt=""/>
+																<img th:src="@{/assets/app/media/img/users/user4.jpg}" src="../../../../static/assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
 															</div>
 															<div class="m-card-user__details">
 																<span class="m-card-user__name m--font-weight-500">
@@ -3196,7 +3196,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											Minimum Setup
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
-											<input type='text' class="form-control" id="m_timepicker_1" readonly placeholder="Select time" type="text"/>
+											<input type='text' class="form-control" id="m_timepicker_1" readonly placeholder="Select time" type="text" />
 										</div>
 									</div>
 									<div class="form-group m-form__group row">
@@ -3205,7 +3205,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<div class='input-group timepicker' id='m_timepicker_2'>
-												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<i class="la la-clock-o"></i>
@@ -3225,7 +3225,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="la la-clock-o"></i>
 													</span>
 												</div>
-												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 											</div>
 										</div>
 									</div>
@@ -3240,7 +3240,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<i class="la la-exclamation-circle"></i>
 													</span>
 												</div>
-												<input type='text' class="form-control m-input" readonly value="10:30:20 AM" type="text"/>
+												<input type='text' class="form-control m-input" readonly value="10:30:20 AM" type="text" />
 											</div>
 										</div>
 									</div>
@@ -3278,7 +3278,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="modal-dialog modal-lg" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="">
+										<h5 class="modal-title" id="" />
 											Bootstrap Time Picker Examples
 										</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -3292,7 +3292,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													Minimum Setup
 												</label>
 												<div class="col-lg-9 col-md-9 col-sm-12">
-													<input type='text' class="form-control" id="m_timepicker_1_modal" readonly placeholder="Select time" type="text"/>
+													<input type='text' class="form-control" id="m_timepicker_1_modal" readonly placeholder="Select time" type="text" />
 												</div>
 											</div>
 											<div class="form-group m-form__group row">
@@ -3301,7 +3301,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</label>
 												<div class="col-lg-9 col-md-9 col-sm-12">
 													<div class='input-group timepicker' id='m_timepicker_2_modal'>
-														<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+														<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 														<div class="input-group-append">
 															<span class="input-group-text">
 																<i class="la la-clock-o"></i>
@@ -3321,7 +3321,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<i class="la la-clock-o"></i>
 															</span>
 														</div>
-														<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+														<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 													</div>
 												</div>
 											</div>
@@ -3336,7 +3336,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<i class="la la-exclamation-circle"></i>
 															</span>
 														</div>
-														<input type='text' class="form-control m-input" readonly value="10:30:20 AM" type="text"/>
+														<input type='text' class="form-control m-input" readonly value="10:30:20 AM" type="text" />
 													</div>
 												</div>
 											</div>
@@ -3374,7 +3374,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<div class='input-group timepicker' id='m_timepicker_1_validate'>
-												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<i class="la la-clock-o"></i>
@@ -3395,7 +3395,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<div class='input-group timepicker' id='m_timepicker_2_validate'>
-												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<i class="la la-clock-o"></i>
@@ -3416,7 +3416,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<div class='input-group timepicker' id='m_timepicker_3_validate'>
-												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text"/>
+												<input type='text' class="form-control m-input" readonly placeholder="Select time" type="text" />
 												<div class="input-group-append">
 													<span class="input-group-text">
 														<i class="la la-clock-o"></i>
@@ -3539,7 +3539,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../../static/assets/app/media/img//users/user3.jpg" alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -3569,7 +3569,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../../static/assets/app/media/img//users/user3.jpg" alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -3602,7 +3602,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../../static/assets/app/media/img//users/user3.jpg"  alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -3679,7 +3679,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-messenger__wrapper">
 									<div class="m-messenger__message m-messenger__message--in">
 										<div class="m-messenger__message-pic">
-											<img src="../../../../static/assets/app/media/img//users/user3.jpg"  alt=""/>
+											<img th:src="@{/assets/app/media/img/users/user3.jpg}" src="../../../../static/assets/app/media/img/users/user3.jpg" alt="" />
 										</div>
 										<div class="m-messenger__message-body">
 											<div class="m-messenger__message-arrow"></div>
@@ -3721,7 +3721,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3734,7 +3734,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3747,7 +3747,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3760,7 +3760,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3773,7 +3773,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3791,7 +3791,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3804,7 +3804,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3817,7 +3817,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3830,7 +3830,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" checked="checked" name="">
+												<input type="checkbox" checked="checked" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -3843,7 +3843,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-list-settings__item-control">
 										<span class="m-switch m-switch--outline m-switch--icon-check m-switch--brand">
 											<label>
-												<input type="checkbox" name="">
+												<input type="checkbox" name="" />
 												<span></span>
 											</label>
 										</span>
@@ -4120,7 +4120,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<ul class="m-nav-sticky" style="margin-top: 30px;">
 			<!--
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
-				<a href="">
+				<a href="" />
 					<i class="la la-eye"></i>
 				</a>
 			</li>
