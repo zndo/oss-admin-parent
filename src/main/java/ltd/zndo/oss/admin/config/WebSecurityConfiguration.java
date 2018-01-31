@@ -30,7 +30,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfig extends WebMvcConfigurerAdapter {
+public class WebSecurityConfiguration extends WebMvcConfigurerAdapter {
 
 	// Spring会自动寻找实现接口的类注入,会找到我们的 UserDetailsServiceImpl 类
 	@Autowired
