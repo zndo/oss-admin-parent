@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import ltd.zndo.oss.admin.web.security.entity.User;
 
 @RestController
+@PreAuthorize("hasRole('USER')")
 @RequestMapping("/users")
-@PreAuthorize("hasRole('ADMIN')")
 public class UserRestController {
-	
+
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping
 	public List<User> uesrs(){
 		return null;

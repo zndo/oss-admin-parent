@@ -5,6 +5,8 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * 安全认证用户实体类
  * 
@@ -18,12 +20,12 @@ public class User implements UserDetails {
 	 */
 	private static final long serialVersionUID = -2370978319174748374L;
 
-	// 角色
-	private final Collection<? extends GrantedAuthority> authorities;
-
 	private boolean accountNonExpired;
 
 	private boolean accountNonLocked;
+
+	// 角色
+	private final Collection<? extends GrantedAuthority> authorities;
 
 	private boolean credentialsNonExpired;
 
@@ -105,6 +107,7 @@ public class User implements UserDetails {
 		this.accountNonLocked = accountNonLocked;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean isAccountNonLocked() {
 		return accountNonLocked;
@@ -114,6 +117,7 @@ public class User implements UserDetails {
 		this.credentialsNonExpired = credentialsNonExpired;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean isCredentialsNonExpired() {
 		return credentialsNonExpired;
@@ -123,15 +127,18 @@ public class User implements UserDetails {
 		this.enabled = enabled;
 	}
 
+	@JsonIgnore
 	@Override
 	public boolean isEnabled() {
 		return enabled;
 	}
 
+	@JsonIgnore
 	public String getId() {
 		return id;
 	}
 
+	@JsonIgnore
 	@Override
 	public String getPassword() {
 		return password;

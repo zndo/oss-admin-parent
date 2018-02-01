@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,7 +31,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class WebSecurityConfiguration extends WebMvcConfigurerAdapter {
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	// Spring会自动寻找实现接口的类注入,会找到我们的 UserDetailsServiceImpl 类
 	@Autowired
@@ -64,17 +65,26 @@ public class WebSecurityConfiguration extends WebMvcConfigurerAdapter {
 		};
 	}
 
-	// @Override
+	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity
 				// 取消csrf
 				.csrf().disable()
 				// 基于token，所以不需要session
 				// .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-				.authorizeRequests().antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+				.authorizeRequests() //
+				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 				// 允许对于网站静态资源的无授权访问
-				.antMatchers(HttpMethod.GET, "/", "/*.html", "/favicon.ico", "/**/*.html", "/**/*.css", "/**/*.js",
-						"/webjars/**", "/swagger-resources/**", "/*/api-docs")
+				.antMatchers(HttpMethod.GET, //
+						"/", //
+						"/*.html", //
+						"/favicon.ico", //
+						"/**/*.html", //
+						"/**/*.css", //
+						"/**/*.js", //
+						"/webjars/**", //
+						"/swagger-resources/**", //
+						"/*/api-docs")//
 				.permitAll()
 				// 对于获取token的rest api要允许匿名访问
 				.antMatchers("/auth/**").permitAll()
