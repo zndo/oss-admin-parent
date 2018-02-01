@@ -8,8 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Web MVC 配置类
  * 
  * @author tianxin<tianxin@weconex.com>
- * @created 2017/1/1 9:00
- * @modified 2017/1/1 9:30
+ * @created 2018/01/01 9:00
+ * @modified 2018/01/01 9:30
  * @since
  * @since JDK 1.8
  *
