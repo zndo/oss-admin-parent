@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- MyBatis Generator 逆向工程配置 -->
+<!-- mybatis-generator:generate -->
+<generatorConfiguration>
+	<context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+		<!-- 属性 -->
+		<property name="javaFileEncoding" value="UTF-8"></property>
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter"></property>
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter"></property>
+		<property name="beginningDelimiter" value="`"></property>
+		<property name="endingDelimiter" value="`"></property>
+		
+		<!-- 插件 -->
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+		</plugin>
+
+		<!-- 序列化插件 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+		</plugin>
+
+		<!-- 注释 -->
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- 连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/ADMIN?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true&amp;failOverReadOnly=false&amp;tinyInt1isBit=false" userId="root" password="123456">
+			<property name="remarksReporting" value="true" />
+		</jdbcConnection>
+		
+		<!-- Java 类型解析器 -->
+		<javaTypeResolver type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+	        <!-- 
+	            true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
+	            false：默认,
+	                scale>0;length>18：使用BigDecimal;
+	                scale=0;length[10,18]：使用Long；
+	                scale=0;length[5,9]：使用Integer；
+	                scale=0;length<5：使用Short；
+	         -->
+	        <property name="forceBigDecimals" value="false"/>
+	    </javaTypeResolver>
+
+		<!-- 实体 -->
+		<javaModelGenerator targetPackage="${targetModelPackage}"
+			targetProject="${targetJavaProject}">
+			<property name="enableSubPackages" value="false" />
+			<property name="constructorBased" value="false" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- Mapper XML -->
+		<sqlMapGenerator targetPackage="${targetXMLPackage}"
+			targetProject="${targetResourcesProject}">
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+
+		<!-- Mapper Interface -->
+		<javaClientGenerator targetPackage="${targetMapperPackage}"
+			targetProject="${targetJavaProject}" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+
+		<!-- 表 -->
+
+		<!-- 后台管理用户表 -->
+		<table></table>
+<!-- 		<table tableName="ADMIN_USER" domainObjectName="AdminUser" > -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="OPENID" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="USERNAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="PASSWORD" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="SIGNIN_TYPE" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="NICKNAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="ROLES" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="AVATAR_URL" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="GENDER" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="EMAIL" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="PHONE" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="USER_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="META" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="MD5" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理用户资料表 -->
+<!-- 		<table tableName="ADMIN_USER_PROFILE" domainObjectName="AdminUserProfile"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="USERID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="REALNAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="IDENTITY" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="ADDRESS" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理用户表 -->
+<!-- 		<table tableName="ADMIN_ROLE" domainObjectName="AdminRole"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="ROLE_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="DESCRIPTION" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="F_ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="ROLE_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理权限表 -->
+<!-- 		<table tableName="ADMIN_AUTHORITY" domainObjectName="AdminAuthority"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="AUTHORITY" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="AUTHORITY_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="DESCRIPTION" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="AUTHORITY_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理资源表 -->
+<!-- 		<table tableName="ADMIN_RESOURCE" domainObjectName="AdminResource"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="TYPE" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="RESOURCE_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="DESCRIPTION" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="URL" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="PRIORITY" javaType="java.lang.Integer" /> -->
+<!-- 			<columnOverride column="RESOURCE_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 用户角色关系表 -->
+<!-- 		<table tableName="ADMIN_USER_ROLES" domainObjectName="AdminUserRoles"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="USERID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="ROLEID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="RLAT_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 角色权限关系表 -->
+<!-- 		<table tableName="ADMIN_ROLE_AUTHORITIES" domainObjectName="AdminRoleAuthorities"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="ROLEID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="AUTHORITYID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="RLAT_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 权限资源关系表 -->
+<!-- 		<table tableName="ADMIN_AUTHORITY_RESOURCES" domainObjectName="AdminAuthorityResources"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="AUTHORITYID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="RESOURCEID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="RLAT_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理模块表 -->
+<!-- 		<table tableName="ADMIN_MODULE" domainObjectName="AdminModule"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="TYPE" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="MODULE_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="DESCRIPTION" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="PARENT_MODULE" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="URL" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="MENU_LEVEL" javaType="java.lang.Integer" /> -->
+<!-- 			<columnOverride column="BUTTOM_LEVEL" javaType="java.lang.Integer" /> -->
+<!-- 			<columnOverride column="APP_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="CONTROLLER_NAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="PRIORITY" javaType="java.lang.Integer" /> -->
+<!-- 			<columnOverride column="MODULE_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 角色模块关系表 -->
+<!-- 		<table tableName="ADMIN_ROLE_MODULES" domainObjectName="AdminRoleModules"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="ROLEID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="MODULEID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="RLAT_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+		<!-- 后台管理登录记忆表 -->
+<!-- 		<table tableName="ADMIN_REMEMBER_ME" domainObjectName="AdminRememberMe"> -->
+<!-- 			<property name="rootClass" value="${rootClass}" /> -->
+<!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
+<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
+<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<columnOverride column="USERNAME" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="SERIES" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="TOKEN" javaType="java.lang.String" /> -->
+<!-- 			<columnOverride column="REC_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
+<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 		</table> -->
+
+	</context>
+</generatorConfiguration>

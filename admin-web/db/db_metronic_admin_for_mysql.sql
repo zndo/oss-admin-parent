@@ -1,0 +1,282 @@
+/*
+ Navicat MySQL Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MariaDB
+ Source Server Version : 50626
+ Source Host           : localhost:3306
+ Source Database       : ADMIN
+
+ Target Server Type    : MariaDB
+ Target Server Version : 100206
+ File Encoding         : utf-8
+
+ Date: 01/01/2018 09:30:00 AM
+*/
+SET NAMES utf8;
+
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `ADMIN_USER` - 后台管理用户表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_USER`;
+
+CREATE TABLE `ADMIN_USER` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `OPENID` VARCHAR (64) NULL COMMENT '用户唯一身份识别 ID',
+    `USERNAME` VARCHAR (32) DEFAULT NULL COMMENT '帐号',
+    `PASSWORD` VARCHAR (128) DEFAULT NULL COMMENT '密码',
+    `SIGNIN_TYPE` VARCHAR (16) DEFAULT 'DEFAULT' COMMENT '登录类型：DEFAULT/DEFAULT/WEIXIN/WEIBO/GITHUB',
+    `NICKNAME` VARCHAR (32) DEFAULT NULL COMMENT '昵称',
+    `ROLES` VARCHAR (255) DEFAULT 'ROLE_USER' COMMENT '角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN',
+    `AVATAR_URL` VARCHAR (255) DEFAULT NULL COMMENT '头像地址',
+    `GENDER` VARCHAR (2) DEFAULT NULL COMMENT '性别',
+    `EMAIL` VARCHAR (32) DEFAULT NULL COMMENT '邮箱',
+    `PHONE` VARCHAR (16) NOT NULL COMMENT '手机号',
+    `USER_STATUS` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '用户状态：-1-已禁用/0-未激活/1-已激活',
+    `META` VARCHAR (64) DEFAULT NULL COMMENT '其他信息',
+    `MD5` VARCHAR (128) NOT NULL COMMENT '个人信息MD5',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`USERNAME`),
+    UNIQUE KEY (`PHONE`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_USER`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_USER_PROFILE` - 后台管理用户资料表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_USER_PROFILE`;
+
+CREATE TABLE `ADMIN_USER_PROFILE` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `USERID` BIGINT (20) NOT NULL COMMENT '用户ID，外键',
+    `REALNAME` VARCHAR (16) NOT NULL COMMENT '真实姓名',
+    `IDENTITY` VARCHAR (16) NOT NULL COMMENT '身份证号',
+    `ADDRESS` VARCHAR (64) DEFAULT NULL COMMENT '住址',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`IDENTITY`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Table structure for `ADMIN_ROLE` - 后台管理角色表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_ROLE`;
+
+CREATE TABLE `ADMIN_ROLE` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `ROLE_NAME` VARCHAR (32) NOT NULL COMMENT '角色名',
+    `DESCRIPTION` VARCHAR (128) DEFAULT NULL COMMENT '角色描述',
+    `F_ID` BIGINT (32) DEFAULT NULL COMMENT 'F_ID',
+    `ROLE_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '角色状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`ROLE_NAME`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_ROLE`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_AUTHORITY` - 后台管理权限表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_AUTHORITY`;
+
+CREATE TABLE `ADMIN_AUTHORITY` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `AUTHORITY` VARCHAR (128) NOT NULL COMMENT '权限标识',
+    `AUTHORITY_NAME` VARCHAR (32) NOT NULL COMMENT '权限名',
+    `DESCRIPTION` VARCHAR (128) DEFAULT NULL COMMENT '权限描述',
+    `AUTHORITY_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '权限状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`AUTHORITY`),
+    UNIQUE KEY (`AUTHORITY_NAME`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_AUTHORITY`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_RESOURCE` - 后台管理资源表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_RESOURCE`;
+
+CREATE TABLE `ADMIN_RESOURCE` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `TYPE` VARCHAR (128) NOT NULL COMMENT '资源类型',
+    `RESOURCE_NAME` VARCHAR (32) NOT NULL COMMENT '资源名',
+    `DESCRIPTION` VARCHAR (128) DEFAULT NULL COMMENT '资源描述',
+    `URL` VARCHAR (255) DEFAULT NULL COMMENT '资源地址',
+    `PRIORITY` INT DEFAULT NULL COMMENT '优先级',
+    `RESOURCE_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '资源状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`RESOURCE_NAME`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_RESOURCE`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_USER_ROLES` - 用户角色关系表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_USER_ROLES`;
+
+CREATE TABLE `ADMIN_USER_ROLES` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `USERID` BIGINT (20) NOT NULL COMMENT '用户ID',
+    `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
+    `RLAT_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '关系状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_USER_ROLES`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_ROLE_AUTHORITIES` - 角色权限关系表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_ROLE_AUTHORITIES`;
+
+CREATE TABLE `ADMIN_ROLE_AUTHORITIES` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
+    `AUTHORITYID` BIGINT (20) NOT NULL COMMENT '权限ID',
+    `RLAT_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '关系状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_ROLE_AUTHORITIES`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_AUTHORITY_RESOURCES` - 权限资源关系表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_AUTHORITY_RESOURCES`;
+
+CREATE TABLE `ADMIN_AUTHORITY_RESOURCES` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `AUTHORITYID` BIGINT (20) NOT NULL COMMENT '角色ID',
+    `RESOURCEID` BIGINT (20) NOT NULL COMMENT '权限ID',
+    `RLAT_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '关系状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_AUTHORITY_RESOURCES`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_MODULE` - 后台管理模块表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_MODULE`;
+
+CREATE TABLE `ADMIN_MODULE` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `TYPE` VARCHAR (128) NOT NULL COMMENT '模块类型',
+    `MODULE_NAME` VARCHAR (32) NOT NULL COMMENT '模块名',
+    `DESCRIPTION` VARCHAR (128) DEFAULT NULL COMMENT '模块描述',
+    `PARENT_MODULE` VARCHAR (32) NOT NULL COMMENT '父模块',
+    `URL` VARCHAR (255) DEFAULT NULL COMMENT '模块地址',
+    `MENU_LEVEL` INT DEFAULT NULL COMMENT '菜单级别',
+    `BUTTOM_LEVEL` INT DEFAULT NULL COMMENT '最下级',
+    `APP_NAME` VARCHAR (32) NOT NULL COMMENT '应用名',
+    `CONTROLLER_NAME` VARCHAR (128) NOT NULL COMMENT '控制器名',
+    `PRIORITY` INT DEFAULT NULL COMMENT '优先级',
+    `MODULE_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '模块状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`MODULE_NAME`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_MODULE`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_ROLE_MODULES` - 角色模块关系表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_ROLE_MODULES`;
+
+CREATE TABLE `ADMIN_ROLE_MODULES` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
+    `MODULEID` BIGINT (20) NOT NULL COMMENT '模块ID',
+    `RLAT_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '关系状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_ROLE_MODULES`
+-- ----------------------------
+
+-- ----------------------------
+--  Table structure for `ADMIN_REMEMBER_ME` - 后台管理登录记忆表
+-- ----------------------------
+DROP TABLE
+IF EXISTS `ADMIN_REMEMBER_ME`;
+
+CREATE TABLE `ADMIN_REMEMBER_ME` (
+    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+    `USERNAME` VARCHAR (32) DEFAULT NULL COMMENT '帐号',
+    `SERIES` VARCHAR (255) DEFAULT NULL COMMENT '序列',
+    `TOKEN` VARCHAR (255) NOT NULL COMMENT '令牌',
+    `REC_STATUS` TINYINT(1) NOT NULL DEFAULT 1 COMMENT '记录状态：1-正常/2-禁用',
+    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
+    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
+    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
+    PRIMARY KEY (`ID`),
+    UNIQUE KEY (`SERIES`)
+) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
+
+-- ----------------------------
+--  Records of `ADMIN_REMEMBER_ME`
+-- ----------------------------
+
+
