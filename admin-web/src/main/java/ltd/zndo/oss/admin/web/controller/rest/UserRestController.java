@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ltd.zndo.oss.admin.web.security.entity.User;
+import ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails;
 
 @RestController
 @PreAuthorize("hasRole('USER')")
@@ -16,7 +16,7 @@ public class UserRestController {
 
 	@PreAuthorize("hasRole('USER')")
 	@GetMapping
-	public List<User> uesrs(){
+	public List<SecurityUserDetails> uesrs(){
 		return null;
 	}
 

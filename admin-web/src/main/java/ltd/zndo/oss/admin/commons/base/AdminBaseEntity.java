@@ -21,25 +21,43 @@ public class AdminBaseEntity implements Serializable {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    /**
+	/**
      * 创建时间
      */
     @Column(name = "CREATED")
-    private Date created;
+    protected Date created;
 
     /**
      * 更新时间
      */
     @Column(name = "UPDATED")
-    private Date updated;
+    protected Date updated;
 
     /**
      * 是否删除：0-未删除/1-已删除
      */
     @Column(name = "DELETED")
-    private Boolean deleted;
+    protected Boolean deleted;
+
+    /**
+     * 获取ID
+     * 
+     * @return ID - ID
+     */
+    public Long getId() {
+		return id;
+	}
+
+    /**
+     * 设置ID
+     * 
+     * @param id ID
+     */
+	public void setId(Long id) {
+		this.id = id;
+	}
 
     /**
      * 获取创建时间

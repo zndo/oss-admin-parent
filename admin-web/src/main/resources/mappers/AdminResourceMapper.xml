@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ltd.zndo.oss.admin.persistence.mapper.AdminResourceMapper">
-  <resultMap id="BaseResultMap" type="ltd.zndo.oss.admin.persistence.entity.AdminResource">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="TYPE" jdbcType="VARCHAR" property="type" />
-    <result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName" />
-    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
-    <result column="URL" jdbcType="VARCHAR" property="url" />
-    <result column="PRIORITY" jdbcType="INTEGER" property="priority" />
-    <result column="RESOURCE_STATUS" jdbcType="TINYINT" property="resourceStatus" />
-    <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
-    <result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />
-    <result column="DELETED" jdbcType="TINYINT" property="deleted" />
-  </resultMap>
+	<resultMap id="BaseResultMap"
+		type="ltd.zndo.oss.admin.persistence.entity.AdminResource">
+		<!-- WARNING - @mbg.generated -->
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="TYPE" jdbcType="VARCHAR" property="type" />
+		<result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName" />
+		<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+		<result column="URL" jdbcType="VARCHAR" property="url" />
+		<result column="PRIORITY" jdbcType="INTEGER" property="priority" />
+		<result column="RESOURCE_STATUS" jdbcType="TINYINT" property="resourceStatus" />
+		<result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+		<result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />
+		<result column="DELETED" jdbcType="TINYINT" property="deleted" />
+	</resultMap>
+
+	<select id="loadResourcesMapping" resultMap="java.lang.List"
+		parameterType="java.lang.String">
+		SELECT
+			T3.URL,
+			T2.AUTHORITY
+		FROM
+			ADMIN_SECURITY_RESOURCES T1
+		JOIN ADMIN_AUTHORITY AS T2 ON T2.ID = T1.AUTHORITYID
+		JOIN RESOURCES AS T3 ON T3.ID = T1.RESOURCEID
+		AND T1.RLAT_STATUS = 1
+		AND T1.DELETED = 0
+		AND T2.AUTHORITY_STATUS = 1
+		AND T2.DELETED = 0
+		AND T3.RESOURCE_STATUS = 1
+		AND T3.DELETED = 0
+		AND T3.TYPE = 'URL'
+		ORDER BY
+			T3.PRIORITY DESC
+	</select>
+
 </mapper>

@@ -14,4 +14,25 @@
     <result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />
     <result column="DELETED" jdbcType="TINYINT" property="deleted" />
   </resultMap>
+
+	<select id="loadUserRolesByUsername" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT
+		*
+		FROM
+		ADMIN_ROLE WHERE ID IN (
+			SELECT DISTINCT
+			ROLEID
+			FROM
+			ADMIN_USER_ROLES AS T1
+			JOIN ADMIN_USER AS T2 ON T2.USERID = T1.ID
+			AND T1.RLAT_STATUS = 1
+			AND T1.DELETED = 0
+			AND T2.USER_STATUS = 1
+			AND T2.DELETED = 0
+			AND T2.USERNAME =
+			#{username,jdbcType=VARCHAR}
+		)
+	</select>
+	
 </mapper>

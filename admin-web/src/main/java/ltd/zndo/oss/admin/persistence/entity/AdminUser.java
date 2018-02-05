@@ -40,12 +40,6 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
     private String nickname;
 
     /**
-     * 角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN
-     */
-    @Column(name = "ROLES")
-    private String roles;
-
-    /**
      * 头像地址
      */
     @Column(name = "AVATAR_URL")
@@ -73,7 +67,19 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
      * 用户状态：-1-已禁用/0-未激活/1-已激活
      */
     @Column(name = "USER_STATUS")
-    private Boolean userStatus;
+    private Integer userStatus;
+
+    /**
+     * 其他信息
+     */
+    @Column(name = "META")
+    private String meta;
+
+    /**
+     * 个人信息MD5
+     */
+    @Column(name = "MD5")
+    private String md5;
 
     /**
      * 创建时间
@@ -92,18 +98,6 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
      */
     @Column(name = "DELETED")
     private Boolean deleted;
-
-    /**
-     * 其他信息
-     */
-    @Column(name = "META")
-    private String meta;
-
-    /**
-     * 个人信息MD5
-     */
-    @Column(name = "MD5")
-    private String md5;
 
     private static final long serialVersionUID = 1L;
 
@@ -198,24 +192,6 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
     }
 
     /**
-     * 获取角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN
-     *
-     * @return ROLES - 角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN
-     */
-    public String getRoles() {
-        return roles;
-    }
-
-    /**
-     * 设置角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN
-     *
-     * @param roles 角色：ROLE_GUEST/ROLE_USER/ROLE_ADMIN
-     */
-    public void setRoles(String roles) {
-        this.roles = roles == null ? null : roles.trim();
-    }
-
-    /**
      * 获取头像地址
      *
      * @return AVATAR_URL - 头像地址
@@ -292,7 +268,7 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
      *
      * @return USER_STATUS - 用户状态：-1-已禁用/0-未激活/1-已激活
      */
-    public Boolean getUserStatus() {
+    public Integer getUserStatus() {
         return userStatus;
     }
 
@@ -301,7 +277,7 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
      *
      * @param userStatus 用户状态：-1-已禁用/0-未激活/1-已激活
      */
-    public void setUserStatus(Boolean userStatus) {
+    public void setUserStatus(Integer userStatus) {
         this.userStatus = userStatus;
     }
 

@@ -2,8 +2,7 @@ package ltd.zndo.oss.admin.web.security.entity;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author zndo
  *
  */
-public class User implements UserDetails, Serializable {
+public class SecurityUserDetails implements UserDetails, Serializable {
 
 	/**
 	 * SerialVersionUID
@@ -35,34 +34,52 @@ public class User implements UserDetails, Serializable {
 	private boolean enabled;
 
 	// ID
-	private final String id;
+	private final Long id;
 
 	// 密码
 	private final String password;
 
 	// 用户名
 	private final String username;
-	
+
 	// 用户的角色
-//    @JsonIgnore  
-//    private Set<SysUsersRoles> sysUsersRoleses = new HashSet<SysUsersRoles>(0);
+//	 @JsonIgnore
+//	 private Set<AdminRole> sysUsersRoles = new HashSet<AdminRole>(0);
 
 	// Constructors
+
+//	/**
+//	 * 构造方法-半参
+//	 * 
+//	 * @param id
+//	 * @param username
+//	 * @param password
+//	 * @param authorities
+//	 */
+//	public SecurityUserDetails(Collection<? extends GrantedAuthority> authorities, String id, String password,
+//			String username) {
+//		super();
+//		this.authorities = authorities;
+//		this.id = id;
+//		this.password = password;
+//		this.username = username;
+//	}
 
 	/**
 	 * 构造方法-半参
 	 * 
 	 * @param id
-	 * @param username
 	 * @param password
+	 * @param username
 	 * @param authorities
 	 */
-	public User(Collection<? extends GrantedAuthority> authorities, String id, String password, String username) {
+	public SecurityUserDetails(Long id, String password, String username,
+			List<GrantedAuthority> authorities) {
 		super();
-		this.authorities = authorities;
 		this.id = id;
 		this.password = password;
 		this.username = username;
+		this.authorities = authorities;
 	}
 
 	/**
@@ -77,8 +94,9 @@ public class User implements UserDetails, Serializable {
 	 * @param password
 	 * @param username
 	 */
-	public User(Collection<? extends GrantedAuthority> authorities, boolean accountNonExpired, boolean accountNonLocked,
-			boolean credentialsNonExpired, boolean enabled, String id, String password, String username) {
+	public SecurityUserDetails(Collection<? extends GrantedAuthority> authorities, boolean accountNonExpired,
+			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled, Long id, String password,
+			String username) {
 		super();
 		this.authorities = authorities;
 		this.accountNonExpired = accountNonExpired;
@@ -141,7 +159,7 @@ public class User implements UserDetails, Serializable {
 	}
 
 	@JsonIgnore
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 

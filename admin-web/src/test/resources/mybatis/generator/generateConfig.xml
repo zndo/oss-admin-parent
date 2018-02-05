@@ -74,7 +74,7 @@
 		<!-- 表 -->
 
 		<!-- 后台管理用户表 -->
-		<table></table>
+		<table tableName="Demo"></table>
 <!-- 		<table tableName="ADMIN_USER" domainObjectName="AdminUser" > -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
@@ -91,7 +91,7 @@
 <!-- 			<columnOverride column="GENDER" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="EMAIL" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="PHONE" javaType="java.lang.String" /> -->
-<!-- 			<columnOverride column="USER_STATUS" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="USER_STATUS" javaType="java.lang.Integer" /> -->
 <!-- 			<columnOverride column="META" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="MD5" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
@@ -115,7 +115,7 @@
 <!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
 <!-- 		</table> -->
 
-		<!-- 后台管理用户表 -->
+		<!-- 后台管理角色表 -->
 <!-- 		<table tableName="ADMIN_ROLE" domainObjectName="AdminRole"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->

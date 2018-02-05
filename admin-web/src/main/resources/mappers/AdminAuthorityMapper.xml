@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ltd.zndo.oss.admin.persistence.mapper.AdminAuthorityMapper">
-  <resultMap id="BaseResultMap" type="ltd.zndo.oss.admin.persistence.entity.AdminAuthority">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="AUTHORITY" jdbcType="VARCHAR" property="authority" />
-    <result column="AUTHORITY_NAME" jdbcType="VARCHAR" property="authorityName" />
-    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
-    <result column="AUTHORITY_STATUS" jdbcType="TINYINT" property="authorityStatus" />
-    <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
-    <result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />
-    <result column="DELETED" jdbcType="TINYINT" property="deleted" />
-  </resultMap>
+	<resultMap id="BaseResultMap"
+		type="ltd.zndo.oss.admin.persistence.entity.AdminAuthority">
+		<!-- WARNING - @mbg.generated -->
+		<id column="ID" jdbcType="BIGINT" property="id" />
+		<result column="AUTHORITY" jdbcType="VARCHAR" property="authority" />
+		<result column="AUTHORITY_NAME" jdbcType="VARCHAR" property="authorityName" />
+		<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+		<result column="AUTHORITY_STATUS" jdbcType="TINYINT" property="authorityStatus" />
+		<result column="CREATED" jdbcType="TIMESTAMP" property="created" />
+		<result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />
+		<result column="DELETED" jdbcType="TINYINT" property="deleted" />
+	</resultMap>
+
+	<select id="loadUserAuthoritiesByUsername" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT
+		*
+		FROM
+		ADMIN_AUTHORITY WHERE ID IN (
+			SELECT DISTINCT
+			AUTHORITYID
+			FROM
+			ADMIN_ROLE_AUTHORITIES AS T1
+			JOIN ADMIN_USER_ROLES AS T2 ON T1.ROLEID = T2.ROLEID
+			JOIN ADMIN_USER AS T3 ON T3.ID = T2.USERID
+			AND T1.RLAT_STATUS = 1
+			AND T1.DELETED = 0
+			AND T2.RLAT_STATUS = 1
+			AND T2.DELETED = 0
+			AND T3.USER_STATUS = 1
+			AND T3.DELETED = 0
+			AND T3.USERNAME =
+			#{username,jdbcType=VARCHAR}
+		)
+	</select>
+
 </mapper>
