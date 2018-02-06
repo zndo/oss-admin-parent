@@ -22,7 +22,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<!-- dependencies -->
 		<swagger2.version>2.8.0</swagger2.version>
+		<mybatis-starter.version>1.3.1</mybatis-starter.version>
+		<pagehelper-starter.version>1.2.3</pagehelper-starter.version>
+		<mapper-starter.version>1.2.3</mapper-starter.version>
+		<!-- admin modules -->
+		<admin-commons.version>0.0.1-SNAPSHOT</admin-commons.version>
+		<!-- plugins -->
+		<mybatis-generator-maven-plugin.version>1.3.6</mybatis-generator-maven-plugin.version>
 		<!-- mbg properties -->
 		<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
 		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
@@ -61,11 +69,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -115,6 +118,20 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -122,6 +139,10 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -134,23 +155,24 @@
 			<version>${swagger2.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper</artifactId>
-			<version>5.1.2</version>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis-starter.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.ehcache</groupId>
-			<artifactId>ehcache</artifactId>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper-starter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper-spring-boot-starter</artifactId>
-			<version>1.2.3</version>
+			<version>${mapper-starter.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ltd.zndo.oss.admin</groupId>
 			<artifactId>admin-commons</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${admin-commons.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -179,7 +201,7 @@
 				<!-- mybatis-generator:generate -->
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
-				<version>1.3.6</version>
+				<version>${mybatis-generator-maven-plugin.version}</version>
 				<configuration>
 					<configurationFile>${basedir}/src/test/resources/mybatis/generator/generateConfig.xml</configurationFile>
 					<overwrite>true</overwrite>
@@ -189,17 +211,12 @@
 					<dependency>
 						<groupId>mysql</groupId>
 						<artifactId>mysql-connector-java</artifactId>
-						<version>5.1.44</version>
+						<version>${mysql.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>tk.mybatis</groupId>
 						<artifactId>mapper-spring-boot-starter</artifactId>
-						<version>1.2.3</version>
-					</dependency>
-					<dependency>
-						<groupId>ltd.zndo.oss.admin</groupId>
-						<artifactId>admin-commons</artifactId>
-						<version>0.0.1-SNAPSHOT</version>
+						<version>mapper-starter.version</version>
 					</dependency>
 				</dependencies>
 			</plugin>

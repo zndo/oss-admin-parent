@@ -71,9 +71,8 @@ var UserLogin = function() {
 
             form.validate({
                 rules: {
-                    email: {
-                        required: true,
-                        email: true
+                    username: {
+                        required: true
                     },
                     password: {
                         required: true
@@ -88,9 +87,9 @@ var UserLogin = function() {
             btn.addClass('m-loader m-loader--right m-loader--light').attr('disabled', true);
 
             form.ajaxSubmit({
-                url: '',
+                url: '/user/login',
                 success: function(response, status, xhr, $form) {
-                	// similate 2s delay
+                	// 模拟 2 秒延时
                 	setTimeout(function() {
 	                    btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
 	                    showErrorMsg(form, 'danger', '用户名或密码不正确，请重试。');

@@ -1,4 +1,4 @@
-package ltd.zndo.oss.admin.web.security.impl;
+package ltd.zndo.oss.admin.service.security.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +23,7 @@ import ltd.zndo.oss.admin.web.security.UserFactory;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-	private AdminUserMapper adminUserMapper;
+    AdminUserMapper adminUserMapper;
 
 	@Autowired
 	ISecurityRoleService securityRoleService;

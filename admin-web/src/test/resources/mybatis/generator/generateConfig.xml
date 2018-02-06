@@ -34,7 +34,7 @@
 
 		<!-- 连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://127.0.0.1:3306/ADMIN?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true&amp;failOverReadOnly=false&amp;tinyInt1isBit=false" userId="root" password="123456">
+			connectionURL="jdbc:mysql://127.0.0.1:3306/ADMIN?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=true&amp;failOverReadOnly=false&amp;tinyInt1isBit=false" userId="root" password="123456">
 			<property name="remarksReporting" value="true" />
 		</jdbcConnection>
 		

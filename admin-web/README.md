@@ -6,3 +6,11 @@ Features:
 -- app_url?lang=zh_CN
 -- app_url?lang=en_US
 持久化-MyBatis
+缓存
+-- 一级 EhCache
+-- 二级 Redis
+
+
+
+
+
