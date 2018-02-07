@@ -16,12 +16,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails;
 
-public class SigninSuccessHandler implements AuthenticationSuccessHandler, InitializingBean {
+public class SigninSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler { //implements AuthenticationSuccessHandler, InitializingBean {
 
 	protected Log logger = LogFactory.getLog(getClass());
 
@@ -48,7 +49,10 @@ public class SigninSuccessHandler implements AuthenticationSuccessHandler, Initi
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 
-		this.saveLoginInfo(request, authentication);
+		// 保存用户登录信息
+		this.saveSigninInfo(request, authentication);
+		
+//		super.onAuthenticationSuccess(request, response, authentication); 
 
 		if (this.forwardToDestination) {
 			logger.info("Login success,Forwarding to " + this.defaultTargetUrl);
@@ -62,7 +66,7 @@ public class SigninSuccessHandler implements AuthenticationSuccessHandler, Initi
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-	public void saveLoginInfo(HttpServletRequest request, Authentication authentication) {
+	public void saveSigninInfo(HttpServletRequest request, Authentication authentication) {
 		SecurityUserDetails user = (SecurityUserDetails) authentication.getPrincipal();
 		try {
 			String ip = this.getIpAddress(request);
@@ -70,7 +74,7 @@ public class SigninSuccessHandler implements AuthenticationSuccessHandler, Initi
 			// TODO
 			// user.setLastLogin(date);
 			// user.setLoginIp(ip);
-			// this.sysUsersRepository.saveAndFlush(user);
+			// this.sysUsersRepository.saveAndFlush(user); // 
 		} catch (DataAccessException e) {
 			if (logger.isWarnEnabled()) {
 				logger.info("无法更新用户登录信息至数据库");
@@ -106,29 +110,22 @@ public class SigninSuccessHandler implements AuthenticationSuccessHandler, Initi
 		this.forwardToDestination = forwardToDestination;
 	}
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void afterPropertiesSet() throws Exception {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
 	 */
-	// @Override
-	// public void afterPropertiesSet() throws Exception {
-	// if(StringUtils.isEmpty(defaultTargetUrl))
-	// throw new InitializationException("You must configure defaultTargetUrl");
-	//
-	// }
+//	 @Override
+//	 public void afterPropertiesSet() throws Exception {
+//	 if(StringUtils.isEmpty(defaultTargetUrl))
+//	 throw new InitializationException("You must configure defaultTargetUrl");
+//	
+//	 }
 
-	// @Override
-	// public void onAuthenticationSuccess(HttpServletRequest request,
-	// HttpServletResponse response,
-	// Authentication authentication) throws IOException, ServletException {
-	// // TODO Auto-generated method stub
-	//
-	// }
 }

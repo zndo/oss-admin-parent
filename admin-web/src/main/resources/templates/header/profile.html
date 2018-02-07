@@ -11,7 +11,7 @@ Like: www.facebook.com/keenthemes
 Renew 支持: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<html lang="zh" >
+<html lang="zh" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 	<!-- begin::Head -->
 	<head>
 		<meta charset="utf-8" />
@@ -990,8 +990,8 @@ License: You must have a valid license purchased only from themeforest(the above
 																<img th:src="@{/assets/app/media/img/users/user9.jpg}" src="../../static/assets/app/media/img/users/user9.jpg" class="m--img-rounded m--marginless" alt="" />
 															</div>
 															<div class="m-card-user__details">
-																<span class="m-card-user__name m--font-weight-500">
-																	Sean Tien
+																<span class="m-card-user__name m--font-weight-500" th:inline="text">
+																	[[${#httpServletRequest.remoteUser}]] <!-- Sean Tien -->
 																</span>
 																<a href="" class="m-card-user__email m--font-weight-300 m-link">
 																	zndo@live.com
@@ -1059,9 +1059,11 @@ License: You must have a valid license purchased only from themeforest(the above
 																</li>
 																<li class="m-nav__separator m-nav__separator--fit"></li>
 																<li class="m-nav__item">
-																	<a href="../snippets/pages/user/login-1.html" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
+																	<form name="logout" th:action="@{/logout}" method="POST">
+																		<a th:href="@{javascript:document.logout.submit();}" href="../../../snippets/pages/user/login-1.html" class="btn m-btn--pill btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
 																		注销
-																	</a>
+																		</a>
+																	</form>
 																</li>
 															</ul>
 														</div>
@@ -3120,7 +3122,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 											<div class="m-card-profile__details">
 												<span class="m-card-profile__name">
-													Sean Tien
+													[[${#httpServletRequest.remoteUser}]] <!-- Sean Tien -->
 												</span>
 												<a href="" class="m-card-profile__email m-link">
 													zndo@live.com
@@ -3372,7 +3374,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															全名
 														</label>
 														<div class="col-7">
-															<input class="form-control m-input" type="text" value="Sean Tien">
+															<input class="form-control m-input" type="text" value="<!-- Sean Tien -->">
 														</div>
 													</div>
 													<div class="form-group m-form__group row">

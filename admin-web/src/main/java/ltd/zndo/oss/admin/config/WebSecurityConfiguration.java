@@ -18,6 +18,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import ltd.zndo.oss.admin.web.security.handlers.SigninSuccessHandler;
+
 /**
  * Web 安全配置类
  * 
@@ -38,12 +40,15 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsService;
 
 	@Autowired
-	public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder
+	public void configureAuthentication(AuthenticationManagerBuilder builder) throws Exception {
+		builder
 				// 设置UserDetailsService
 				.userDetailsService(this.userDetailsService)
 				// 使用BCrypt进行密码的hash
 				.passwordEncoder(passwordEncoder());
+
+		// 不擦除凭据，记住用户
+		builder.eraseCredentials(false);
 	}
 
 	// 装载BCrypt密码编码器
@@ -63,6 +68,17 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 						.maxAge(3600);
 			}
 		};
+	}
+	
+//	@Bean
+//	public JdbcTokenRepositoryImpl  tokenRepository() {
+//		setDataSource(ds);
+//		return null;
+//	}
+	
+	@Bean
+	public SigninSuccessHandler signinSuccessHandler() {
+		return new SigninSuccessHandler();
 	}
 
 	@Override
@@ -91,14 +107,24 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				// 对于获取token的rest api要允许匿名访问
 				.antMatchers("/auth/**").permitAll()
 				// 除上面外的所有请求全部需要鉴权认证
-				.anyRequest().authenticated().and() //
+				.anyRequest().authenticated()//
+				.and() //
 				.formLogin() //
 				.loginPage("/user/login") // 登录页面
 				.failureUrl("/user/login?error") //
 				.permitAll() //
+				.successHandler(signinSuccessHandler()) //
 				.and() //
-				.logout().permitAll() //
-				.and();
+				.logout()//
+				.logoutSuccessUrl("/user/login")//
+				.permitAll() //
+				.invalidateHttpSession(true)// 退出成功清除 Session
+				.and()//
+				.rememberMe() // 记住我，需要预置表结构 persistent_logins
+				.tokenValiditySeconds(1209600) // TOKEN 有效期
+//				.tokenRepository(tokenRepository());
+		;
+
 		// 禁用缓存
 		httpSecurity.headers().cacheControl();
 	}

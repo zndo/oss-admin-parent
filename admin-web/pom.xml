@@ -9,12 +9,12 @@
 	<packaging>jar</packaging>
 
 	<name>zndo-metronic-admin</name>
-	<description>基于 Spring Boot 1.5.8.RELEASE &amp; Thymeleaf 和 Metronic 5.0.7.1 模板的后台管理项目</description>
+	<description>基于 Spring Boot 1.5.10.RELEASE &amp; Thymeleaf 和 Metronic 5.0.7.1 模板的后台管理项目</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.8.RELEASE</version>
+		<version>1.5.10.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -81,6 +81,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.nekohtml</groupId>
@@ -216,7 +220,7 @@
 					<dependency>
 						<groupId>tk.mybatis</groupId>
 						<artifactId>mapper-spring-boot-starter</artifactId>
-						<version>mapper-starter.version</version>
+						<version>${mapper-starter.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>

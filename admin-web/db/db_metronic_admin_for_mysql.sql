@@ -105,7 +105,7 @@ VALUES
 		'2018-02-05 17:21:11',
 		'0',
 		'Shanghai',
-		'cceb16794b768cabf72abd45757e9de8'
+		'cceb16794b768cabf72abd45757e9de9'
 	);
 
 COMMIT;
@@ -385,26 +385,21 @@ CREATE TABLE `ADMIN_ROLE_MODULES` (
 -- ----------------------------
 
 -- ----------------------------
---  Table structure for `ADMIN_REMEMBER_ME` - 后台管理登录记忆表
+--  Table structure for `persistent_logins` - 后台管理登录记忆表
 -- ----------------------------
 DROP TABLE
-IF EXISTS `ADMIN_REMEMBER_ME`;
+IF EXISTS `persistent_logins`;
 
-CREATE TABLE `ADMIN_REMEMBER_ME` (
-    `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
-    `USERNAME` VARCHAR (32) DEFAULT NULL COMMENT '帐号',
-    `SERIES` VARCHAR (255) DEFAULT NULL COMMENT '序列',
-    `TOKEN` VARCHAR (255) NOT NULL COMMENT '令牌',
-    `REC_STATUS` TINYINT (1) NOT NULL DEFAULT 1 COMMENT '记录状态：0-禁用/1-正常',
-    `CREATED` DATETIME NOT NULL COMMENT '创建时间',
-    `UPDATED` DATETIME NOT NULL NOT NULL COMMENT '更新时间',
-    `DELETED` TINYINT (1) NOT NULL DEFAULT 0 NULL COMMENT '是否删除：0-未删除/1-已删除',
-    PRIMARY KEY (`ID`),
-    UNIQUE KEY (`SERIES`)
+CREATE TABLE `persistent_logins` (
+    `username` VARCHAR (64) NOT NULL COMMENT '帐号',
+    `series` VARCHAR (64) NOT NULL COMMENT '序列',
+    `token` VARCHAR (64) NOT NULL COMMENT 'TOKEN',
+    `last_used` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后使用',
+    PRIMARY KEY (`series`)
 ) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
 
 -- ----------------------------
---  Records of `ADMIN_REMEMBER_ME`
+--  Records of `persistent_logins`
 -- ----------------------------
 
 

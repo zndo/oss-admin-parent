@@ -37,30 +37,31 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-		AdminUser loadedUser = null;
+		// 数据库管理用户实体
+		AdminUser user = null;
 		// TODO 缓存取用户
 		// SysUsers user = (SysUsers) this.userCache.getUserFromCache(username);
 
-		if (loadedUser == null) { // 缓存不存在，再从数据库加载
+		if (user == null) { // 缓存不存在，再从数据库加载
 			AdminUser params = new AdminUser();
 			params.setUsername(username);
 			params.setDeleted(false);
-			loadedUser = adminUserMapper.selectOne(params);
+			user = adminUserMapper.selectOne(params);
 
-			if (loadedUser == null) { // 数据库仍不存在
+			if (user == null) { // 数据库仍不存在
 				throw new UsernameNotFoundException(String.format("用户不存在 '%s'.", username));
 			}
 
 		}
-		if (loadedUser.getUserStatus().equals(UserStatus.DISABLED.getCode())) {
+		if (user.getUserStatus().equals(UserStatus.DISABLED.getCode())) {
 			throw new UsernameNotFoundException(String.format("用户已禁用 '%s'.", username));
 		}
-		if (loadedUser.getUserStatus().equals(UserStatus.INACTIVE.getCode())) {
+		if (user.getUserStatus().equals(UserStatus.INACTIVE.getCode())) {
 			throw new UsernameNotFoundException(String.format("用户未激活 '%s'.", username));
 		}
 
 		// 获取用户的角色
-		List<AdminRole> adminRoles = securityRoleService.loadUserRolesByUsername(username);
+		List<AdminRole> roles = securityRoleService.loadUserRolesByUsername(username);
 
 		// 获取用户的权限
 		Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
@@ -68,7 +69,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 		// TODO 更新缓存
 		
-		return UserFactory.create(loadedUser, adminRoles, auths);
+		/**
+		 * @see ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails
+		 */
+		return UserFactory.create(user, roles, auths);
 	}
 
 }
