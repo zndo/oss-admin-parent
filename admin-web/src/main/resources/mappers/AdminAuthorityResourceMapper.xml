@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="ltd.zndo.oss.admin.persistence.mapper.AdminRoleModulesMapper">
-  <resultMap id="BaseResultMap" type="ltd.zndo.oss.admin.persistence.entity.AdminRoleModules">
+<mapper namespace="ltd.zndo.oss.admin.persistence.mapper.AdminAuthorityResourceMapper">
+  <resultMap id="BaseResultMap" type="ltd.zndo.oss.admin.persistence.entity.AdminAuthorityResource">
     <!--
       WARNING - @mbg.generated
     -->
     <id column="ID" jdbcType="BIGINT" property="id" />
-    <result column="ROLEID" jdbcType="BIGINT" property="roleid" />
-    <result column="MODULEID" jdbcType="BIGINT" property="moduleid" />
+    <result column="AUTHORITYID" jdbcType="BIGINT" property="authorityid" />
+    <result column="RESOURCEID" jdbcType="BIGINT" property="resourceid" />
     <result column="RLAT_STATUS" jdbcType="TINYINT" property="rlatStatus" />
     <result column="CREATED" jdbcType="TIMESTAMP" property="created" />
     <result column="UPDATED" jdbcType="TIMESTAMP" property="updated" />

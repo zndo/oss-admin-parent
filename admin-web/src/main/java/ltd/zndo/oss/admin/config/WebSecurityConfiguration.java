@@ -1,7 +1,6 @@
 package ltd.zndo.oss.admin.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.autoconfigure.ManagementServerProperties.SessionCreationPolicy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,17 +10,17 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import ltd.zndo.oss.admin.commons.util.PasswordUtil;
 import ltd.zndo.oss.admin.web.security.handlers.SigninSuccessHandler;
+import ltd.zndo.oss.admin.web.security.interceptors.URLFilterSecurityInterceptor;
 
 /**
- * Web 安全配置类
+ * Web 安全配置
  * 
  * @author tianxin<tianxin@weconex.com>
  * @created 2018/01/01 9:00
@@ -35,26 +34,25 @@ import ltd.zndo.oss.admin.web.security.handlers.SigninSuccessHandler;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	// Spring会自动寻找实现接口的类注入,会找到我们的 UserDetailsServiceImpl 类
+	/**
+	 * @see ltd.zndo.oss.admin.service.security.impl.UserDetailsServiceImpl
+	 */
 	@Autowired
 	private UserDetailsService userDetailsService;
 
 	@Autowired
+	private URLFilterSecurityInterceptor adminFilterSecurityInterceptor;
+
+	@Autowired
 	public void configureAuthentication(AuthenticationManagerBuilder builder) throws Exception {
 		builder
-				// 设置UserDetailsService
+				// UserDetailsService
 				.userDetailsService(this.userDetailsService)
-				// 使用BCrypt进行密码的hash
-				.passwordEncoder(passwordEncoder());
+				// 密码编码器
+				.passwordEncoder(PasswordUtil.encoder);
 
-		// 不擦除凭据，记住用户
+		// 不擦除凭证
 		builder.eraseCredentials(false);
-	}
-
-	// 装载BCrypt密码编码器
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
 	}
 
 	// 允许跨域
@@ -69,64 +67,66 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 			}
 		};
 	}
-	
-//	@Bean
-//	public JdbcTokenRepositoryImpl  tokenRepository() {
-//		setDataSource(ds);
-//		return null;
-//	}
-	
+
+	// @Bean
+	// public JdbcTokenRepositoryImpl tokenRepository() {
+	// setDataSource(ds);
+	// return null;
+	// }
+
 	@Bean
 	public SigninSuccessHandler signinSuccessHandler() {
 		return new SigninSuccessHandler();
 	}
 
 	@Override
-	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity
-				// 取消csrf
+	protected void configure(HttpSecurity security) throws Exception {
+		security
+				// 取消 CSRF
 				.csrf().disable()
-				// 基于token，所以不需要session
-				// .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-				.authorizeRequests() //
+				// 请求认证
+				.authorizeRequests()
+				// OPTIONS
 				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-				// 允许对于网站静态资源的无授权访问
-				.antMatchers(HttpMethod.GET, //
-						"/", //
-						"/*.html", //
-						"/favicon.ico", //
-						"/**/*.html", //
-						"/**/*.css", //
-						"/**/*.js", //
+				// 允许无授权访问的资源匹配器
+				.antMatchers(HttpMethod.GET, // 类型是 GET
+						// 静态资源
+						"/favicon.ico", // 站点图标
 						"/static/**", //
 						"/assets/**", //
+						// Swagger 资源
 						"/webjars/**", //
 						"/swagger-resources/**", //
-						"/*/api-docs")//
+						"/*/api-docs", //
+						// 页面
+						"/sigin", // 登录
+						"/logout") // 注销-signout
 				.permitAll()
-				// 对于获取token的rest api要允许匿名访问
-				.antMatchers("/auth/**").permitAll()
-				// 除上面外的所有请求全部需要鉴权认证
+				// 其他请求需要认证
 				.anyRequest().authenticated()//
 				.and() //
 				.formLogin() //
-				.loginPage("/user/login") // 登录页面
-				.failureUrl("/user/login?error") //
-				.permitAll() //
+				.loginPage("/signin") // 登录页面
+				.defaultSuccessUrl("/") // 登录成功跳转地址
+				.failureUrl("/signin?failure") //
 				.successHandler(signinSuccessHandler()) //
 				.and() //
 				.logout()//
 				.logoutSuccessUrl("/user/login")//
-				.permitAll() //
-				.invalidateHttpSession(true)// 退出成功清除 Session
+				.invalidateHttpSession(true) // 使 HTTPSession 失效
+				.clearAuthentication(true) // 清除认证
 				.and()//
 				.rememberMe() // 记住我，需要预置表结构 persistent_logins
-				.tokenValiditySeconds(1209600) // TOKEN 有效期
-//				.tokenRepository(tokenRepository());
+		// .tokenValiditySeconds(1209600) // TOKEN 有效期
+		// .tokenRepository(tokenRepository());
 		;
 
 		// 禁用缓存
-		httpSecurity.headers().cacheControl();
+		security.headers().cacheControl();
+
+		// 安全拦截器
+		security.addFilterBefore(adminFilterSecurityInterceptor, FilterSecurityInterceptor.class);
+
 	}
 
 }

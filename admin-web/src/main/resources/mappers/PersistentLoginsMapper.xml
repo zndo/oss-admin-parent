@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ltd.zndo.oss.admin.persistence.mapper.PersistentLoginsMapper">
+  <resultMap id="BaseResultMap" type="ltd.zndo.oss.admin.persistence.entity.PersistentLogins">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="series" jdbcType="VARCHAR" property="series" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="token" jdbcType="VARCHAR" property="token" />
+    <result column="last_used" jdbcType="TIMESTAMP" property="lastUsed" />
+  </resultMap>
+</mapper>

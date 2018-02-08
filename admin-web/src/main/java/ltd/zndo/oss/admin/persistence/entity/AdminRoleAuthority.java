@@ -6,20 +6,20 @@ import javax.persistence.*;
 
 import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
 
-@Table(name = "admin_authority_resources")
-public class AdminAuthorityResources extends AdminBaseEntity implements Serializable {
+@Table(name = "admin_role_authorities")
+public class AdminRoleAuthority extends AdminBaseEntity implements Serializable {
 	
     /**
      * 角色ID
      */
-    @Column(name = "AUTHORITYID")
-    private Long authorityid;
+    @Column(name = "ROLEID")
+    private Long roleid;
 
     /**
      * 权限ID
      */
-    @Column(name = "RESOURCEID")
-    private Long resourceid;
+    @Column(name = "AUTHORITYID")
+    private Long authorityid;
 
     /**
      * 关系状态：1-正常/2-禁用
@@ -50,37 +50,37 @@ public class AdminAuthorityResources extends AdminBaseEntity implements Serializ
     /**
      * 获取角色ID
      *
-     * @return AUTHORITYID - 角色ID
+     * @return ROLEID - 角色ID
+     */
+    public Long getRoleid() {
+        return roleid;
+    }
+
+    /**
+     * 设置角色ID
+     *
+     * @param roleid 角色ID
+     */
+    public void setRoleid(Long roleid) {
+        this.roleid = roleid;
+    }
+
+    /**
+     * 获取权限ID
+     *
+     * @return AUTHORITYID - 权限ID
      */
     public Long getAuthorityid() {
         return authorityid;
     }
 
     /**
-     * 设置角色ID
+     * 设置权限ID
      *
-     * @param authorityid 角色ID
+     * @param authorityid 权限ID
      */
     public void setAuthorityid(Long authorityid) {
         this.authorityid = authorityid;
-    }
-
-    /**
-     * 获取权限ID
-     *
-     * @return RESOURCEID - 权限ID
-     */
-    public Long getResourceid() {
-        return resourceid;
-    }
-
-    /**
-     * 设置权限ID
-     *
-     * @param resourceid 权限ID
-     */
-    public void setResourceid(Long resourceid) {
-        this.resourceid = resourceid;
     }
 
     /**

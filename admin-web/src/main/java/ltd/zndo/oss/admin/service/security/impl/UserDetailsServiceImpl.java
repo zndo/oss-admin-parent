@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -69,10 +70,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		
 		// TODO 更新缓存
 		
-		/**
-		 * @see ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails
-		 */
-		return UserFactory.create(user, roles, auths);
+		return new User(user.getUsername(), user.getPassword(), auths);
+		
+//		/**
+//		 * @see ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails
+//		 */
+//		return UserFactory.create(user, roles, auths);
 	}
 
 }

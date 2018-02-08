@@ -14,7 +14,7 @@ import ltd.zndo.oss.admin.persistence.mapper.AdminAuthorityMapper;
 import ltd.zndo.oss.admin.service.security.ISecurityAuthorityService;
 
 @Service
-public class SecurityAuthorityServiceImpl implements ISecurityAuthorityService{
+public class SecurityAuthorityServiceImpl implements ISecurityAuthorityService {
 
 	@Autowired
 	private AdminAuthorityMapper adminAuthorityMapper;
@@ -31,8 +31,10 @@ public class SecurityAuthorityServiceImpl implements ISecurityAuthorityService{
 
 		List<AdminAuthority> adminAuthorities = this.loadUserAuthoritiesByUsername(username);
 		for (AdminAuthority authority : adminAuthorities) {
-			GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(authority.getAuthority());
-			auths.add(grantedAuthority);
+			if (authority != null && authority.getAuthority() != null) {
+				GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(authority.getAuthority());
+				auths.add(grantedAuthority);
+			}
 		}
 
 		return auths;

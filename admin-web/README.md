@@ -12,5 +12,10 @@ Features:
 
 
 
+注意事项：
+1、MBG 插件不会识别 rootClass 和 rootInterface，生成后需要手动 import
+
+
+
 
 

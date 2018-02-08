@@ -16,15 +16,15 @@
 		<result column="DELETED" jdbcType="TINYINT" property="deleted" />
 	</resultMap>
 
-	<select id="loadResourcesMapping" resultMap="java.lang.List"
+	<select id="loadResourcesMapping" resultType="java.util.List"
 		parameterType="java.lang.String">
 		SELECT
 			T3.URL,
 			T2.AUTHORITY
 		FROM
-			ADMIN_SECURITY_RESOURCES T1
+			ADMIN_AUTHORITY_RESOURCE T1
 		JOIN ADMIN_AUTHORITY AS T2 ON T2.ID = T1.AUTHORITYID
-		JOIN RESOURCES AS T3 ON T3.ID = T1.RESOURCEID
+		JOIN ADMIN_RESOURCE AS T3 ON T3.ID = T1.RESOURCEID
 		AND T1.RLAT_STATUS = 1
 		AND T1.DELETED = 0
 		AND T2.AUTHORITY_STATUS = 1

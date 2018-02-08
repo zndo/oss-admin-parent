@@ -2,6 +2,7 @@ package ltd.zndo.oss.admin.web.security.interceptors;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -9,35 +10,42 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.stereotype.Service;
 
-public class AdminFilterSecurityInterceptor extends AbstractSecurityInterceptor {
+import ltd.zndo.oss.admin.service.security.URLAccessDecisionManager;
+
+@Service
+public class URLFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
+
+	/**
+	 * @see ltd.zndo.oss.admin.service.security.impl.URLFilterInvocationSecurityMetadataSource
+	 */
+	@Autowired
+	private FilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource;
 
 	@Autowired
-	private FilterInvocationSecurityMetadataSource securityMetadataSource;
-
-	@Autowired
-	public void setMyAccessDecisionManager(AccessDecisionManager myAccessDecisionManager) {
-		super.setAccessDecisionManager(myAccessDecisionManager);
+	public void setURLAccessDecisionManager(URLAccessDecisionManager urlAccessDecisionManager) {
+		super.setAccessDecisionManager(urlAccessDecisionManager);
 	}
 
-//	@Override
-//	public void init(FilterConfig filterConfig) throws ServletException {
-//
-//	}
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		// TODO Auto-generated method stub
 
-//	@Override
-//	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-//			throws IOException, ServletException {
-//
-//		FilterInvocation fi = new FilterInvocation(request, response, chain);
-////		invoke(fi);
-////	}
+	}
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		FilterInvocation fi = new FilterInvocation(request, response, chain);
+		invoke(fi);
+
+	}
 
 	public void invoke(FilterInvocation fi) throws IOException, ServletException {
 		// fi里面有一个被拦截的url
@@ -53,10 +61,11 @@ public class AdminFilterSecurityInterceptor extends AbstractSecurityInterceptor 
 		}
 	}
 
-//	@Override
-//	public void destroy() {
-//
-//	}
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	public Class<?> getSecureObjectClass() {
@@ -65,7 +74,7 @@ public class AdminFilterSecurityInterceptor extends AbstractSecurityInterceptor 
 
 	@Override
 	public SecurityMetadataSource obtainSecurityMetadataSource() {
-		return this.securityMetadataSource;
+		return this.filterInvocationSecurityMetadataSource;
 	}
 
 }

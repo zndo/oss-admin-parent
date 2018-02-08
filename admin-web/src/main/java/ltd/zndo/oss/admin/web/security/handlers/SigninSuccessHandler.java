@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.SavedRequestAwareAuthenti
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails;
+import ltd.zndo.oss.admin.service.security.entity.SecurityUserDetails;
 
 public class SigninSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler { //implements AuthenticationSuccessHandler, InitializingBean {
 

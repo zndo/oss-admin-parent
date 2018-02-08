@@ -1,4 +1,4 @@
-package ltd.zndo.oss.admin.web.security.entity;
+package ltd.zndo.oss.admin.service.security.entity;
 
 import java.io.Serializable;
 import java.util.Collection;

@@ -247,12 +247,12 @@ CREATE TABLE `ADMIN_RESOURCE` (
 -- ----------------------------
 
 -- ----------------------------
---  Table structure for `ADMIN_USER_ROLES` - 用户角色关系表
+--  Table structure for `ADMIN_USER_ROLE` - 用户角色关系表
 -- ----------------------------
 DROP TABLE
-IF EXISTS `ADMIN_USER_ROLES`;
+IF EXISTS `ADMIN_USER_ROLE`;
 
-CREATE TABLE `ADMIN_USER_ROLES` (
+CREATE TABLE `ADMIN_USER_ROLE` (
     `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
     `USERID` BIGINT (20) NOT NULL COMMENT '用户ID',
     `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
@@ -264,12 +264,12 @@ CREATE TABLE `ADMIN_USER_ROLES` (
 ) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
 
 -- ----------------------------
---  Records of `ADMIN_USER_ROLES`
+--  Records of `ADMIN_USER_ROLE`
 -- ----------------------------
 
 BEGIN;
 
-INSERT INTO `admin`.`admin_user_roles` (
+INSERT INTO `admin`.`ADMIN_USER_ROLE` (
 	`ID`,
 	`USERID`,
 	`ROLEID`,
@@ -292,12 +292,12 @@ VALUES
 COMMIT;
 
 -- ----------------------------
---  Table structure for `ADMIN_ROLE_AUTHORITIES` - 角色权限关系表
+--  Table structure for `ADMIN_ROLE_AUTHORITY` - 角色权限关系表
 -- ----------------------------
 DROP TABLE
-IF EXISTS `ADMIN_ROLE_AUTHORITIES`;
+IF EXISTS `ADMIN_ROLE_AUTHORITY`;
 
-CREATE TABLE `ADMIN_ROLE_AUTHORITIES` (
+CREATE TABLE `ADMIN_ROLE_AUTHORITY` (
     `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
     `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
     `AUTHORITYID` BIGINT (20) NOT NULL COMMENT '权限ID',
@@ -309,16 +309,16 @@ CREATE TABLE `ADMIN_ROLE_AUTHORITIES` (
 ) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
 
 -- ----------------------------
---  Records of `ADMIN_ROLE_AUTHORITIES`
+--  Records of `ADMIN_ROLE_AUTHORITY`
 -- ----------------------------
 
 -- ----------------------------
---  Table structure for `ADMIN_AUTHORITY_RESOURCES` - 权限资源关系表
+--  Table structure for `ADMIN_AUTHORITY_RESOURCE` - 权限资源关系表
 -- ----------------------------
 DROP TABLE
-IF EXISTS `ADMIN_AUTHORITY_RESOURCES`;
+IF EXISTS `ADMIN_AUTHORITY_RESOURCE`;
 
-CREATE TABLE `ADMIN_AUTHORITY_RESOURCES` (
+CREATE TABLE `ADMIN_AUTHORITY_RESOURCE` (
     `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
     `AUTHORITYID` BIGINT (20) NOT NULL COMMENT '角色ID',
     `RESOURCEID` BIGINT (20) NOT NULL COMMENT '权限ID',
@@ -330,7 +330,7 @@ CREATE TABLE `ADMIN_AUTHORITY_RESOURCES` (
 ) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
 
 -- ----------------------------
---  Records of `ADMIN_AUTHORITY_RESOURCES`
+--  Records of `ADMIN_AUTHORITY_RESOURCE`
 -- ----------------------------
 
 -- ----------------------------
@@ -364,12 +364,12 @@ CREATE TABLE `ADMIN_MODULE` (
 -- ----------------------------
 
 -- ----------------------------
---  Table structure for `ADMIN_ROLE_MODULES` - 角色模块关系表
+--  Table structure for `ADMIN_ROLE_MODULE` - 角色模块关系表
 -- ----------------------------
 DROP TABLE
-IF EXISTS `ADMIN_ROLE_MODULES`;
+IF EXISTS `ADMIN_ROLE_MODULE`;
 
-CREATE TABLE `ADMIN_ROLE_MODULES` (
+CREATE TABLE `ADMIN_ROLE_MODULE` (
     `ID` BIGINT (20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
     `ROLEID` BIGINT (20) NOT NULL COMMENT '角色ID',
     `MODULEID` BIGINT (20) NOT NULL COMMENT '模块ID',
@@ -381,7 +381,7 @@ CREATE TABLE `ADMIN_ROLE_MODULES` (
 ) ENGINE = INNODB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8;
 
 -- ----------------------------
---  Records of `ADMIN_ROLE_MODULES`
+--  Records of `ADMIN_ROLE_MODULE`
 -- ----------------------------
 
 -- ----------------------------

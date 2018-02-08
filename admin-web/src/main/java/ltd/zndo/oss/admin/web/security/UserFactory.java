@@ -9,7 +9,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import ltd.zndo.oss.admin.persistence.entity.AdminRole;
 import ltd.zndo.oss.admin.persistence.entity.AdminUser;
-import ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails;
+import ltd.zndo.oss.admin.service.security.entity.SecurityUserDetails;
 
 public class UserFactory {
 

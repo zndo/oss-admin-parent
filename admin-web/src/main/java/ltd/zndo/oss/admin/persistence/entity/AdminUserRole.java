@@ -6,20 +6,20 @@ import javax.persistence.*;
 
 import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
 
-@Table(name = "admin_role_modules")
-public class AdminRoleModules extends AdminBaseEntity implements Serializable {
+@Table(name = "admin_user_roles")
+public class AdminUserRole extends AdminBaseEntity implements Serializable {
 	
+    /**
+     * 用户ID
+     */
+    @Column(name = "USERID")
+    private Long userid;
+
     /**
      * 角色ID
      */
     @Column(name = "ROLEID")
     private Long roleid;
-
-    /**
-     * 模块ID
-     */
-    @Column(name = "MODULEID")
-    private Long moduleid;
 
     /**
      * 关系状态：1-正常/2-禁用
@@ -48,6 +48,24 @@ public class AdminRoleModules extends AdminBaseEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 获取用户ID
+     *
+     * @return USERID - 用户ID
+     */
+    public Long getUserid() {
+        return userid;
+    }
+
+    /**
+     * 设置用户ID
+     *
+     * @param userid 用户ID
+     */
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
+
+    /**
      * 获取角色ID
      *
      * @return ROLEID - 角色ID
@@ -63,24 +81,6 @@ public class AdminRoleModules extends AdminBaseEntity implements Serializable {
      */
     public void setRoleid(Long roleid) {
         this.roleid = roleid;
-    }
-
-    /**
-     * 获取模块ID
-     *
-     * @return MODULEID - 模块ID
-     */
-    public Long getModuleid() {
-        return moduleid;
-    }
-
-    /**
-     * 设置模块ID
-     *
-     * @param moduleid 模块ID
-     */
-    public void setModuleid(Long moduleid) {
-        this.moduleid = moduleid;
     }
 
     /**

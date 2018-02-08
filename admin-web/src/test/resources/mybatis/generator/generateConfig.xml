@@ -165,7 +165,7 @@
 <!-- 		</table> -->
 
 		<!-- 用户角色关系表 -->
-<!-- 		<table tableName="ADMIN_USER_ROLES" domainObjectName="AdminUserRoles"> -->
+<!-- 		<table tableName="ADMIN_USER_ROLE" domainObjectName="AdminUserRoles"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
 <!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
@@ -180,7 +180,7 @@
 <!-- 		</table> -->
 
 		<!-- 角色权限关系表 -->
-<!-- 		<table tableName="ADMIN_ROLE_AUTHORITIES" domainObjectName="AdminRoleAuthorities"> -->
+<!-- 		<table tableName="ADMIN_ROLE_AUTHORITY" domainObjectName="AdminRoleAuthorities"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
 <!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
@@ -195,7 +195,7 @@
 <!-- 		</table> -->
 
 		<!-- 权限资源关系表 -->
-<!-- 		<table tableName="ADMIN_AUTHORITY_RESOURCES" domainObjectName="AdminAuthorityResources"> -->
+<!-- 		<table tableName="ADMIN_AUTHORITY_RESOURCE" domainObjectName="AdminAuthorityResources"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
 <!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
@@ -233,7 +233,7 @@
 <!-- 		</table> -->
 
 		<!-- 角色模块关系表 -->
-<!-- 		<table tableName="ADMIN_ROLE_MODULES" domainObjectName="AdminRoleModules"> -->
+<!-- 		<table tableName="ADMIN_ROLE_MODULE" domainObjectName="AdminRoleModules"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
 <!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
@@ -248,19 +248,14 @@
 <!-- 		</table> -->
 
 		<!-- 后台管理登录记忆表 -->
-<!-- 		<table tableName="ADMIN_REMEMBER_ME" domainObjectName="AdminRememberMe"> -->
+<!-- 		<table tableName="PERSISTENT_LOGINS" domainObjectName="PersistentLogins"> -->
 <!-- 			<property name="rootClass" value="${rootClass}" /> -->
 <!-- 			<property name="rootInterface" value="${rootInterface}" /> -->
-<!-- 			<property name="selectAllOrderByClause" value="CREATED DESC,UPDATED DESC"/> -->
-<!-- 			<generatedKey column="ID" sqlStatement="MySql" identity="true" /> -->
-<!-- 			<columnOverride column="ID" javaType="java.lang.Long" /> -->
+<!-- 			<property name="selectAllOrderByClause" value="LAST_USED DESC"/> -->
 <!-- 			<columnOverride column="USERNAME" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="SERIES" javaType="java.lang.String" /> -->
 <!-- 			<columnOverride column="TOKEN" javaType="java.lang.String" /> -->
-<!-- 			<columnOverride column="REC_STATUS" javaType="java.lang.Boolean" /> -->
-<!-- 			<columnOverride column="CREATED" javaType="java.util.Date" /> -->
-<!-- 			<columnOverride column="UPDATED" javaType="java.util.Date" /> -->
-<!-- 			<columnOverride column="DELETED" javaType="java.lang.Boolean" /> -->
+<!-- 			<columnOverride column="LAST_USED" javaType="java.util.Date" /> -->
 <!-- 		</table> -->
 
 	</context>
