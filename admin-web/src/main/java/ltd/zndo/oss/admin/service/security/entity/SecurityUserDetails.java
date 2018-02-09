@@ -27,43 +27,58 @@ public class SecurityUserDetails implements UserDetails, Serializable {
 	private boolean accountNonLocked;
 
 	// 角色
-	private final Collection<? extends GrantedAuthority> authorities;
+	private Collection<? extends GrantedAuthority> authorities;// final
 
 	private boolean credentialsNonExpired;
+
+	// 邮箱
+	private String email;
 
 	private boolean enabled;
 
 	// ID
-	private final Long id;
+	private Long id; // final
 
 	// 密码
-	private final String password;
+	private String password;// final
+
+	// 手机号
+	private String phone;
 
 	// 用户名
-	private final String username;
+	private String username;// final
 
 	// 用户的角色
-//	 @JsonIgnore
-//	 private Set<AdminRole> sysUsersRoles = new HashSet<AdminRole>(0);
+	// @JsonIgnore
+	// private Set<AdminRole> sysUsersRoles = new HashSet<AdminRole>(0);
 
 	// Constructors
 
-//	/**
-//	 * 构造方法-半参
-//	 * 
-//	 * @param id
-//	 * @param username
-//	 * @param password
-//	 * @param authorities
-//	 */
-//	public SecurityUserDetails(Collection<? extends GrantedAuthority> authorities, String id, String password,
-//			String username) {
-//		super();
-//		this.authorities = authorities;
-//		this.id = id;
-//		this.password = password;
-//		this.username = username;
-//	}
+	// /**
+	// * 构造方法-半参
+	// *
+	// * @param id
+	// * @param username
+	// * @param password
+	// * @param authorities
+	// */
+	// public SecurityUserDetails(Collection<? extends GrantedAuthority>
+	// authorities, String id, String password,
+	// String username) {
+	// super();
+	// this.authorities = authorities;
+	// this.id = id;
+	// this.password = password;
+	// this.username = username;
+	// }
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	/**
 	 * 构造方法-半参
@@ -73,13 +88,16 @@ public class SecurityUserDetails implements UserDetails, Serializable {
 	 * @param username
 	 * @param authorities
 	 */
-	public SecurityUserDetails(Long id, String password, String username,
-			List<GrantedAuthority> authorities) {
+	public SecurityUserDetails(Collection<? extends GrantedAuthority> authorities, String email, Long id, String password,
+			String phone,
+			String username) {
 		super();
+		this.authorities = authorities;
+		this.email = email;
 		this.id = id;
 		this.password = password;
+		this.phone = phone;
 		this.username = username;
-		this.authorities = authorities;
 	}
 
 	/**
@@ -94,17 +112,20 @@ public class SecurityUserDetails implements UserDetails, Serializable {
 	 * @param password
 	 * @param username
 	 */
-	public SecurityUserDetails(Collection<? extends GrantedAuthority> authorities, boolean accountNonExpired,
-			boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled, Long id, String password,
+	public SecurityUserDetails(boolean accountNonExpired,
+			boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities, boolean credentialsNonExpired, String email, boolean enabled, Long id, String password,
+			String phone,
 			String username) {
 		super();
-		this.authorities = authorities;
 		this.accountNonExpired = accountNonExpired;
 		this.accountNonLocked = accountNonLocked;
+		this.authorities = authorities;
 		this.credentialsNonExpired = credentialsNonExpired;
+		this.email = email;
 		this.enabled = enabled;
 		this.id = id;
 		this.password = password;
+		this.phone = phone;
 		this.username = username;
 	}
 
@@ -172,6 +193,14 @@ public class SecurityUserDetails implements UserDetails, Serializable {
 	@Override
 	public String getUsername() {
 		return username;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 
 }

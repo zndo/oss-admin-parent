@@ -1,4 +1,4 @@
-package ltd.zndo.oss.admin.web.security;
+package ltd.zndo.oss.admin.service.security.util;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,16 +25,17 @@ public class UserFactory {
 	 */
 	public static SecurityUserDetails create(AdminUser loadedUser, List<AdminRole> adminRoles,
 			Collection<GrantedAuthority> auths) {
-		return new SecurityUserDetails( //
-				loadedUser.getId(), //
-				loadedUser.getPassword(), //
-				loadedUser.getUsername(), //
-				mapToGrantedAuthorities( //
-						adminRoles //
-								.stream() //
-								.map(AdminRole::getRoleName) //
-								.collect(Collectors.toList())) //
-		);
+//		return new SecurityUserDetails( //
+//				loadedUser.getId(), //
+//				loadedUser.getPassword(), //
+//				loadedUser.getUsername(), //
+//				mapToGrantedAuthorities( //
+//						adminRoles //
+//								.stream() //
+//								.map(AdminRole::getRoleName) //
+//								.collect(Collectors.toList())) //
+//		);
+		return null;
 	}
 
 	// 将与用户类一对多的角色类的名称集合转换为 GrantedAuthority 集合

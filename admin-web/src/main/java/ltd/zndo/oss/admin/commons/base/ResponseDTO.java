@@ -1,6 +1,7 @@
 package ltd.zndo.oss.admin.commons.base;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 响应 DTO
@@ -18,41 +19,27 @@ public class ResponseDTO implements Serializable {
 
 	// Fields
 
-	private String code; // 业务代码
-	private String msg; // 业务消息
+	private int code; // 业务代码
+	private String message; // 业务消息
 	private int status; // HTTP 状态代码
-	private long timestamp; // 时间戳
+	private Date datetime; // 时间
 
 	// Constructors
 
-	public ResponseDTO() {
-		super();
-	}
-
-	public ResponseDTO(String code, String msg, int status, long timestamp) {
-		super();
-		this.code = code;
-		this.msg = msg;
-		this.status = status;
-		this.timestamp = timestamp;
-	}
-
-	// Getters & Setters
-
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
-	public String getMsg() {
-		return msg;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 
 	public int getStatus() {
@@ -63,13 +50,28 @@ public class ResponseDTO implements Serializable {
 		this.status = status;
 	}
 
-	public long getTimestamp() {
-		return timestamp;
+	public Date getDatetime() {
+		return datetime;
 	}
 
-	public void setTimestamp(long timestamp) {
-		this.timestamp = timestamp;
+	public void setDatetime(Date datetime) {
+		this.datetime = datetime;
 	}
+
+	public ResponseDTO() {
+		super();
+	}
+
+	public ResponseDTO(int code, String message, int status, Date datetime) {
+		super();
+		this.code = code;
+		this.message = message;
+		this.status = status;
+		this.datetime = datetime;
+	}
+
+	// Getters & Setters
+
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -114,13 +116,13 @@ public class ResponseDTO implements Serializable {
 		 * @param status
 		 * @return
 		 */
-		public static ResponseDTO build(String code, String msg, int status) {
+		public static ResponseDTO build(int code, String message, int status) {
 
 			ResponseDTO response = ResponseDTO.getInstance();
 			response.setCode(code);
-			response.setMsg(msg);
+			response.setMessage(message);
 			response.setStatus(status);
-			response.setTimestamp(System.currentTimeMillis());
+			response.setDatetime(new Date());
 
 			return response;
 		}

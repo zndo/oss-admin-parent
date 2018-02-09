@@ -1,4 +1,4 @@
-package ltd.zndo.oss.admin.web.security;
+package ltd.zndo.oss.admin.service.security.impl;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdminAccessDesisionManager implements AccessDecisionManager {
+public class URLAccessDecisionManager implements AccessDecisionManager {
 
 	// decide 方法是判定是否拥有权限的决策方法，
 	// authentication 是释CustomUserService中循环添加到 GrantedAuthority 对象中的权限信息集合.

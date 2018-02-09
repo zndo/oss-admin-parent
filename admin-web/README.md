@@ -10,10 +10,15 @@ Features:
 -- 一级 EhCache
 -- 二级 Redis
 
+登录
+-- Ajax 表单提交
+-- 验证码
 
 
 注意事项：
 1、MBG 插件不会识别 rootClass 和 rootInterface，生成后需要手动 import
+
+
 
 
 

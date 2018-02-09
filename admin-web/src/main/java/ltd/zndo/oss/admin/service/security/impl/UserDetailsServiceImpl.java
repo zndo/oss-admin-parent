@@ -18,13 +18,14 @@ import ltd.zndo.oss.admin.persistence.entity.AdminUser;
 import ltd.zndo.oss.admin.persistence.mapper.AdminUserMapper;
 import ltd.zndo.oss.admin.service.security.ISecurityAuthorityService;
 import ltd.zndo.oss.admin.service.security.ISecurityRoleService;
-import ltd.zndo.oss.admin.web.security.UserFactory;
+import ltd.zndo.oss.admin.service.security.entity.SecurityUserDetails;
+import ltd.zndo.oss.admin.service.security.util.UserFactory;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
-    AdminUserMapper adminUserMapper;
+	AdminUserMapper adminUserMapper;
 
 	@Autowired
 	ISecurityRoleService securityRoleService;
@@ -36,7 +37,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	 * 根据用户名加载用户
 	 */
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String usernameOrEmailOrPhone) throws UsernameNotFoundException {
 
 		// 数据库管理用户实体
 		AdminUser user = null;
@@ -45,37 +46,39 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		if (user == null) { // 缓存不存在，再从数据库加载
 			AdminUser params = new AdminUser();
-			params.setUsername(username);
+			params.setUsername(usernameOrEmailOrPhone);
 			params.setDeleted(false);
 			user = adminUserMapper.selectOne(params);
 
 			if (user == null) { // 数据库仍不存在
-				throw new UsernameNotFoundException(String.format("用户不存在 '%s'.", username));
+				throw new UsernameNotFoundException(String.format("用户不存在 '%s'.", usernameOrEmailOrPhone));
 			}
 
 		}
 		if (user.getUserStatus().equals(UserStatus.DISABLED.getCode())) {
-			throw new UsernameNotFoundException(String.format("用户已禁用 '%s'.", username));
+			throw new UsernameNotFoundException(String.format("用户已禁用 '%s'.", usernameOrEmailOrPhone));
 		}
 		if (user.getUserStatus().equals(UserStatus.INACTIVE.getCode())) {
-			throw new UsernameNotFoundException(String.format("用户未激活 '%s'.", username));
+			throw new UsernameNotFoundException(String.format("用户未激活 '%s'.", usernameOrEmailOrPhone));
 		}
 
 		// 获取用户的角色
-		List<AdminRole> roles = securityRoleService.loadUserRolesByUsername(username);
+//		List<AdminRole> roles = securityRoleService.loadUserRolesByUsername(usernameOrEmailOrPhone);
 
 		// 获取用户的权限
 		Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
-		auths = this.securityAuthorityService.loadUserAuthorities(username);
-		
+		auths = this.securityAuthorityService.loadUserAuthorities(usernameOrEmailOrPhone);
+
 		// TODO 更新缓存
-		
-		return new User(user.getUsername(), user.getPassword(), auths);
-		
-//		/**
-//		 * @see ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails
-//		 */
-//		return UserFactory.create(user, roles, auths);
+
+		return new SecurityUserDetails(auths, user.getEmail(), user.getId(), user.getPassword(), user.getPhone(),
+				user.getUsername());
+		// return new User(user.getUsername(), user.getPassword(), auths);
+
+		// /**
+		// * @see ltd.zndo.oss.admin.web.security.entity.SecurityUserDetails
+		// */
+		// return UserFactory.create(user, roles, auths);
 	}
 
 }

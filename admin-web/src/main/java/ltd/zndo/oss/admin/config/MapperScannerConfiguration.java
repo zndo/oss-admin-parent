@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @MapperScan(basePackages = { // 基础包
-		"org.mybatis.springboot.mapper", // MyBatis
-		"tk.mybatis.mapper.common", // TK Common Mapper
+//		"org.mybatis.springboot.mapper", // MyBatis
+//		"tk.mybatis.mapper.common", // TK Common Mapper
 		"ltd.zndo.oss.admin.persistence.mapper" // Admin Mapper
 })
 @Configuration

@@ -17,7 +17,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Service;
 
-import ltd.zndo.oss.admin.service.security.URLAccessDecisionManager;
+import ltd.zndo.oss.admin.service.security.impl.URLAccessDecisionManager;
 
 @Service
 public class URLFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {

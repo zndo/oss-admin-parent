@@ -1,5 +1,5 @@
 //== Class Definition
-var UserLogin = function() {
+var UserSignIn = function() {
 
     var login = $('#m_login');
 
@@ -87,8 +87,16 @@ var UserLogin = function() {
             btn.addClass('m-loader m-loader--right m-loader--light').attr('disabled', true);
 
             form.ajaxSubmit({
-                url: '/user/login',
+                url: '/signin',
                 success: function(response, status, xhr, $form) {
+                	
+                	alert("test");
+                	// test
+                	console.log(response);
+//                	console.log(status);
+//                	console.log(xhr);
+//                	console.log($form);
+                	
                 	// 模拟 2 秒延时
                 	setTimeout(function() {
 	                    btn.removeClass('m-loader m-loader--right m-loader--light').attr('disabled', false);
@@ -213,5 +221,5 @@ var UserLogin = function() {
 
 //== Class Initialization
 jQuery(document).ready(function() {
-    UserLogin.init();
+    UserSignIn.init();
 });
