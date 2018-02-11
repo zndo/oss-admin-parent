@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ltd.zndo.oss.admin</groupId>
-	<artifactId>admin-web</artifactId>
+	<artifactId>oss-admin-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>zndo-metronic-admin</name>
-	<description>基于 Spring Boot 1.5.10.RELEASE &amp; Thymeleaf 和 Metronic 5.0.7.1 模板的后台管理项目</description>
+	<name>${project.artifactId}</name>
+	<description>基于 Spring Boot 1.5.10.RELEASE &amp; Thymeleaf &amp; Metronic 5.0.7.1 模板的后台管理项目</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

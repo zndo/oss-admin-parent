@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>ltd.zndo.oss.admin</groupId>
-  <artifactId>zndo-oss-admin-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>${artifactId}</name>
-  <description>ZNDO 开源后台管理项目</description>
-  <modules>
-    <module>admin-commons</module>
-    <module>admin-web</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>ltd.zndo.oss.admin</groupId>
+	<artifactId>oss-admin-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<name>${project.artifactId}</name>
+	<description>ZNDO 开源后台管理项目</description>
+	
+	<modules>
+		<module>oss-admin-commons</module>
+		<module>oss-admin-web</module>
+	</modules>
+	
 </project>
