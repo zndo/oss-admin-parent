@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
+import ltd.zndo.oss.admin.persistence.base.BaseEntity;
 
 @Table(name = "admin_resource")
-public class AdminResource extends AdminBaseEntity implements Serializable {
+public class AdminResource extends BaseEntity implements Serializable {
 	
     /**
      * 资源类型

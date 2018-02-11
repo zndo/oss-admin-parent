@@ -3,11 +3,10 @@ package ltd.zndo.oss.admin.persistence.mapper;
 import java.util.List;
 import java.util.Map;
 
-import ltd.zndo.oss.admin.commons.base.AdminBaseMapper;
+import ltd.zndo.oss.admin.persistence.base.BaseMapper;
 import ltd.zndo.oss.admin.persistence.entity.AdminResource;
-import tk.mybatis.mapper.common.Mapper;
 
-public interface AdminResourceMapper extends AdminBaseMapper, Mapper<AdminResource> {
+public interface AdminResourceMapper extends BaseMapper<AdminResource> {
 
 	/**
 	 * 加载资源映射

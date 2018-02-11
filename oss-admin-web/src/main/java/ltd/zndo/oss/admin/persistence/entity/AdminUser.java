@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
+import ltd.zndo.oss.admin.persistence.base.BaseEntity;
 
 @Table(name = "admin_user")
-public class AdminUser extends AdminBaseEntity implements Serializable {
+public class AdminUser extends BaseEntity implements Serializable {
 	
     /**
      * 用户唯一身份识别 ID
