@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
+import ltd.zndo.oss.admin.persistence.base.BaseEntity;
 
 @Table(name = "admin_user")
-public class AdminUser extends AdminBaseEntity implements Serializable {
+public class AdminUser extends BaseEntity implements Serializable {
 	
     /**
      * 用户唯一身份识别 ID
@@ -64,7 +64,7 @@ public class AdminUser extends AdminBaseEntity implements Serializable {
     private String phone;
 
     /**
-     * 用户状态：-1-已禁用/0-未激活/1-已激活
+     * 用户状态：-1-已禁用/0-未激活/1-已激活/2-已锁定
      */
     @Column(name = "USER_STATUS")
     private Integer userStatus;

@@ -16,24 +16,25 @@
 		<result column="DELETED" jdbcType="TINYINT" property="deleted" />
 	</resultMap>
 
-	<select id="loadResourcesMapping" resultType="java.util.List"
-		parameterType="java.lang.String">
+	<select id="loadResourcesMapping" resultType="java.util.HashMap">
 		SELECT
-			T3.URL,
-			T2.AUTHORITY
+		T3.URL,
+		T2.AUTHORITY
 		FROM
-			ADMIN_AUTHORITY_RESOURCE T1
+		ADMIN_AUTHORITY_RESOURCE T1
 		JOIN ADMIN_AUTHORITY AS T2 ON T2.ID = T1.AUTHORITYID
-		JOIN ADMIN_RESOURCE AS T3 ON T3.ID = T1.RESOURCEID
+		JOIN
+		ADMIN_RESOURCE AS T3 ON T3.ID = T1.RESOURCEID
 		AND T1.RLAT_STATUS = 1
 		AND T1.DELETED = 0
 		AND T2.AUTHORITY_STATUS = 1
 		AND T2.DELETED = 0
-		AND T3.RESOURCE_STATUS = 1
+		AND
+		T3.RESOURCE_STATUS = 1
 		AND T3.DELETED = 0
 		AND T3.TYPE = 'URL'
 		ORDER BY
-			T3.PRIORITY DESC
+		T3.PRIORITY DESC
 	</select>
 
 </mapper>

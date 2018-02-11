@@ -1,7 +1,9 @@
 package ltd.zndo.oss.admin.config;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -12,6 +14,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
+import org.springframework.security.web.savedrequest.RequestCache;
+import org.springframework.security.web.savedrequest.SavedRequest;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -20,6 +32,8 @@ import ltd.zndo.oss.admin.commons.util.PasswordUtil;
 import ltd.zndo.oss.admin.web.security.filters.AdminUsernamePasswordAuthenticationFilter;
 import ltd.zndo.oss.admin.web.security.handlers.SigninSuccessHandler;
 import ltd.zndo.oss.admin.web.security.interceptors.URLFilterSecurityInterceptor;
+
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 
 /**
  * Web 安全配置
@@ -121,23 +135,27 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 						"/*/api-docs", //
 						// 页面
 						"/signin.html", // 登录页面
+						"/signin", // 登录请求
+						"/signin/success", // 登录成功
+						"/signin/failure", // 登录失败
 						"/logout") // 注销-signout
 				.permitAll() // 匹配的 Matcher 内容全部允许
 				.anyRequest().authenticated() // 其他请求需要认证
 				.and() // & 登录
 				.formLogin() // 登录表单设置
-				.loginPage("/signin.html") // 登录页面
-				.loginProcessingUrl("/signin") // 自定义登录处理地址
-//	            .usernameParameter("username") // 自定义用户名参数
-//	            .passwordParameter("password") // 自定义密码参数
-				.successHandler(signinSuccessHandler()) // 登录成功处理器
-				.defaultSuccessUrl("/signin/success") // 默认登录成功跳转地址
-				.failureUrl("/signin?failure") // 登录失败跳转地址
-				.and() // & 注销
-				.logout()//
-				.logoutSuccessUrl("/signin.html")//
-				.invalidateHttpSession(true) // 使 HTTPSession 失效
-				.clearAuthentication(true) // 清除认证
+					.loginPage("/signin.html") // 登录页面
+					.loginProcessingUrl("/signin") // 自定义登录处理地址
+		            .usernameParameter("username") // 自定义用户名参数
+		            .passwordParameter("password") // 自定义密码参数
+					.successHandler(signinSuccessHandler()) // 登录成功处理器
+					.defaultSuccessUrl("/signin/success") // 默认登录成功跳转地址
+					.failureUrl("/signin/failure") // 登录失败跳转地址
+				.and() // &
+				.logout() // 注销
+					.logoutUrl("/signout")//
+					.logoutSuccessUrl("/signin.html")//
+					.invalidateHttpSession(true) // 使 HTTPSession 失效
+					.clearAuthentication(true) // 清除认证
 				.and()//
 				.rememberMe() // 记住我，需要预置表结构 persistent_logins
 		// .tokenValiditySeconds(1209600) // TOKEN 有效期

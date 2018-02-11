@@ -6,6 +6,9 @@
 <!-- MyBatis Generator 逆向工程配置 -->
 <!-- mybatis-generator:generate -->
 <generatorConfiguration>
+
+    <properties resource="application-dev.properties"/>
+
 	<context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
 		<!-- 属性 -->

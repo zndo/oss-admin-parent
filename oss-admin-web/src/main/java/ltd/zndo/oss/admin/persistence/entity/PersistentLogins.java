@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-import ltd.zndo.oss.admin.commons.base.AdminBaseEntity;
+import ltd.zndo.oss.admin.persistence.base.BaseEntity;
 
 @Table(name = "persistent_logins")
-public class PersistentLogins extends AdminBaseEntity implements Serializable {
+public class PersistentLogins extends BaseEntity implements Serializable {
     /**
      * 序列
      */

@@ -117,11 +117,11 @@ public class URLFilterInvocationSecurityMetadataSource
 		Iterator<Map<String, String>> it = list.iterator();
 		while (it.hasNext()) {
 			Map<String, String> rs = it.next();
-			String resourcePath = rs.get("url");
-			String authority = rs.get("authority");
+			String resourcePath = rs.get("URL");
+			String authority = rs.get("AUTHORITY");
 
 			if (map.containsKey(resourcePath)) {
-				String mark = map.get("url");
+				String mark = map.get("URL");
 				map.put(resourcePath, mark + "," + authority);
 			} else {
 				map.put(resourcePath, authority);
