@@ -93,8 +93,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	// return null;
 	// }
 
-	@Bean
-	public SigninSuccessHandler signinSuccessHandler() {
+//	@Bean
+//	public SigninSuccessHandler signinSuccessHandler() {
 		
 		// 获取登陆前来源页面
 //		SavedRequest savedRequest = requestCache.getRequest(request, response);
@@ -108,11 +108,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 //		return result;
 		
 //		return new SigninSuccessHandler(); // 登录成功跳转默认登录成功页面
-		SigninSuccessHandler handler = new SigninSuccessHandler();
-		// 设置登陆前来源页面
-		
-		return handler;
-	}
+//		SigninSuccessHandler handler = new SigninSuccessHandler();
+//		// 设置登陆前来源页面
+//		
+//		return handler;
+//	}
 
 	@Override
 	protected void configure(HttpSecurity security) throws Exception {
@@ -147,7 +147,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 					.loginProcessingUrl("/signin") // 自定义登录处理地址
 		            .usernameParameter("username") // 自定义用户名参数
 		            .passwordParameter("password") // 自定义密码参数
-					.successHandler(signinSuccessHandler()) // 登录成功处理器
+//					.successHandler(signinSuccessHandler()) // 登录成功处理器
 					.defaultSuccessUrl("/signin/success") // 默认登录成功跳转地址
 					.failureUrl("/signin/failure") // 登录失败跳转地址
 				.and() // &
