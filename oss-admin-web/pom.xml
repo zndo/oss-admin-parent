@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>ltd.zndo.oss.admin</groupId>
-	<artifactId>admin-web</artifactId>
+	<artifactId>oss-admin-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>zndo-metronic-admin</name>
+	<name>oss-admin-web</name>
 	<description>基于 Spring Boot 1.5.10.RELEASE &amp; Thymeleaf 和 Metronic 5.0.7.1 模板的后台管理项目</description>
 
 	<parent>
@@ -28,7 +28,7 @@
 		<pagehelper-starter.version>1.2.3</pagehelper-starter.version>
 		<mapper-starter.version>1.2.3</mapper-starter.version>
 		<!-- admin modules -->
-		<admin-commons.version>0.0.1-SNAPSHOT</admin-commons.version>
+		<oss-admin-commons.version>0.0.1-SNAPSHOT</oss-admin-commons.version>
 		<!-- plugins -->
 		<mybatis-generator-maven-plugin.version>1.3.6</mybatis-generator-maven-plugin.version>
 		<!-- mbg properties -->
@@ -175,8 +175,8 @@
 		</dependency>
 		<dependency>
 			<groupId>ltd.zndo.oss.admin</groupId>
-			<artifactId>admin-commons</artifactId>
-			<version>${admin-commons.version}</version>
+			<artifactId>oss-admin-commons</artifactId>
+			<version>${oss-admin-commons.version}</version>
 		</dependency>
 	</dependencies>
 

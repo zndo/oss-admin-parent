@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>ltd.zndo.oss.admin</groupId>
-    <artifactId>zndo-oss-admin-parent</artifactId>
+    <artifactId>oss-admin-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 <!--   <groupId>ltd.zndo.oss.admin</groupId> -->
-  <artifactId>admin-commons</artifactId>
+  <artifactId>oss-admin-commons</artifactId>
 <!--   <version>0.0.1-SNAPSHOT</version> -->
-  <name>admin-commons</name>
+  <name>oss-admin-commons</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
