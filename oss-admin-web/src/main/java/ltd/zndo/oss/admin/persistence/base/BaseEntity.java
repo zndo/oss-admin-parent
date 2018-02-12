@@ -17,10 +17,26 @@ public class BaseEntity implements Serializable {
 	private static final long serialVersionUID = -6714818680438665121L;
 	
 	@Transient
-    private Integer pageNum = 1; // 默认页码
+	protected Integer pageNum = 1; // 默认页码
 
     @Transient
-    private Integer pageSize = 10; // 默认条数
+    protected Integer pageSize = 10; // 默认条数
+
+	public Integer getPageNum() {
+		return pageNum;
+	}
+
+	public void setPageNum(Integer pageNum) {
+		this.pageNum = pageNum;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
 
 	/**
      * ID
@@ -43,7 +59,7 @@ public class BaseEntity implements Serializable {
     protected Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-false-未删除/1-true-已删除
      */
     @Column(name = "DELETED")
     protected Boolean deleted;
@@ -103,18 +119,18 @@ public class BaseEntity implements Serializable {
     }
 
     /**
-     * 获取是否删除：0-未删除/1-已删除
+     * 获取是否删除：0-FALSE-未删除/1-TRUE-已删除
      *
-     * @return DELETED - 是否删除：0-未删除/1-已删除
+     * @return DELETED - 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     public Boolean getDeleted() {
         return deleted;
     }
 
     /**
-     * 设置是否删除：0-未删除/1-已删除
+     * 设置是否删除：0-FALSE-未删除/1-TRUE-已删除
      *
-     * @param deleted 是否删除：0-未删除/1-已删除
+     * @param deleted 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;

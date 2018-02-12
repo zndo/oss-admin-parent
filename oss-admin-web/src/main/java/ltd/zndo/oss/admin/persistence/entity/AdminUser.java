@@ -64,7 +64,7 @@ public class AdminUser extends BaseEntity implements Serializable {
     private String phone;
 
     /**
-     * 用户状态：-1-已禁用/0-未激活/1-已激活/2-已锁定
+     * 用户状态：-1-未激活/0-已禁用/1-已激活/2-已锁定
      */
     @Column(name = "USER_STATUS")
     private Integer userStatus;
@@ -94,7 +94,7 @@ public class AdminUser extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-false-未删除/1-true-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -264,27 +264,27 @@ public class AdminUser extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取用户状态：-1-已禁用/0-未激活/1-已激活
+     * 获取用户状态：-1-未激活/0-已禁用/1-已激活/2-已锁定
      *
-     * @return USER_STATUS - 用户状态：-1-已禁用/0-未激活/1-已激活
+     * @return USER_STATUS - 用户状态：-1-未激活/0-已禁用/1-已激活/2-已锁定
      */
     public Integer getUserStatus() {
         return userStatus;
     }
 
     /**
-     * 设置用户状态：-1-已禁用/0-未激活/1-已激活
+     * 设置用户状态：-1-未激活/0-已禁用/1-已激活/2-已锁定
      *
-     * @param userStatus 用户状态：-1-已禁用/0-未激活/1-已激活
+     * @param userStatus 用户状态：-1-未激活/0-已禁用/1-已激活/2-已锁定
      */
     public void setUserStatus(Integer userStatus) {
         this.userStatus = userStatus;
     }
 
     /**
-     * 设置是否删除：0-未删除/1-已删除
+     * 设置是否删除：0-FALSE-未删除/1-TRUE-已删除
      *
-     * @param deleted 是否删除：0-未删除/1-已删除
+     * @param deleted 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;

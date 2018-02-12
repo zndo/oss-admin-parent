@@ -116,7 +116,7 @@ var UserSignIn = function() {
 																	'用户名或密码不正确，请重试。');
 														}, 2000);
 											} else {
-//												console.log(response);
+											window.location.href = "/dashboard.html";
 												console.log(status);
 												console.log(xhr);
 												console.log($form);

@@ -46,7 +46,7 @@ public class AdminUserProfile extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;

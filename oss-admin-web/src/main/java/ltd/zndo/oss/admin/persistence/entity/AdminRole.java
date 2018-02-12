@@ -28,7 +28,7 @@ public class AdminRole extends BaseEntity implements Serializable {
     private Long fId;
 
     /**
-     * 角色状态：1-正常/2-禁用
+     * 角色状态：0-FALSE-禁用/1-TRUE-正常
      */
     @Column(name = "ROLE_STATUS")
     private Boolean roleStatus;
@@ -46,7 +46,7 @@ public class AdminRole extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -108,18 +108,18 @@ public class AdminRole extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取角色状态：1-正常/2-禁用
+     * 获取角色状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @return ROLE_STATUS - 角色状态：1-正常/2-禁用
+     * @return ROLE_STATUS - 角色状态：0-FALSE-禁用/1-TRUE-正常
      */
     public Boolean getRoleStatus() {
         return roleStatus;
     }
 
     /**
-     * 设置角色状态：1-正常/2-禁用
+     * 设置角色状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @param roleStatus 角色状态：1-正常/2-禁用
+     * @param roleStatus 角色状态：0-FALSE-禁用/1-TRUE-正常
      */
     public void setRoleStatus(Boolean roleStatus) {
         this.roleStatus = roleStatus;

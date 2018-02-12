@@ -40,7 +40,7 @@ public class AdminResource extends BaseEntity implements Serializable {
     private Integer priority;
 
     /**
-     * 资源状态：1-正常/2-禁用
+     * 资源状态：0-FALSE-禁用/1-TRUE-正常
      */
     @Column(name = "RESOURCE_STATUS")
     private Boolean resourceStatus;
@@ -58,7 +58,7 @@ public class AdminResource extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -156,18 +156,18 @@ public class AdminResource extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取资源状态：1-正常/2-禁用
+     * 获取资源状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @return RESOURCE_STATUS - 资源状态：1-正常/2-禁用
+     * @return RESOURCE_STATUS - 资源状态：0-FALSE-禁用/1-TRUE-正常
      */
     public Boolean getResourceStatus() {
         return resourceStatus;
     }
 
     /**
-     * 设置资源状态：1-正常/2-禁用
+     * 设置资源状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @param resourceStatus 资源状态：1-正常/2-禁用
+     * @param resourceStatus 资源状态：0-FALSE-禁用/1-TRUE-正常
      */
     public void setResourceStatus(Boolean resourceStatus) {
         this.resourceStatus = resourceStatus;

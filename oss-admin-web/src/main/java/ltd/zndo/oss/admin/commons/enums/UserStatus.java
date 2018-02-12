@@ -12,9 +12,10 @@ package ltd.zndo.oss.admin.commons.enums;
  */
 public enum UserStatus {
 
-	DISABLED(-1, "DISABLED"), // 已禁用
-	INACTIVE(0, "INACTIVE"), // 未激活
-	ACTIVED(1, "ACTIVED") // 已激活
+	INACTIVE(-1, "INACTIVE"), // 未激活
+	DISABLED(0, "DISABLED"), // 已禁用
+	ACTIVED(1, "ACTIVED"), // 已激活
+	LOCKED(2, "LOCKED") // 已锁定
 	;
 
 	private Integer code;

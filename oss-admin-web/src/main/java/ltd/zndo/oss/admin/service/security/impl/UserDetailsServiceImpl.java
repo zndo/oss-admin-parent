@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import ltd.zndo.oss.admin.commons.enums.RecordStatus;
 import ltd.zndo.oss.admin.commons.enums.UserStatus;
 import ltd.zndo.oss.admin.persistence.entity.AdminRole;
 import ltd.zndo.oss.admin.persistence.entity.AdminUser;
@@ -55,15 +56,19 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			}
 
 		}
-		if (user.getUserStatus().equals(UserStatus.DISABLED.getCode())) {
+		if (user.getUserStatus() == UserStatus.DISABLED.getCode()) {
 			throw new UsernameNotFoundException(String.format("用户已禁用 '%s'.", usernameOrEmailOrPhone));
 		}
-		if (user.getUserStatus().equals(UserStatus.INACTIVE.getCode())) {
+		if (user.getUserStatus() == UserStatus.INACTIVE.getCode()) {
 			throw new UsernameNotFoundException(String.format("用户未激活 '%s'.", usernameOrEmailOrPhone));
+		}
+		if (user.getUserStatus() == UserStatus.LOCKED.getCode()) {
+			throw new UsernameNotFoundException(String.format("用户已锁定 '%s'.", usernameOrEmailOrPhone));
 		}
 
 		// 获取用户的角色
-//		List<AdminRole> roles = securityRoleService.loadUserRolesByUsername(usernameOrEmailOrPhone);
+		// List<AdminRole> roles =
+		// securityRoleService.loadUserRolesByUsername(usernameOrEmailOrPhone);
 
 		// 获取用户的权限
 		Collection<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
@@ -71,8 +76,25 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 		// TODO 更新缓存
 
-		return new SecurityUserDetails(auths, user.getEmail(), user.getId(), user.getPassword(), user.getPhone(),
-				user.getUsername());
+		// 返回安全认证用户详情
+		SecurityUserDetails suDetails = new SecurityUserDetails(//
+				user.getUsername(), //
+				user.getPassword(), //
+				auths //
+		);
+		// suDetails.setAccountNonExpired(true);
+		// suDetails.setAccountNonLocked(user.getUserStatus() !=
+		// UserStatus.LOCKED.getCode());
+		// suDetails.setAuthorities(auths);
+		// suDetails.setCredentialsNonExpired(true);
+		// suDetails.setEmail(user.getEmail());
+		// suDetails.setEnabled(true);
+		// suDetails.setId(user.getId());
+
+		return suDetails;
+		// return new SecurityUserDetails(auths, user.getEmail(), user.getId(),
+		// user.getPassword(), user.getPhone(),
+		// user.getUsername());
 		// return new User(user.getUsername(), user.getPassword(), auths);
 
 		// /**

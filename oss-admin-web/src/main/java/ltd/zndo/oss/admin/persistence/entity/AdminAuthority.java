@@ -28,7 +28,7 @@ public class AdminAuthority extends BaseEntity implements Serializable {
     private String description;
 
     /**
-     * 权限状态：1-正常/2-禁用
+     * 权限状态：0-FALSE-禁用/1-TRUE-正常
      */
     @Column(name = "AUTHORITY_STATUS")
     private Boolean authorityStatus;
@@ -46,7 +46,7 @@ public class AdminAuthority extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -108,18 +108,18 @@ public class AdminAuthority extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取权限状态：1-正常/2-禁用
+     * 获取权限状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @return AUTHORITY_STATUS - 权限状态：1-正常/2-禁用
+     * @return AUTHORITY_STATUS - 权限状态：0-FALSE-禁用/1-TRUE-正常
      */
     public Boolean getAuthorityStatus() {
         return authorityStatus;
     }
 
     /**
-     * 设置权限状态：1-正常/2-禁用
+     * 设置权限状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @param authorityStatus 权限状态：1-正常/2-禁用
+     * @param authorityStatus 权限状态：0-FALSE-禁用/1-TRUE-正常
      */
     public void setAuthorityStatus(Boolean authorityStatus) {
         this.authorityStatus = authorityStatus;

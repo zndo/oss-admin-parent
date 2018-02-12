@@ -48,21 +48,11 @@ public class AdminRestController {
 		}
 
 		/**
-		 * 获取认证消息
-		 */
-		AuthenticationException authException = (AuthenticationException) request.getSession()
-				.getAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-
-		/**
 		 * 返回数据
 		 */
-		// private String code; // 业务代码
-		// private String msg; // 业务消息
-		// private int status; // HTTP 状态代码
-		// private long timestamp; // 时间戳
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("code", 0);
-		result.put("message", authException.getMessage());
+		result.put("message", "登录成功");
 		result.put("status", response.getStatus());
 		result.put("datetime", new Date());
 		if (StringUtils.isNotBlank(sourceUrl)) {

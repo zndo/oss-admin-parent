@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import ltd.zndo.oss.admin.persistence.entity.AdminUser;
+import ltd.zndo.oss.admin.service.security.entity.SecurityUserDetails;
 
 @Controller
 public class DashboardController {
@@ -20,7 +21,7 @@ public class DashboardController {
 		SecurityContext ctx = SecurityContextHolder.getContext();
 		Authentication auth = ctx.getAuthentication();
 		if (auth.getPrincipal() instanceof UserDetails) {
-			AdminUser user = (AdminUser) auth.getPrincipal();
+			SecurityUserDetails user = (SecurityUserDetails) auth.getPrincipal();
 			System.out.println("--------------> " + user.getEmail());
 		}
 

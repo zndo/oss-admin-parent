@@ -70,7 +70,7 @@ public class AdminModule extends BaseEntity implements Serializable {
     private Integer priority;
 
     /**
-     * 模块状态：1-正常/2-禁用
+     * 模块状态：0-FALSE-禁用/1-TRUE-正常
      */
     @Column(name = "MODULE_STATUS")
     private Boolean moduleStatus;
@@ -88,7 +88,7 @@ public class AdminModule extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -276,18 +276,18 @@ public class AdminModule extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取模块状态：1-正常/2-禁用
+     * 获取模块状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @return MODULE_STATUS - 模块状态：1-正常/2-禁用
+     * @return MODULE_STATUS - 模块状态：0-FALSE-禁用/1-TRUE-正常
      */
     public Boolean getModuleStatus() {
         return moduleStatus;
     }
 
     /**
-     * 设置模块状态：1-正常/2-禁用
+     * 设置模块状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @param moduleStatus 模块状态：1-正常/2-禁用
+     * @param moduleStatus 模块状态：0-FALSE-禁用/1-TRUE-正常
      */
     public void setModuleStatus(Boolean moduleStatus) {
         this.moduleStatus = moduleStatus;

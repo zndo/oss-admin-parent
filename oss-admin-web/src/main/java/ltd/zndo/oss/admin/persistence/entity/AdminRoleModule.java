@@ -22,7 +22,7 @@ public class AdminRoleModule extends BaseEntity implements Serializable {
     private Long moduleid;
 
     /**
-     * 关系状态：1-正常/2-禁用
+     * 关系状态：0-FALSE-禁用/1-TRUE-正常
      */
     @Column(name = "RLAT_STATUS")
     private Boolean rlatStatus;
@@ -40,7 +40,7 @@ public class AdminRoleModule extends BaseEntity implements Serializable {
     private Date updated;
 
     /**
-     * 是否删除：0-未删除/1-已删除
+     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
      */
     @Column(name = "DELETED")
     private Boolean deleted;
@@ -84,18 +84,18 @@ public class AdminRoleModule extends BaseEntity implements Serializable {
     }
 
     /**
-     * 获取关系状态：1-正常/2-禁用
+     * 获取关系状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @return RLAT_STATUS - 关系状态：1-正常/2-禁用
+     * @return RLAT_STATUS - 关系状态：0-FALSE-禁用/1-TRUE-正常
      */
     public Boolean getRlatStatus() {
         return rlatStatus;
     }
 
     /**
-     * 设置关系状态：1-正常/2-禁用
+     * 设置关系状态：0-FALSE-禁用/1-TRUE-正常
      *
-     * @param rlatStatus 关系状态：1-正常/2-禁用
+     * @param rlatStatus 关系状态：0-FALSE-禁用/1-TRUE-正常
      */
     public void setRlatStatus(Boolean rlatStatus) {
         this.rlatStatus = rlatStatus;

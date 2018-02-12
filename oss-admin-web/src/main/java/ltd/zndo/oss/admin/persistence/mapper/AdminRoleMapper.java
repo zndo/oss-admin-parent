@@ -2,10 +2,10 @@ package ltd.zndo.oss.admin.persistence.mapper;
 
 import java.util.List;
 
-import ltd.zndo.oss.admin.persistence.base.BaseMapper;
+import ltd.zndo.oss.admin.persistence.base.IBaseMapper;
 import ltd.zndo.oss.admin.persistence.entity.AdminRole;
 
-public interface AdminRoleMapper extends BaseMapper<AdminRole> {
+public interface AdminRoleMapper extends IBaseMapper<AdminRole> {
 
 	/**
 	 * 根据用户名加载用户角色
