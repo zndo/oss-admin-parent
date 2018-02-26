@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<head>
 		<meta charset="utf-8" />
 		<title>
-			Metronic | 记录选择
+			Metronic | 用户列表
 		</title>
 		<meta name="description" content="Single and group record selection">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -464,7 +464,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															<li class="m-menu__item "  data-redirect="true" aria-haspopup="true">
 																<a th:href="@{/header/actions.html}" href="../../../header/actions.html" class="m-menu__link ">
 																	<span class="m-menu__link-text">
-																		资源 & 媒介
+																		资源 &amp; 媒介
 																	</span>
 																</a>
 															</li>
@@ -804,7 +804,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item m-list-timeline__item--read">
 																					<span class="m-list-timeline__badge"></span>
-																					<span href="" class="m-list-timeline__text">
+																					<span class="m-list-timeline__text">
 																						接收到新订单
 																						<span class="m-badge m-badge--danger m-badge--wide">
 																							紧急
@@ -842,7 +842,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																			<div class="m-list-timeline__items">
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						接收到新订单
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -851,7 +851,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-danger"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						接收到新发货单
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -860,7 +860,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-success"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						生产服务器启动
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -869,7 +869,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						接收到新订单
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -878,7 +878,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						系统停止
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -887,7 +887,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																				</div>
 																				<div class="m-list-timeline__item">
 																					<span class="m-list-timeline__badge m-list-timeline__badge--state1-info"></span>
-																					<a href="" class="m-list-timeline__text">
+																					<a class="m-list-timeline__text">
 																						生产服务器停止
 																					</a>
 																					<span class="m-list-timeline__time">
@@ -901,7 +901,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
 																	<div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
 																		<div class="m-stack__item m-stack__item--center m-stack__item--middle">
-																			<span class="" />
+																			<span class="">
 																				所有的都按预期完成！
 																				<br>
 																				没有新的日志。
@@ -993,7 +993,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																<span class="m-card-user__name m--font-weight-500" th:inline="text">
 																	[[${#httpServletRequest.remoteUser}]] <!-- Sean Tien -->
 																</span>
-																<a href="" class="m-card-user__email m--font-weight-300 m-link">
+																<a class="m-card-user__email m--font-weight-300 m-link">
 																	zndo@live.com
 																</a>
 															</div>
@@ -1102,8 +1102,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		 data-menu-scrollable="false" data-menu-dropdown-timeout="500"  
 		>
 						<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
-							<li class="m-menu__item " aria-haspopup="true" >
-								<a th:href="@{/dashboard.html}" href="../../../index.html" class="m-menu__link ">
+							<li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
+								<a th:href="@{/dashboard.html}" href="index.html" class="m-menu__link ">
 									<i class="m-menu__link-icon flaticon-line-graph"></i>
 									<span class="m-menu__link-title">
 										<span class="m-menu__link-wrap">
@@ -1117,6 +1117,990 @@ License: You must have a valid license purchased only from themeforest(the above
 										</span>
 									</span>
 								</a>
+							</li>
+							<li class="m-menu__section">
+								<h4 class="m-menu__section-text">
+									系统
+								</h4>
+								<i class="m-menu__section-icon flaticon-more-v3"></i>
+							</li>
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+								<a href="#" class="m-menu__link m-menu__toggle">
+									<i class="m-menu__link-icon flaticon-layers"></i>
+									<span class="m-menu__link-text">
+										用户
+									</span>
+									<i class="m-menu__ver-arrow la la-angle-right"></i>
+								</a>
+								<div class="m-menu__submenu ">
+									<span class="m-menu__arrow"></span>
+									<ul class="m-menu__subnav">
+										<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
+											<span class="m-menu__link">
+												<span class="m-menu__link-text">
+													帐号
+												</span>
+											</span>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a th:href="users.html" href="components/base/state.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													帐号										</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/typography.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													排版
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/stack.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													对齐
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tables.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													表格
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/progress.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													进度条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/modal.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													模态框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/alerts.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													警告框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/popover.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													弹出框
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tooltip.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													工具提示												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/blockui.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													遮罩												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/spinners.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													旋转器
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/scrollable.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													滚动条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/dropdown.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													下拉菜单
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+											<a href="#" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													选项卡
+												</span>
+												<i class="m-menu__ver-arrow la la-angle-right"></i>
+											</a>
+											<div class="m-menu__submenu ">
+												<span class="m-menu__arrow"></span>
+												<ul class="m-menu__subnav">
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/bootstrap.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Bootstrap 选项卡															</span>
+														</a>
+													</li>
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/line.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Line 选项卡
+															</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/accordions.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													折叠面板												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/navs.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													导航菜单												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/lists.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													列表												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/treeview.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													树形视图												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/bootstrap-notify.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Bootstrap 通知												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/toastr.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Toastr
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/sweetalert2.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													SweetAlert2
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+								<a href="#" class="m-menu__link m-menu__toggle">
+									<i class="m-menu__link-icon flaticon-layers"></i>
+									<span class="m-menu__link-text">
+										授权
+									</span>
+									<i class="m-menu__ver-arrow la la-angle-right"></i>
+								</a>
+								<div class="m-menu__submenu ">
+									<span class="m-menu__arrow"></span>
+									<ul class="m-menu__subnav">
+										<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
+											<span class="m-menu__link">
+												<span class="m-menu__link-text">
+													授权
+												</span>
+											</span>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/state.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													访问授权												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/typography.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													应用授权
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/stack.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													对齐
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tables.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													表格
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/progress.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													进度条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/modal.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													模态框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/alerts.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													警告框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/popover.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													弹出框
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tooltip.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													工具提示												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/blockui.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													遮罩												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/spinners.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													旋转器
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/scrollable.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													滚动条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/dropdown.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													下拉菜单
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+											<a href="#" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													选项卡
+												</span>
+												<i class="m-menu__ver-arrow la la-angle-right"></i>
+											</a>
+											<div class="m-menu__submenu ">
+												<span class="m-menu__arrow"></span>
+												<ul class="m-menu__subnav">
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/bootstrap.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Bootstrap 选项卡															</span>
+														</a>
+													</li>
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/line.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Line 选项卡
+															</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/accordions.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													折叠面板												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/navs.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													导航菜单												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/lists.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													列表												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/treeview.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													树形视图												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/bootstrap-notify.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Bootstrap 通知												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/toastr.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Toastr
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/sweetalert2.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													SweetAlert2
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+								<a href="#" class="m-menu__link m-menu__toggle">
+									<i class="m-menu__link-icon flaticon-layers"></i>
+									<span class="m-menu__link-text">
+										应用
+									</span>
+									<i class="m-menu__ver-arrow la la-angle-right"></i>
+								</a>
+								<div class="m-menu__submenu ">
+									<span class="m-menu__arrow"></span>
+									<ul class="m-menu__subnav">
+										<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
+											<span class="m-menu__link">
+												<span class="m-menu__link-text">
+													应用
+												</span>
+											</span>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/state.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													菜单												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/typography.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													排版
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/stack.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													对齐
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tables.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													表格
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/progress.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													进度条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/modal.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													模态框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/alerts.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													警告框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/popover.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													弹出框
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tooltip.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													工具提示												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/blockui.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													遮罩												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/spinners.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													旋转器
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/scrollable.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													滚动条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/dropdown.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													下拉菜单
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+											<a href="#" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													选项卡
+												</span>
+												<i class="m-menu__ver-arrow la la-angle-right"></i>
+											</a>
+											<div class="m-menu__submenu ">
+												<span class="m-menu__arrow"></span>
+												<ul class="m-menu__subnav">
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/bootstrap.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Bootstrap 选项卡															</span>
+														</a>
+													</li>
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/line.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Line 选项卡
+															</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/accordions.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													折叠面板												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/navs.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													导航菜单												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/lists.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													列表												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/treeview.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													树形视图												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/bootstrap-notify.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Bootstrap 通知												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/toastr.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Toastr
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/sweetalert2.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													SweetAlert2
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+								<a href="#" class="m-menu__link m-menu__toggle">
+									<i class="m-menu__link-icon flaticon-layers"></i>
+									<span class="m-menu__link-text">
+										帐号
+									</span>
+									<i class="m-menu__ver-arrow la la-angle-right"></i>
+								</a>
+								<div class="m-menu__submenu ">
+									<span class="m-menu__arrow"></span>
+									<ul class="m-menu__subnav">
+										<li class="m-menu__item  m-menu__item--parent" aria-haspopup="true" >
+											<span class="m-menu__link">
+												<span class="m-menu__link-text">
+													帐号
+												</span>
+											</span>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/state.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													状态颜色												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/typography.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													排版
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/stack.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													对齐
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tables.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													表格
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/progress.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													进度条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/modal.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													模态框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/alerts.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													警告框												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/popover.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													弹出框
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/tooltip.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													工具提示												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/blockui.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													遮罩												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/spinners.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													旋转器
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/scrollable.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													滚动条												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/dropdown.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													下拉菜单
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+											<a href="#" class="m-menu__link m-menu__toggle">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													选项卡
+												</span>
+												<i class="m-menu__ver-arrow la la-angle-right"></i>
+											</a>
+											<div class="m-menu__submenu ">
+												<span class="m-menu__arrow"></span>
+												<ul class="m-menu__subnav">
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/bootstrap.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Bootstrap 选项卡															</span>
+														</a>
+													</li>
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/base/tabs/line.html" class="m-menu__link ">
+															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+																<span></span>
+															</i>
+															<span class="m-menu__link-text">
+																Line 选项卡
+															</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/accordions.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													折叠面板												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/navs.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													导航菜单												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/lists.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													列表												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/treeview.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													树形视图												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/bootstrap-notify.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Bootstrap 通知												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/toastr.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													Toastr
+												</span>
+											</a>
+										</li>
+										<li class="m-menu__item " aria-haspopup="true" >
+											<a href="components/base/sweetalert2.html" class="m-menu__link ">
+												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
+													<span></span>
+												</i>
+												<span class="m-menu__link-text">
+													SweetAlert2
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
 							</li>
 							<li class="m-menu__section">
 								<h4 class="m-menu__section-text">
@@ -1143,7 +2127,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/state.html}" href="../../../components/base/state.html" class="m-menu__link ">
+											<a href="components/base/state.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1152,7 +2136,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/typography.html}" href="../../../components/base/typography.html" class="m-menu__link ">
+											<a href="components/base/typography.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1162,7 +2146,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/stack.html}" href="../../../components/base/stack.html" class="m-menu__link ">
+											<a href="components/base/stack.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1172,7 +2156,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/tables.html}" href="../../../components/base/tables.html" class="m-menu__link ">
+											<a href="components/base/tables.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1182,7 +2166,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/progress.html}" href="../../../components/base/progress.html" class="m-menu__link ">
+											<a href="components/base/progress.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1191,7 +2175,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/modal.html}" href="../../../components/base/modal.html" class="m-menu__link ">
+											<a href="components/base/modal.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1200,7 +2184,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/alerts.html}" href="../../../components/base/alerts.html" class="m-menu__link ">
+											<a href="components/base/alerts.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1209,7 +2193,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/popover.html}" href="../../../components/base/popover.html" class="m-menu__link ">
+											<a href="components/base/popover.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1219,7 +2203,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/tooltip.html}" href="../../../components/base/tooltip.html" class="m-menu__link ">
+											<a href="components/base/tooltip.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1228,7 +2212,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/blockui.html}" href="../../../components/base/blockui.html" class="m-menu__link ">
+											<a href="components/base/blockui.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1237,7 +2221,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/spinners.html}" href="../../../components/base/spinners.html" class="m-menu__link ">
+											<a href="components/base/spinners.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1247,7 +2231,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/scrollable.html}" href="../../../components/base/scrollable.html" class="m-menu__link ">
+											<a href="components/base/scrollable.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1256,7 +2240,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/dropdown.html}" href="../../../components/base/dropdown.html" class="m-menu__link ">
+											<a href="components/base/dropdown.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1279,7 +2263,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/base/tabs/bootstrap.html}" href="../../../components/base/tabs/bootstrap.html" class="m-menu__link ">
+														<a href="components/base/tabs/bootstrap.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1288,7 +2272,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/base/tabs/line.html}" href="../../../components/base/tabs/line.html" class="m-menu__link ">
+														<a href="components/base/tabs/line.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1301,7 +2285,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/accordions.html}" href="../../../components/base/accordions.html" class="m-menu__link ">
+											<a href="components/base/accordions.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1310,7 +2294,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/navs.html}" href="../../../components/base/navs.html" class="m-menu__link ">
+											<a href="components/base/navs.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1319,7 +2303,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/lists.html}" href="../../../components/base/lists.html" class="m-menu__link ">
+											<a href="components/base/lists.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1328,7 +2312,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/treeview.html}" href="../../../components/base/treeview.html" class="m-menu__link ">
+											<a href="components/base/treeview.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1337,7 +2321,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/bootstrap-notify.html}" href="../../../components/base/bootstrap-notify.html" class="m-menu__link ">
+											<a href="components/base/bootstrap-notify.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1346,7 +2330,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/toastr.html}" href="../../../components/base/toastr.html" class="m-menu__link ">
+											<a href="components/base/toastr.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1356,7 +2340,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/base/sweetalert2.html}" href="../../../components/base/sweetalert2.html" class="m-menu__link ">
+											<a href="components/base/sweetalert2.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1379,7 +2363,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<span class="m-menu__arrow"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/icons/flaticon.html}" href="../../../components/icons/flaticon.html" class="m-menu__link ">
+											<a href="components/icons/flaticon.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1389,7 +2373,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/icons/fontawesome.html}" href="../../../components/icons/fontawesome.html" class="m-menu__link ">
+											<a href="components/icons/fontawesome.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1399,7 +2383,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/icons/lineawesome.html}" href="../../../components/icons/lineawesome.html" class="m-menu__link ">
+											<a href="components/icons/lineawesome.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1409,7 +2393,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/icons/socicons.html}" href="../../../components/icons/socicons.html" class="m-menu__link ">
+											<a href="components/icons/socicons.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1452,7 +2436,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/base/default.html}" href="../../../components/buttons/base/default.html" class="m-menu__link ">
+														<a href="components/buttons/base/default.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1461,7 +2445,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/base/square.html}" href="../../../components/buttons/base/square.html" class="m-menu__link ">
+														<a href="components/buttons/base/square.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1471,7 +2455,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/base/pill.html}" href="../../../components/buttons/base/pill.html" class="m-menu__link ">
+														<a href="components/buttons/base/pill.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1481,7 +2465,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/base/air.html}" href="../../../components/buttons/base/air.html" class="m-menu__link ">
+														<a href="components/buttons/base/air.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1494,7 +2478,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/buttons/group.html}" href="../../../components/buttons/group.html" class="m-menu__link ">
+											<a href="components/buttons/group.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1503,7 +2487,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/buttons/dropdown.html}" href="../../../components/buttons/dropdown.html" class="m-menu__link ">
+											<a href="components/buttons/dropdown.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -1526,7 +2510,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/icon/lineawesome.html}" href="../../../components/buttons/icon/lineawesome.html" class="m-menu__link ">
+														<a href="components/buttons/icon/lineawesome.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1536,7 +2520,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/icon/fontawesome.html}" href="../../../components/buttons/icon/fontawesome.html" class="m-menu__link ">
+														<a href="components/buttons/icon/fontawesome.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1546,7 +2530,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/buttons/icon/flaticon.html}" href="../../../components/buttons/icon/flaticon.html" class="m-menu__link ">
+														<a href="components/buttons/icon/flaticon.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1590,7 +2574,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/controls/base.html}" href="../../../components/forms/controls/base.html" class="m-menu__link ">
+														<a href="components/forms/controls/base.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1600,17 +2584,17 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/controls/checkbox-radio.html}" href="../../../components/forms/controls/checkbox-radio.html" class="m-menu__link ">
+														<a href="components/forms/controls/checkbox-radio.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
 															<span class="m-menu__link-text">
-																复选框 & 单选
+																复选框 &amp; 单选
 															</span>
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/controls/input-group.html}" href="../../../components/forms/controls/input-group.html" class="m-menu__link ">
+														<a href="components/forms/controls/input-group.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1620,7 +2604,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/controls/switch.html}" href="../../../components/forms/controls/switch.html" class="m-menu__link ">
+														<a href="components/forms/controls/switch.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1630,7 +2614,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/controls/option.html}" href="../../../components/forms/controls/option.html" class="m-menu__link ">
+														<a href="components/forms/controls/option.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1656,7 +2640,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-datepicker.html}" href="../../../components/forms/widgets/bootstrap-datepicker.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-datepicker.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1666,7 +2650,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-datetimepicker.html}" href="../../../components/forms/widgets/bootstrap-datetimepicker.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-datetimepicker.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1675,7 +2659,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-timepicker.html}" href="../../../components/forms/widgets/bootstrap-timepicker.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-timepicker.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1684,7 +2668,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-daterangepicker.html}" href="../../../components/forms/widgets/bootstrap-daterangepicker.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-daterangepicker.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1694,7 +2678,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-touchspin.html}" href="../../../components/forms/widgets/bootstrap-touchspin.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-touchspin.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1704,7 +2688,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-maxlength.html}" href="../../../components/forms/widgets/bootstrap-maxlength.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-maxlength.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1714,7 +2698,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-switch.html}" href="../../../components/forms/widgets/bootstrap-switch.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-switch.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1724,7 +2708,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-multipleselectsplitter.html}" href="../../../components/forms/widgets/bootstrap-multipleselectsplitter.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-multipleselectsplitter.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1734,7 +2718,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-select.html}" href="../../../components/forms/widgets/bootstrap-select.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-select.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1744,7 +2728,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/select2.html}" href="../../../components/forms/widgets/select2.html" class="m-menu__link ">
+														<a href="components/forms/widgets/select2.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1754,7 +2738,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/typeahead.html}" href="../../../components/forms/widgets/typeahead.html" class="m-menu__link ">
+														<a href="components/forms/widgets/typeahead.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1764,7 +2748,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/nouislider.html}" href="../../../components/forms/widgets/nouislider.html" class="m-menu__link ">
+														<a href="components/forms/widgets/nouislider.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1774,7 +2758,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/form-repeater.html}" href="../../../components/forms/widgets/form-repeater.html" class="m-menu__link ">
+														<a href="components/forms/widgets/form-repeater.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1784,7 +2768,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/ion-range-slider.html}" href="../../../components/forms/widgets/ion-range-slider.html" class="m-menu__link ">
+														<a href="components/forms/widgets/ion-range-slider.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1794,7 +2778,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/input-mask.html}" href="../../../components/forms/widgets/input-mask.html" class="m-menu__link ">
+														<a href="components/forms/widgets/input-mask.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1804,7 +2788,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/summernote.html}" href="../../../components/forms/widgets/summernote.html" class="m-menu__link ">
+														<a href="components/forms/widgets/summernote.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1814,7 +2798,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/bootstrap-markdown.html}" href="../../../components/forms/widgets/bootstrap-markdown.html" class="m-menu__link ">
+														<a href="components/forms/widgets/bootstrap-markdown.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1823,7 +2807,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/autosize.html}" href="../../../components/forms/widgets/autosize.html" class="m-menu__link ">
+														<a href="components/forms/widgets/autosize.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1833,7 +2817,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/clipboard.html}" href="../../../components/forms/widgets/clipboard.html" class="m-menu__link ">
+														<a href="components/forms/widgets/clipboard.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1842,7 +2826,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/dropzone.html}" href="../../../components/forms/widgets/dropzone.html" class="m-menu__link ">
+														<a href="components/forms/widgets/dropzone.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1852,7 +2836,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/widgets/recaptcha.html}" href="../../../components/forms/widgets/recaptcha.html" class="m-menu__link ">
+														<a href="components/forms/widgets/recaptcha.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1877,7 +2861,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/layouts/default-forms.html}" href="../../../components/forms/layouts/default-forms.html" class="m-menu__link ">
+														<a href="components/forms/layouts/default-forms.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1886,7 +2870,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/layouts/multi-column-forms.html}" href="../../../components/forms/layouts/multi-column-forms.html" class="m-menu__link ">
+														<a href="components/forms/layouts/multi-column-forms.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1895,7 +2879,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/layouts/action-bars.html}" href="../../../components/forms/layouts/action-bars.html" class="m-menu__link ">
+														<a href="components/forms/layouts/action-bars.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1919,7 +2903,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/validation/states.html}" href="../../../components/forms/validation/states.html" class="m-menu__link ">
+														<a href="components/forms/validation/states.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1929,7 +2913,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/validation/form-controls.html}" href="../../../components/forms/validation/form-controls.html" class="m-menu__link ">
+														<a href="components/forms/validation/form-controls.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1938,7 +2922,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/validation/form-widgets.html}" href="../../../components/forms/validation/form-widgets.html" class="m-menu__link ">
+														<a href="components/forms/validation/form-widgets.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1962,7 +2946,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/wizard/wizard-1.html}" href="../../../components/forms/wizard/wizard-1.html" class="m-menu__link ">
+														<a href="components/forms/wizard/wizard-1.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1972,7 +2956,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/wizard/wizard-2.html}" href="../../../components/forms/wizard/wizard-2.html" class="m-menu__link ">
+														<a href="components/forms/wizard/wizard-2.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1982,7 +2966,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/wizard/wizard-3.html}" href="../../../components/forms/wizard/wizard-3.html" class="m-menu__link ">
+														<a href="components/forms/wizard/wizard-3.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -1992,7 +2976,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/wizard/wizard-4.html}" href="../../../components/forms/wizard/wizard-4.html" class="m-menu__link ">
+														<a href="components/forms/wizard/wizard-4.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2002,7 +2986,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/forms/wizard/wizard-5.html}" href="../../../components/forms/wizard/wizard-5.html" class="m-menu__link ">
+														<a href="components/forms/wizard/wizard-5.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2017,7 +3001,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</ul>
 								</div>
 							</li>
-							<li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+							<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
 								<a href="#" class="m-menu__link m-menu__toggle">
 									<i class="m-menu__link-icon flaticon-tabs"></i>
 									<span class="m-menu__link-text">
@@ -2034,7 +3018,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												</span>
 											</span>
 										</li>
-										<li class="m-menu__item  m-menu__item--submenu m-menu__item--open m-menu__item--expanded" aria-haspopup="true"  data-menu-submenu-toggle="hover">
+										<li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true"  data-menu-submenu-toggle="hover">
 											<a href="#" class="m-menu__link m-menu__toggle">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
@@ -2048,7 +3032,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/data-local.html}" href="../../../components/datatables/base/data-local.html" class="m-menu__link ">
+														<a href="components/datatables/base/data-local.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2058,7 +3042,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/data-json.html}" href="../../../components/datatables/base/data-json.html" class="m-menu__link ">
+														<a href="components/datatables/base/data-json.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2068,7 +3052,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/data-ajax.html}" href="../../../components/datatables/base/data-ajax.html" class="m-menu__link ">
+														<a href="components/datatables/base/data-ajax.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2078,7 +3062,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/html-table.html}" href="../../../components/datatables/base/html-table.html" class="m-menu__link ">
+														<a href="components/datatables/base/html-table.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2087,8 +3071,8 @@ License: You must have a valid license purchased only from themeforest(the above
 															</span>
 														</a>
 													</li>
-													<li class="m-menu__item  m-menu__item--active" aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/record-selection.html}" href="../../../components/datatables/base/record-selection.html" class="m-menu__link ">
+													<li class="m-menu__item " aria-haspopup="true" >
+														<a href="components/datatables/base/record-selection.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2098,7 +3082,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/local-sort.html}" href="../../../components/datatables/base/local-sort.html" class="m-menu__link ">
+														<a href="components/datatables/base/local-sort.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2108,7 +3092,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/row-details.html}" href="../../../components/datatables/base/row-details.html" class="m-menu__link ">
+														<a href="components/datatables/base/row-details.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2118,7 +3102,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/column-rendering.html}" href="../../../components/datatables/base/column-rendering.html" class="m-menu__link ">
+														<a href="components/datatables/base/column-rendering.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2128,7 +3112,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/column-width.html}" href="../../../components/datatables/base/column-width.html" class="m-menu__link ">
+														<a href="components/datatables/base/column-width.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2138,7 +3122,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/responsive-columns.html}" href="../../../components/datatables/base/responsive-columns.html" class="m-menu__link ">
+														<a href="components/datatables/base/responsive-columns.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2148,7 +3132,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/base/translation.html}" href="../../../components/datatables/base/translation.html" class="m-menu__link ">
+														<a href="components/datatables/base/translation.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2174,7 +3158,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/scrolling/vertical.html}" href="../../../components/datatables/scrolling/vertical.html" class="m-menu__link ">
+														<a href="components/datatables/scrolling/vertical.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2184,7 +3168,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/scrolling/horizontal.html}" href="../../../components/datatables/scrolling/horizontal.html" class="m-menu__link ">
+														<a href="components/datatables/scrolling/horizontal.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2194,7 +3178,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/scrolling/both.html}" href="../../../components/datatables/scrolling/both.html" class="m-menu__link ">
+														<a href="components/datatables/scrolling/both.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2220,7 +3204,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/locked/left.html}" href="../../../components/datatables/locked/left.html" class="m-menu__link ">
+														<a href="components/datatables/locked/left.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2230,7 +3214,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/locked/right.html}" href="../../../components/datatables/locked/right.html" class="m-menu__link ">
+														<a href="components/datatables/locked/right.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2240,7 +3224,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/locked/both.html}" href="../../../components/datatables/locked/both.html" class="m-menu__link ">
+														<a href="components/datatables/locked/both.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2250,7 +3234,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/locked/html-table.html}" href="../../../components/datatables/locked/html-table.html" class="m-menu__link ">
+														<a href="components/datatables/locked/html-table.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2276,7 +3260,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/child/data-local.html}" href="../../../components/datatables/child/data-local.html" class="m-menu__link ">
+														<a href="components/datatables/child/data-local.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2286,7 +3270,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/child/data-ajax.html}" href="../../../components/datatables/child/data-ajax.html" class="m-menu__link ">
+														<a href="components/datatables/child/data-ajax.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2312,7 +3296,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/api/methods.html}" href="../../../components/datatables/api/methods.html" class="m-menu__link ">
+														<a href="components/datatables/api/methods.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2322,7 +3306,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/datatables/api/events.html}" href="../../../components/datatables/api/events.html" class="m-menu__link ">
+														<a href="components/datatables/api/events.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2356,7 +3340,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/base.html}" href="../../../components/portlets/base.html" class="m-menu__link ">
+											<a href="components/portlets/base.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2366,7 +3350,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/advanced.html}" href="../../../components/portlets/advanced.html" class="m-menu__link ">
+											<a href="components/portlets/advanced.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2376,7 +3360,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/creative.html}" href="../../../components/portlets/creative.html" class="m-menu__link ">
+											<a href="components/portlets/creative.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2386,7 +3370,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/tabbed.html}" href="../../../components/portlets/tabbed.html" class="m-menu__link ">
+											<a href="components/portlets/tabbed.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2396,7 +3380,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/draggable.html}" href="../../../components/portlets/draggable.html" class="m-menu__link ">
+											<a href="components/portlets/draggable.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2406,7 +3390,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/portlets/tools.html}" href="../../../components/portlets/tools.html" class="m-menu__link ">
+											<a href="components/portlets/tools.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2437,7 +3421,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/timeline/timeline-1.html}" href="../../../components/timeline/timeline-1.html" class="m-menu__link ">
+											<a href="components/timeline/timeline-1.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2447,7 +3431,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/timeline/timeline-2.html}" href="../../../components/timeline/timeline-2.html" class="m-menu__link ">
+											<a href="components/timeline/timeline-2.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2478,7 +3462,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/widgets/general.html}" href="../../../components/widgets/general.html" class="m-menu__link ">
+											<a href="components/widgets/general.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2488,7 +3472,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/widgets/chart.html}" href="../../../components/widgets/chart.html" class="m-menu__link ">
+											<a href="components/widgets/chart.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2519,7 +3503,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/calendar/basic.html}" href="../../../components/calendar/basic.html" class="m-menu__link ">
+											<a href="components/calendar/basic.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2529,7 +3513,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/calendar/list-view.html}" href="../../../components/calendar/list-view.html" class="m-menu__link ">
+											<a href="components/calendar/list-view.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2539,7 +3523,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/calendar/google.html}" href="../../../components/calendar/google.html" class="m-menu__link ">
+											<a href="components/calendar/google.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2549,7 +3533,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/calendar/external-events.html}" href="../../../components/calendar/external-events.html" class="m-menu__link ">
+											<a href="components/calendar/external-events.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2559,7 +3543,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/calendar/background-events.html}" href="../../../components/calendar/background-events.html" class="m-menu__link ">
+											<a href="components/calendar/background-events.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2603,7 +3587,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/charts/amcharts/charts.html}" href="../../../components/charts/amcharts/charts.html" class="m-menu__link ">
+														<a href="components/charts/amcharts/charts.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2613,7 +3597,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/charts/amcharts/stock-charts.html}" href="../../../components/charts/amcharts/stock-charts.html" class="m-menu__link ">
+														<a href="components/charts/amcharts/stock-charts.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2623,7 +3607,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/components/charts/amcharts/maps.html}" href="../../../components/charts/amcharts/maps.html" class="m-menu__link ">
+														<a href="components/charts/amcharts/maps.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2636,7 +3620,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</div>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/charts/flotcharts.html}" href="../../../components/charts/flotcharts.html" class="m-menu__link ">
+											<a href="components/charts/flotcharts.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2646,7 +3630,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/charts/google-charts.html}" href="../../../components/charts/google-charts.html" class="m-menu__link ">
+											<a href="components/charts/google-charts.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2656,7 +3640,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/charts/morris-charts.html}" href="../../../components/charts/morris-charts.html" class="m-menu__link ">
+											<a href="components/charts/morris-charts.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2687,7 +3671,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/maps/google-maps.html}" href="../../../components/maps/google-maps.html" class="m-menu__link ">
+											<a href="components/maps/google-maps.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2697,7 +3681,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/maps/jqvmap.html}" href="../../../components/maps/jqvmap.html" class="m-menu__link ">
+											<a href="components/maps/jqvmap.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2728,7 +3712,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/utils/session-timeout.html}" href="../../../components/utils/session-timeout.html" class="m-menu__link ">
+											<a href="components/utils/session-timeout.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2738,7 +3722,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</a>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/components/utils/idle-timer.html}" href="../../../components/utils/idle-timer.html" class="m-menu__link ">
+											<a href="components/utils/idle-timer.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2788,7 +3772,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/snippets/general/pricing-tables/pricing-table-1.html}" href="../../../snippets/general/pricing-tables/pricing-table-1.html" class="m-menu__link ">
+														<a href="snippets/general/pricing-tables/pricing-table-1.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2798,7 +3782,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/snippets/general/pricing-tables/pricing-table-2.html}" href="../../../snippets/general/pricing-tables/pricing-table-2.html" class="m-menu__link ">
+														<a href="snippets/general/pricing-tables/pricing-table-2.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2808,7 +3792,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/snippets/general/pricing-tables/pricing-table-3.html}" href="../../../snippets/general/pricing-tables/pricing-table-3.html" class="m-menu__link ">
+														<a href="snippets/general/pricing-tables/pricing-table-3.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2818,7 +3802,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a th:href="@{/snippets/general/pricing-tables/pricing-table-4.html}" href="../../../snippets/general/pricing-tables/pricing-table-4.html" class="m-menu__link ">
+														<a href="snippets/general/pricing-tables/pricing-table-4.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2852,7 +3836,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											</span>
 										</li>
 										<li class="m-menu__item " aria-haspopup="true" >
-											<a th:href="@{/snippets/faq/faq-1.html}" href="../../../snippets/faq/faq-1.html" class="m-menu__link ">
+											<a href="snippets/faq/faq-1.html" class="m-menu__link ">
 												<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 													<span></span>
 												</i>
@@ -2896,7 +3880,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/user/login-1.html}" href="../../../snippets/pages/user/login-1.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/user/login-1.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2906,7 +3890,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/user/login-2.html}" href="../../../snippets/pages/user/login-2.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/user/login-2.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2916,7 +3900,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/user/login-3.html}" href="../../../snippets/pages/user/login-3.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/user/login-3.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2926,7 +3910,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/user/login-4.html}" href="../../../snippets/pages/user/login-4.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/user/login-4.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2936,7 +3920,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/user/login-5.html}" href="../../../snippets/pages/user/login-5.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/user/login-5.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2962,7 +3946,7 @@ License: You must have a valid license purchased only from themeforest(the above
 												<span class="m-menu__arrow"></span>
 												<ul class="m-menu__subnav">
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/errors/error-1.html}" href="../../../snippets/pages/errors/error-1.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-1.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2972,7 +3956,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/errors/error-2.html}" href="../../../snippets/pages/errors/error-2.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-2.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2982,7 +3966,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/errors/error-3.html}" href="../../../snippets/pages/errors/error-3.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-3.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -2992,7 +3976,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/errors/error-4.html}" href="../../../snippets/pages/errors/error-4.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-4.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -3002,7 +3986,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" th:href="@{/snippets/pages/errors/error-5.html}" href="../../../snippets/pages/errors/error-5.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-5.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -3012,7 +3996,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</a>
 													</li>
 													<li class="m-menu__item " aria-haspopup="true" >
-														<a target="_blank" href="../../../snippets/pages/errors/error-6.html" class="m-menu__link ">
+														<a target="_blank" href="snippets/pages/errors/error-6.html" class="m-menu__link ">
 															<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 																<span></span>
 															</i>
@@ -3050,7 +4034,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										-
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a class="m-nav__link">
 											<span class="m-nav__link-text">
 												Datatables
 											</span>
@@ -3060,7 +4044,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										-
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a class="m-nav__link">
 											<span class="m-nav__link-text">
 												基本
 											</span>
@@ -3070,7 +4054,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										-
 									</li>
 									<li class="m-nav__item">
-										<a href="" class="m-nav__link">
+										<a class="m-nav__link">
 											<span class="m-nav__link-text">
 												记录选择
 											</span>
@@ -3096,7 +4080,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															</span>
 														</li>
 														<li class="m-nav__item">
-															<a href="" class="m-nav__link">
+															<a class="m-nav__link">
 																<i class="m-nav__link-icon flaticon-share"></i>
 																<span class="m-nav__link-text">
 																	活动
@@ -3104,7 +4088,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															</a>
 														</li>
 														<li class="m-nav__item">
-															<a href="" class="m-nav__link">
+															<a class="m-nav__link">
 																<i class="m-nav__link-icon flaticon-chat-1"></i>
 																<span class="m-nav__link-text">
 																	消息
@@ -3112,7 +4096,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															</a>
 														</li>
 														<li class="m-nav__item">
-															<a href="" class="m-nav__link">
+															<a class="m-nav__link">
 																<i class="m-nav__link-icon flaticon-info"></i>
 																<span class="m-nav__link-text">
 																	常见问题解答
@@ -3120,7 +4104,7 @@ License: You must have a valid license purchased only from themeforest(the above
 															</a>
 														</li>
 														<li class="m-nav__item">
-															<a href="" class="m-nav__link">
+															<a class="m-nav__link">
 																<i class="m-nav__link-icon flaticon-lifebuoy"></i>
 																<span class="m-nav__link-text">
 																	支持
@@ -3180,7 +4164,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</span>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-share"></i>
 																			<span class="m-nav__link-text">
 																				创建内容
@@ -3188,7 +4172,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-chat-1"></i>
 																			<span class="m-nav__link-text">
 																				发送消息
@@ -3196,7 +4180,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-multimedia-2"></i>
 																			<span class="m-nav__link-text">
 																				上传文件
@@ -3209,7 +4193,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</span>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-info"></i>
 																			<span class="m-nav__link-text">
 																				常见问题解答
@@ -3217,7 +4201,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-lifebuoy"></i>
 																			<span class="m-nav__link-text">
 																				支持
@@ -3255,7 +4239,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</div>
 														<div class="m-form__control">
 															<select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_status">
-																<option value="" />
+																<option value="">
 																	所有
 																</option>
 																<option value="1">
@@ -3281,7 +4265,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</div>
 														<div class="m-form__control">
 															<select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_type">
-																<option value="" />
+																<option value="">
 																	所有
 																</option>
 																<option value="1">
@@ -3402,7 +4386,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</span>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-share"></i>
 																			<span class="m-nav__link-text">
 																				创建内容
@@ -3410,7 +4394,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-chat-1"></i>
 																			<span class="m-nav__link-text">
 																				发送消息
@@ -3418,7 +4402,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-multimedia-2"></i>
 																			<span class="m-nav__link-text">
 																				上传文件
@@ -3431,7 +4415,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</span>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-info"></i>
 																			<span class="m-nav__link-text">
 																				常见问题解答
@@ -3439,7 +4423,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																		</a>
 																	</li>
 																	<li class="m-nav__item">
-																		<a href="" class="m-nav__link">
+																		<a class="m-nav__link">
 																			<i class="m-nav__link-icon flaticon-lifebuoy"></i>
 																			<span class="m-nav__link-text">
 																				支持
@@ -3477,7 +4461,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</div>
 														<div class="m-form__control">
 															<select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_status1">
-																<option value="" />
+																<option value="">
 																	所有
 																</option>
 																<option value="1">
@@ -3503,7 +4487,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</div>
 														<div class="m-form__control">
 															<select class="form-control m-bootstrap-select m-bootstrap-select--solid" id="m_form_type1">
-																<option value="" />
+																<option value="">
 																	所有
 																</option>
 																<option value="1">
@@ -3903,7 +4887,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<input type="text" name="" placeholder="在这里输入..." class="m-messenger__form-input" />
 								</div>
 								<div class="m-messenger__form-tools">
-									<a href="" class="m-messenger__form-attachment">
+									<a class="m-messenger__form-attachment">
 										<i class="la la-paperclip"></i>
 									</a>
 								</div>
@@ -4063,7 +5047,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											12 个新用户已注册
 											<span class="m-badge m-badge--warning m-badge--wide">
 												重要
@@ -4075,7 +5059,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统停止
 										</a>
 										<span class="m-list-timeline__time">
@@ -4084,7 +5068,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新发货单
 										</a>
 										<span class="m-list-timeline__time">
@@ -4093,7 +5077,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											数据库负载 89%
 											<span class="m-badge m-badge--success m-badge--wide">
 												已解决
@@ -4105,7 +5089,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统错误
 										</a>
 										<span class="m-list-timeline__time">
@@ -4114,7 +5098,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器停止
 											<span class="m-badge m-badge--danger m-badge--wide">
 												待办
@@ -4126,7 +5110,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器启动
 										</a>
 										<span class="m-list-timeline__time">
@@ -4142,7 +5126,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新订单
 											<span class="m-badge m-badge--info m-badge--wide">
 												紧急
@@ -4154,7 +5138,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											12 个新用户已注册
 										</a>
 										<span class="m-list-timeline__time">
@@ -4163,7 +5147,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统停止
 										</a>
 										<span class="m-list-timeline__time">
@@ -4172,7 +5156,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新发货单
 										</a>
 										<span class="m-list-timeline__time">
@@ -4181,7 +5165,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											数据库负载 89%
 										</a>
 										<span class="m-list-timeline__time">
@@ -4190,7 +5174,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统错误
 											<span class="m-badge m-badge--info m-badge--wide">
 												待办
@@ -4202,7 +5186,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器停止
 										</a>
 										<span class="m-list-timeline__time">
@@ -4218,7 +5202,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="m-list-timeline__items">
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器启动
 										</a>
 										<span class="m-list-timeline__time">
@@ -4227,7 +5211,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新订单
 										</a>
 										<span class="m-list-timeline__time">
@@ -4236,7 +5220,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											12 个新用户已注册
 										</a>
 										<span class="m-list-timeline__time">
@@ -4245,7 +5229,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统停止
 										</a>
 										<span class="m-list-timeline__time">
@@ -4254,7 +5238,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-danger"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新发货单
 										</a>
 										<span class="m-list-timeline__time">
@@ -4263,7 +5247,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-warning"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											数据库负载 89%
 										</a>
 										<span class="m-list-timeline__time">
@@ -4272,7 +5256,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											系统错误
 										</a>
 										<span class="m-list-timeline__time">
@@ -4281,7 +5265,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器停止
 										</a>
 										<span class="m-list-timeline__time">
@@ -4290,7 +5274,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-success"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											生产服务器启动
 										</a>
 										<span class="m-list-timeline__time">
@@ -4299,7 +5283,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</div>
 									<div class="m-list-timeline__item">
 										<span class="m-list-timeline__badge m-list-timeline__badge--state-info"></span>
-										<a href="" class="m-list-timeline__text">
+										<a class="m-list-timeline__text">
 											接收到新订单
 										</a>
 										<span class="m-list-timeline__time">
@@ -4322,12 +5306,12 @@ License: You must have a valid license purchased only from themeforest(the above
 		<ul class="m-nav-sticky" style="margin-top: 30px;">
 			<!--
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Showcase" data-placement="left">
-				<a href="" />
+				<a />
 					<i class="la la-eye"></i>
 				</a>
 			</li>
 			<li class="m-nav-sticky__item" data-toggle="m-tooltip" title="Pre-sale Chat" data-placement="left">
-				<a href="" >
+				<a >
 					<i class="la la-comments-o"></i>
 				</a>
 			</li>

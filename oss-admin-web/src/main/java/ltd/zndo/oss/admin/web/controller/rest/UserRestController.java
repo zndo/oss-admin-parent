@@ -35,7 +35,7 @@ public class UserRestController {
 	 * @param response
 	 * @return
 	 */
-	@GetMapping(value = "/signin/success")
+//	@GetMapping(value = "/signin/success")
 	public Map<String, Object> signinSuccess(HttpServletRequest request, HttpServletResponse response) {
 
 //		/**

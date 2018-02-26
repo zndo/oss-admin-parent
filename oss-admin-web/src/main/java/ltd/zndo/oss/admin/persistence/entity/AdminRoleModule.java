@@ -27,24 +27,6 @@ public class AdminRoleModule extends BaseEntity implements Serializable {
     @Column(name = "RLAT_STATUS")
     private Boolean rlatStatus;
 
-    /**
-     * 创建时间
-     */
-    @Column(name = "CREATED")
-    private Date created;
-
-    /**
-     * 更新时间
-     */
-    @Column(name = "UPDATED")
-    private Date updated;
-
-    /**
-     * 是否删除：0-FALSE-未删除/1-TRUE-已删除
-     */
-    @Column(name = "DELETED")
-    private Boolean deleted;
-
     private static final long serialVersionUID = 1L;
 
     /**
