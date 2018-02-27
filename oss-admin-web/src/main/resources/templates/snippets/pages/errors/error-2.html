@@ -24,23 +24,23 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Web font -->
 		<script src="https://cdn.bootcss.com/webfont/1.6.16/webfontloader.js?ver=1.0.0"></script>
 		<script>
-          WebFont.load({
-            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
-            active: function() {
-                sessionStorage.fonts = true;
-            }
-          });
+     WebFont.load({
+      google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+      active: function() {
+        sessionStorage.fonts = true;
+      }
+     });
 		</script>
 		<!--end::Web font -->
-        <!--开始::基础样式 -->
+    <!--开始::基础样式 -->
 		<link th:href="@{/assets/vendors/base/vendors.bundle.css}" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
 		<link th:href="@{/assets/demo/default/base/style.bundle.css}" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--结束::基本样式 -->
 		<link th:href="@{/assets/demo/default/media/img/logo/favicon.ico}" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" rel="shortcut icon" />
 	</head>
 	<!-- end::Head -->
-    <!-- end::Body -->
-	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+  <!-- end::Body -->
+	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default" >
 		<!-- begin:: Page -->
 		<div class="m-grid m-grid--hor m-grid--root m-page">
 			<div class="m-grid__item m-grid__item--fluid m-grid m-error-2" th:style="'background-image: url(' + @{/assets/app/media/img/error/bg2.jpg} + ');'" style="background-image: url(../../../../static/assets/app/media/img/error/bg2.jpg);">
@@ -57,7 +57,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			</div>
 		</div>
 		<!-- end:: Page -->
-    	<!--开始::基础脚本 -->
+  	<!--开始::基础脚本 -->
 		<script th:src="@{/assets/vendors/base/vendors.bundle.js}" src="../../../../static/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
 		<script th:src="@{/assets/demo/default/base/scripts.bundle.js}" src="../../../../static/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
 		<!--结束::基础脚本 -->

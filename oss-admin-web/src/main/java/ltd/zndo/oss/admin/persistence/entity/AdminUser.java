@@ -16,7 +16,7 @@ public class AdminUser extends BaseEntity implements Serializable {
     private String openid;
 
     /**
-     * 帐号
+     * 用户名
      */
     @Column(name = "USERNAME")
     private String username;

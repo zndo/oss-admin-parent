@@ -140,6 +140,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 						"/signin/failure", // 登录失败
 						"/logout") // 注销-signout
 				.permitAll() // 匹配的 Matcher 内容全部允许
+				// 允许无授权访问的资源匹配器
+				.antMatchers(HttpMethod.POST, // 类型是 POST
+						// 列表数据
+						"/users", // 用户列表
+						"/users2") // 用户列表2
+				.permitAll() // 匹配的 Matcher 内容全部允许
 				.anyRequest().authenticated() // 其他请求需要认证
 				.and() // & 登录
 				.formLogin() // 登录表单设置

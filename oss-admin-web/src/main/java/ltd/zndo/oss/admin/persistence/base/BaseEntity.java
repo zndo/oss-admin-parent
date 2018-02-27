@@ -20,21 +20,21 @@ public class BaseEntity implements Serializable {
 	private static final long serialVersionUID = -6714818680438665121L;
 
 	@Transient
-	protected String order; // 排序
+	public String order; // 排序
 
 	@Transient
-	protected String orderBy; // 排序字段
+	public String orderBy; // 排序字段
 
 	@Transient
-	protected String orderType; // 排序类型
+	public String orderType; // 排序类型
 
 	@Transient
-	protected Integer pageNum = 1; // 默认页码
+	public Integer pageNum = 1; // 默认页码
 
 	@Transient
-	protected Integer pageSize = 10; // 默认条数
+	public Integer pageSize = 10; // 默认条数
 
-	// protected Long creator; // 创建者
+	// public Long creator; // 创建者
 
 	public Integer getPageNum() {
 		return pageNum;
@@ -58,25 +58,25 @@ public class BaseEntity implements Serializable {
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Long id;
+	public Long id;
 
 	/**
 	 * 创建时间
 	 */
 	@Column(name = "CREATED")
-	protected Date created;
+	public Date created;
 
 	/**
 	 * 更新时间
 	 */
 	@Column(name = "UPDATED")
-	protected Date updated;
+	public Date updated;
 
 	/**
 	 * 是否删除：0-false-未删除/1-true-已删除
 	 */
 	@Column(name = "DELETED")
-	protected Boolean deleted;
+	public Boolean deleted;
 
 	/**
 	 * 获取ID
