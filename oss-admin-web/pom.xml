@@ -173,11 +173,11 @@
 			<artifactId>mapper-spring-boot-starter</artifactId>
 			<version>${mapper-starter.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>ltd.zndo.oss.admin</groupId>
-			<artifactId>oss-admin-commons</artifactId>
-			<version>${oss-admin-commons.version}</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>ltd.zndo.oss.admin</groupId> -->
+<!-- 			<artifactId>oss-admin-commons</artifactId> -->
+<!-- 			<version>${oss-admin-commons.version}</version> -->
+<!-- 		</dependency> -->
 	</dependencies>
 
 	<repositories>

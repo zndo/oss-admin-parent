@@ -1,39 +1,39 @@
-//== Class definition
+//== 类定义
 
 var DatatableRecordSelectionUsers = function() {
-	//== Private functions
+	// == 私有函数
 
 	var options = {
-		// datasource definition
+		// 数据源定义
 		data: {
 			type: 'remote',
 			source: {
 				read: {
-//					url: 'https://keenthemes.com/metronic/preview/inc/api/datatables/demos/default.php',
-					url: 'http://localhost:9998/users',
+					url: 'http://localhost:9999/users',
 				},
 			},
-			pageSize: 10,
-			serverPaging: true,
-			serverFiltering: true,
-			serverSorting: true,
+			pageSize: 10, // 页面大小
+			serverPaging: true, // 服务端分页
+			serverFiltering: true, // 服务端过滤
+			serverSorting: true, // 服务端排序
 		},
 
-		// layout definition
+		// 布局定义
 		layout: {
-			theme: 'default', // datatable theme
-			class: '', // custom wrapper class
-			scroll: true, // enable/disable datatable scroll both horizontal and vertical when needed.
-			height: 550, // datatable's body's fixed height
-			footer: false // display/hide footer
+			theme: 'default', // 数据表格主题
+			class: '', // 自定义封装类
+			scroll: true, // 当需要的时候启用/禁用数据表格水平垂直双向滚动。
+			height: 550, // 数据表格主体的固定高度
+			footer: false // 显示/隐藏表格脚部
 		},
 
-		// column sorting
-		sortable: true,
+		// 自定义排序
+		sortable: false,
 
+		// 是否分页
 		pagination: true,
 
-		// columns definition
+		// 列定义
 		columns: [
 			{
 				field: 'ID',
@@ -43,44 +43,34 @@ var DatatableRecordSelectionUsers = function() {
 				textAlign: 'center',
 				selector: {class: 'm-checkbox--solid m-checkbox--brand'},
 			}, 
-//			{
-//				field: 'RecordID',
-//				title: 'ID',
-//				width: 40,
-//				template: '{{ID}}',
-//			}, 
-//			{
-//				field: 'openid',
-//				title: 'OpenID',
-//				width: 150,
-//				template: function(row) {
-//					// callback function support for column rendering
-//					return row.openid;
-//				},
-//			}, 
+// {
+// field: 'openid',
+// title: 'OpenID',
+// width: 150,
+// template: function(row) {
+// // callback function support for column rendering
+// return row.openid;
+// },
+// },
 			{
 				field: 'username',
+				width: 100,
 				title: '用户名',
-			}, 
-//			{
-//				field: 'password',
-//				title: '密码',
-//				width: 100,
-//			},
-			{
+			}, {
 				field: 'signinType',
+				width: 60,
 				title: '登录类型',
 				template: function(row) {
 					var status = {
-						"DEFAULT": {'title': 'Online', 'state': 'danger'},
-						"WEIXIN": {'title': 'Retail', 'state': 'primary'},
-						"WEIBO": {'title': 'Direct', 'state': 'accent'},
-						"GITHUB": {'title': 'Direct', 'state': 'accent'},
+						"DEFAULT": {'title': 'DEFAULT', 'state': 'danger'},
+						"WEIXIN" : {'title': 'WEIXIN', 'state': 'primary'},
+						"WEIBO"  : {'title': 'WEIBO', 'state': 'accent'},
+						"GITHUB" : {'title': 'GITHUB', 'state': 'accent'},
+						"QQ"     : {'title': 'QQ', 'state': 'accent'},
+						"SINA"   : {'title': 'SINA', 'state': 'accent'},
 					};
-					return '<span class="m-badge m-badge--' + status[row.signinType].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.signinType].state +
-						'">' +
-						status[row.signinType].title + '</span>';
-				},
+					return '<span class="m--font-bold m--font-' + status[row.signinType].state + '">' + status[row.signinType].title + '</span>';
+				 },
 			}, {
 				field: 'nickname',
 				title: '昵称',
@@ -89,15 +79,18 @@ var DatatableRecordSelectionUsers = function() {
 				title: '头像',
 			}, {
 				field: 'gender',
+				width: 40,
 				title: '性别',
 			}, {
 				field: 'email',
+				width: 150,
 				title: '邮箱',
 			},  {
 				field: 'phone',
 				title: '手机号',
 			},{
 				field: 'userStatus',
+				width: 80,
 				title: '用户状态',
 				template: function(row) {
 					var status = {
@@ -112,25 +105,12 @@ var DatatableRecordSelectionUsers = function() {
 					return '<span class="m-badge ' + status[row.userStatus+2].class + ' m-badge--wide">' + status[row.userStatus+2].title + '</span>';
 				},
 			},
-//			{
-//				field: 'signinType',
-//				title: 'signinType',
-//				template: function(row) {
-//					var status = {
-//						1: {'title': 'Online', 'state': 'danger'},
-//						2: {'title': 'Retail', 'state': 'primary'},
-//						3: {'title': 'Direct', 'state': 'accent'},
-//					};
-//					return '<span class="m-badge m-badge--' + status[row.signinType].state + ' m-badge--dot"></span>&nbsp;<span class="m--font-bold m--font-' + status[row.Type].state +
-//						'">' +
-//						status[row.signinType].title + '</span>';
-//				},
-//			}
-			,  {
+			  {
 				field: 'meta',
 				title: '其他信息',
 			},  {
 				field: 'md5',
+				width: 120,
 				title: 'MD5',
 			},  {
 				field: 'created',
@@ -141,7 +121,7 @@ var DatatableRecordSelectionUsers = function() {
 			},  {
 				field: 'Actions',
 				width: 110,
-				title: 'Actions',
+				title: '操作',
 				sortable: false,
 				overflow: 'visible',
 				template: function (row, index, datatable) {
@@ -168,60 +148,10 @@ var DatatableRecordSelectionUsers = function() {
 			}],
 	};
 
-	// basic demo
-	var localSelectorUsers = function() {
-
-		options.search = {
-			input: $('#generalSearch'),
-		};
-
-		var datatable = $('#local_record_selection').mDatatable(options);
-
-		$('#m_form_status').on('change', function() {
-			datatable.search($(this).val().toLowerCase(), 'Status');
-		});
-
-		$('#m_form_type').on('change', function() {
-			datatable.search($(this).val().toLowerCase(), 'Type');
-		});
-
-		$('#m_form_status,#m_form_type').selectpicker();
-
-		datatable.on('m-datatable--on-check m-datatable--on-uncheck m-datatable--on-layout-updated', function(e) {
-			var checkedNodes = datatable.rows('.m-datatable__row--active').nodes();
-			var count = checkedNodes.length;
-			$('#m_datatable_selected_number').html(count);
-			if (count > 0) {
-				$('#m_datatable_group_action_form').collapse('show');
-			} else {
-				$('#m_datatable_group_action_form').collapse('hide');
-			}
-		});
-
-		$('#m_modal_fetch_id').on('show.bs.modal', function(e) {
-			var ids = datatable.rows('.m-datatable__row--active').
-				nodes().
-				find('.m-checkbox--single > [type="checkbox"]').
-				map(function(i, chk) {
-					return $(chk).val();
-				});
-			var c = document.createDocumentFragment();
-			for (var i = 0; i < ids.length; i++) {
-				var li = document.createElement('li');
-				li.setAttribute('data-id', ids[i]);
-				li.innerHTML = 'Selected record ID: ' + ids[i];
-				c.appendChild(li);
-			}
-			$(e.target).find('.m_datatable_selected_ids').append(c);
-		}).on('hide.bs.modal', function(e) {
-			$(e.target).find('.m_datatable_selected_ids').empty();
-		});
-
-	};
-
+	// 服务端选择
 	var serverSelectorUsers = function() {
 
-		// enable extension
+		// 允许拓展
 		options.extensions = {
 			checkbox: {},
 		};
@@ -270,9 +200,8 @@ var DatatableRecordSelectionUsers = function() {
 	};
 
 	return {
-		// public functions
+		// 公共函数
 		init: function() {
-//			localSelectorUsers();
 			serverSelectorUsers();
 		},
 	};

@@ -5,15 +5,38 @@
 
 	<groupId>ltd.zndo.oss.admin</groupId>
 	<artifactId>oss-admin-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${project.parent.version}</version>
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
 	<description>ZNDO 开源后台管理项目</description>
 
 	<modules>
-		<module>oss-admin-commons</module>
+		
 		<module>oss-admin-web</module>
 	</modules>
 
+	<parent>
+		<groupId>ltd.zndo.oss</groupId>
+		<artifactId>zndo-oss-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<inceptionYear>2006</inceptionYear>
+	<organization>
+		<name>Zndo co., Ltd.</name>
+		<url>https://zndo.ltd/</url>
+	</organization>
+	<scm>
+		<url>https://github.com/zndoltd/${project.artifactId}</url>
+		<connection>scm:git:git://github.com/aoindustries/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:aoindustries/${project.artifactId}.git</developerConnection>
+	</scm>
+	<issueManagement>
+		<url>https://github.com/zndoltd/zndo-oss-parent/issues</url>
+		<system>github</system>
+	</issueManagement>
+	<ciManagement>
+		<system>ci-zndo</system>
+		<url>abcdefg</url>
+	</ciManagement>
 </project>

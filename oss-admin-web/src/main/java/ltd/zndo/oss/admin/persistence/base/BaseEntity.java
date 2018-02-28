@@ -20,19 +20,19 @@ public class BaseEntity implements Serializable {
 	private static final long serialVersionUID = -6714818680438665121L;
 
 	@Transient
-	public String order; // 排序
+	private String order; // 排序
 
 	@Transient
-	public String orderBy; // 排序字段
+	private String orderBy; // 排序字段
 
 	@Transient
-	public String orderType; // 排序类型
+	private String orderType; // 排序类型
 
 	@Transient
-	public Integer pageNum = 1; // 默认页码
+	private Integer pageNum; // 默认页码
 
 	@Transient
-	public Integer pageSize = 10; // 默认条数
+	private Integer pageSize; // 默认条数
 
 	// public Long creator; // 创建者
 
