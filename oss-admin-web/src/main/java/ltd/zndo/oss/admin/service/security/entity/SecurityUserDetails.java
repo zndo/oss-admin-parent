@@ -14,8 +14,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.Assert;
 
 /**
- * 安全认证用户实体类
+ * 安全认证用户实体类<br>
+ * 实现 UserDetails 接口<br>
  * 
+ * @see org.springframework.security.core.userdetails.UserDetails
  * @author zndo
  *
  */

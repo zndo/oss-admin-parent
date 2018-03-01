@@ -22,6 +22,13 @@ import ltd.zndo.oss.admin.service.security.ISecurityRoleService;
 import ltd.zndo.oss.admin.service.security.entity.SecurityUserDetails;
 import ltd.zndo.oss.admin.service.security.util.UserFactory;
 
+/**
+ * 实现 UserDetailsService 接口
+ * 
+ * @see org.springframework.security.core.userdetails.UserDetailsService
+ * @author admin
+ *
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -35,7 +42,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	ISecurityAuthorityService securityAuthorityService;
 
 	/**
-	 * 根据用户名加载用户
+	 * 根据用户名加载用户<br>
+	 * 实现 loadUserByUsername(String username) 方法
 	 */
 	@Override
 	public UserDetails loadUserByUsername(String usernameOrEmailOrPhone) throws UsernameNotFoundException {

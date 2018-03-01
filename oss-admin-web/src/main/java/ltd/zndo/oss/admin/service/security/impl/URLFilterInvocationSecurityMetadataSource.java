@@ -20,12 +20,21 @@ import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.stereotype.Service;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import ltd.zndo.oss.admin.persistence.mapper.AdminResourceMapper;
 
+/**
+ * 
+ * 实现 FilterInvocationSecurityMetadataSource 接口
+ * 
+ * @see Open Declaration
+ *      org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource
+ * @author admin
+ *
+ */
 @Service
 public class URLFilterInvocationSecurityMetadataSource
 		implements FilterInvocationSecurityMetadataSource, InitializingBean {
@@ -40,6 +49,9 @@ public class URLFilterInvocationSecurityMetadataSource
 	@Autowired
 	private AdminResourceMapper adminResourceMapper;
 
+	/**
+	 * 获取属性
+	 */
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -49,7 +61,30 @@ public class URLFilterInvocationSecurityMetadataSource
 	 */
 	@Override
 	public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
-		final HttpServletRequest request = ((FilterInvocation) object).getRequest();
+
+		logger.info("资源类型：" + object.getClass());
+
+		FilterInvocation filterInvocation = (FilterInvocation) object;
+		final HttpServletRequest request = filterInvocation.getRequest();
+
+		String requestURL = filterInvocation.getRequestUrl();
+		logger.info("请求地址：" + requestURL);
+
+		String servletPath = filterInvocation.getRequest().getServletPath();
+		logger.info("请求路径：" + servletPath);
+
+		// Url urlObject = getRoleByUrl(url); //调用自己实现的方法来url
+		// System.out.println("urlObject:" + urlObject);
+		// if (urlObject != null && urlObject.getPrivilege() != null) {
+		// Set<Role> roles = urlObject.getPrivilege().getRoles();
+		// Collection<ConfigAttribute> c = new HashSet<ConfigAttribute>();
+		// c.addAll(roles);
+		// return c; //
+		// 将privilege中的roles改为Collection<ConfigAttribute>，role需要实现ConfigAttribute接口
+		// } else {
+		// // 如果返回为null则说明此url地址不需要相应的角色就可以访问, 这样Security会放行
+		// return null;
+		// }
 
 		// if(map ==null) loadResourceDefine();
 		// //object 中包含用户请求的request 信息
@@ -76,6 +111,9 @@ public class URLFilterInvocationSecurityMetadataSource
 		return attrs;
 	}
 
+	/**
+	 * 获取所有配置属性
+	 */
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -93,6 +131,9 @@ public class URLFilterInvocationSecurityMetadataSource
 		return allAttributes;
 	}
 
+	/**
+	 * 判断是否支持当前格式类型，如果支持则可以通过 getAttributes 方法获取属性
+	 */
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -102,6 +143,7 @@ public class URLFilterInvocationSecurityMetadataSource
 	 */
 	@Override
 	public boolean supports(Class<?> clazz) {
+		// 判断两个类或接口是否相同，或存在继承关系
 		return FilterInvocation.class.isAssignableFrom(clazz);
 	}
 

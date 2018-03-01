@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableCaching
-public class AdminWebApplication {
+public class WebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AdminWebApplication.class, args);
+		SpringApplication.run(WebApplication.class, args);
 	}
 }
