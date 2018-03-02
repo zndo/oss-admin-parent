@@ -123,8 +123,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 						"/signin", // 登录请求
 						"/signin/success", // 登录成功
 						"/signin/failure", // 登录失败
-						"/logout") // 注销-signout
-				.permitAll() // 匹配的 Matcher 内容全部允许
+						"/logout", // 注销-signout
+						// 测试页面
+						"/security-demo.html" // 权限测试
+				).permitAll() // 匹配的 Matcher 内容全部允许
 				// 允许无授权访问的资源匹配器
 				.antMatchers(HttpMethod.POST, // 类型是 POST
 						// 列表数据

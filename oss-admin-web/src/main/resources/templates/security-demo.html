@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin 仪表盘 Template build with Twitter Bootstrap 4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+购买: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew 支持: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<html lang="zh" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<!-- begin::Head -->
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			Metronic | 登录
+		</title>
+		<meta name="description" content="Latest updates and statistic charts" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<!--begin::Web font -->
+		<script src="https://cdn.bootcss.com/webfont/1.6.16/webfontloader.js?ver=1.0.0"></script>
+		<script>
+     WebFont.load({
+      google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+      active: function() {
+        sessionStorage.fonts = true;
+      }
+     });
+		</script>
+		<!--end::Web font -->
+    <!--开始::基础样式 -->
+		<link th:href="@{/assets/vendors/base/vendors.bundle.css}" href="../../../../static/assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+		<link th:href="@{/assets/demo/default/base/style.bundle.css}" href="../../../../static/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--结束::基本样式 -->
+		<link th:href="@{/assets/demo/default/media/img/logo/favicon.ico}" href="../../../../static/assets/demo/default/media/img/logo/favicon.ico" rel="shortcut icon" />
+	</head>
+	<!-- end::Head -->
+  <!-- end::Body -->
+	<body class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default" >
+		<!-- begin:: Page -->
+		<div class="m-grid m-grid--hor m-grid--root m-page">
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-grid--tablet-and-mobile m-grid--hor-tablet-and-mobile m-login m-login--1 m-login--signin" id="m_login">
+				<div class="m-grid__item m-grid__item--fluid m-grid m-grid--center m-grid--hor m-grid__item--order-tablet-and-mobile-1	m-login__content" th:style="'background-image: url(' + @{/assets/app/media/img/bg/bg-4.jpg} + ');'" style="background-image: url(../../../../static/assets/app/media/img/bg/bg-4.jpg);">
+					<div class="m-grid__item m-grid__item--middle">
+						<h3 class="m-login__welcome">
+							加入我们的社区
+						</h3>
+						<p class="m-login__msg">
+							吾生也有涯，而知也无涯。
+							<br>
+							以有涯随无涯，殆已；已而为知者，殆而已矣。
+						</p>
+					</div>
+				</div>
+				<div class="m-grid__item m-grid__item--order-tablet-and-mobile-2 m-login__aside">
+					<div class="m-stack m-stack--hor m-stack--desktop">
+						<div class="m-stack__item m-stack__item--fluid">
+							<div class="m-login__wrapper">
+								<div class="m-login__logo">
+									<a href="#">
+										<img th:src="@{/assets/app/media/img/logos/logo-2.png}" src="../../../../static/assets/app/media/img/logos/logo-2.png" />
+									</a>
+								</div>
+								<div class="m-login__signin">
+									<div class="m-login__head">
+										<h3 class="m-login__title">
+											登录到管理系统
+										</h3>
+									</div>
+									<form class="m-login__form m-form" action="">
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="text" placeholder="帐户名/邮箱地址/手机号" name="username" autocomplete="off" />
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="password" placeholder="登录密码" name="password" />
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input m-login__form-input--last" type="text" placeholder="人机验证" name="validate" />
+										</div>
+										<div class="row m-login__form-sub">
+											<div class="col m--align-left">
+												<label class="m-checkbox m-checkbox--focus">
+													<input type="checkbox" name="remember-me" /><!-- name="remember" -->
+													记住我
+													<span></span>
+												</label>
+											</div>
+											<div class="col m--align-right">
+												<a href="javascript:;" id="m_login_forget_password" class="m-link">
+													忘记密码？
+												</a>
+											</div>
+										</div>
+										<div class="m-login__form-action">
+											<button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
+												登录
+											</button>
+										</div>
+									</form>
+								</div>
+								<div class="m-login__signup">
+									<div class="m-login__head">
+										<h3 class="m-login__title">
+											注册
+										</h3>
+										<div class="m-login__desc">
+											输入您的详细信息来创建您的帐户：
+										</div>
+									</div>
+									<form class="m-login__form m-form" action="">
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="text" placeholder="全名" name="fullname" />
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="text" placeholder="邮箱地址" name="email" autocomplete="off" />
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="password" placeholder="登录密码" name="password" />
+										</div>
+										<div class="form-group m-form__group">
+											<input class="form-control m-input m-login__form-input--last" type="password" placeholder="密码确认" name="rpassword" />
+										</div>
+										<div class="row form-group m-form__group m-login__form-sub">
+											<div class="col m--align-left">
+												<label class="m-checkbox m-checkbox--focus">
+													<input type="checkbox" name="agree" />
+													我已经阅读并同意
+													<a href="#" class="m-link m-link--focus">
+														服务条款和条件
+													</a>
+													。
+													<span></span>
+												</label>
+												<span class="m-form__help"></span>
+											</div>
+										</div>
+										<div class="m-login__form-action">
+											<button id="m_login_signup_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
+												注册
+											</button>
+											<button id="m_login_signup_cancel" class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom">
+												取消
+											</button>
+										</div>
+									</form>
+								</div>
+								<div class="m-login__forget-password">
+									<div class="m-login__head">
+										<h3 class="m-login__title">
+											忘记密码？
+										</h3>
+										<div class="m-login__desc">
+											输入邮箱地址来重置您的登录密码：
+										</div>
+									</div>
+									<form class="m-login__form m-form" action="">
+										<div class="form-group m-form__group">
+											<input class="form-control m-input" type="text" placeholder="邮箱地址" name="email" id="m_email" autocomplete="off" />
+										</div>
+										<div class="m-login__form-action">
+											<button id="m_login_forget_password_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air">
+												发送
+											</button>
+											<button id="m_login_forget_password_cancel" class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom">
+												取消
+											</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="m-stack__item m-stack__item--center">
+							<div class="m-login__account">
+								<span class="m-login__account-msg">
+									还没有帐号？
+								</span>
+								&nbsp;&nbsp;
+								<a href="javascript:;" id="m_login_signup" class="m-link m-link--focus m-login__account-link">
+									注册
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end:: Page -->
+  	<!--开始::基础脚本 -->
+		<script th:src="@{/assets/vendors/base/vendors.bundle.js}" src="../../../../static/assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+		<script th:src="@{/assets/demo/default/base/scripts.bundle.js}" src="../../../../static/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+		<script th:src="@{/assets/plugins/jquery.validate/localization/messages_zh.js}" src="../../../../static/assets/assets/plugins/jquery.validate/localization/messages_zh.js" type="text/javascript"></script>
+		<!--结束::基础脚本 -->  
+    <!--begin::Page 片段 -->
+		<script th:src="@{/assets/admin/js/signin.js}" src="../../../../static/assets/user/signin.js" type="text/javascript"></script>
+		<!--end::Page 片段 -->
+	</body>
+	<!-- end::Body -->
+</html>

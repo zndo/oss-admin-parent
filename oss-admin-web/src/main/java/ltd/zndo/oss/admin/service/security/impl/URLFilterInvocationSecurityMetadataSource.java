@@ -28,7 +28,7 @@ import ltd.zndo.oss.admin.persistence.mapper.AdminResourceMapper;
 
 /**
  * 
- * 实现 FilterInvocationSecurityMetadataSource 接口
+ * 实现 FilterInvocationSecurityMetadataSource 接口<br>
  * 
  * @see Open Declaration
  *      org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource
@@ -70,7 +70,7 @@ public class URLFilterInvocationSecurityMetadataSource
 		String requestURL = filterInvocation.getRequestUrl();
 		logger.info("请求地址：" + requestURL);
 
-		String servletPath = filterInvocation.getRequest().getServletPath();
+		String servletPath = request.getServletPath();
 		logger.info("请求路径：" + servletPath);
 
 		// Url urlObject = getRoleByUrl(url); //调用自己实现的方法来url
@@ -107,28 +107,8 @@ public class URLFilterInvocationSecurityMetadataSource
 				break;
 			}
 		}
-		logger.info("URL资源：" + request.getRequestURI() + " -> " + attrs);
+		logger.info("资源权限：" + request.getRequestURI() + " -> " + attrs);
 		return attrs;
-	}
-
-	/**
-	 * 获取所有配置属性
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.springframework.security.access.SecurityMetadataSource#
-	 * getAllConfigAttributes()
-	 */
-	@Override
-	public Collection<ConfigAttribute> getAllConfigAttributes() {
-		Set<ConfigAttribute> allAttributes = new HashSet<ConfigAttribute>();
-
-		for (Map.Entry<RequestMatcher, Collection<ConfigAttribute>> entry : requestMap.entrySet()) {
-			allAttributes.addAll(entry.getValue());
-		}
-
-		return allAttributes;
 	}
 
 	/**
@@ -148,25 +128,48 @@ public class URLFilterInvocationSecurityMetadataSource
 	}
 
 	/**
-	 * 加载资源
+	 * 绑定请求 Map 集合-1-应用启动时调用
 	 * 
 	 * @return
 	 */
-	private Map<String, String> loadResuorce() {
-		Map<String, String> map = new LinkedHashMap<String, String>();
+	protected Map<RequestMatcher, Collection<ConfigAttribute>> bindRequestMap() {
 
+		Map<RequestMatcher, Collection<ConfigAttribute>> map = new LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>>();
+
+		Map<String, String> raMap = this.loadResource();
+		for (Map.Entry<String, String> entry : raMap.entrySet()) { // 组合资源地址和权限列表的映射
+			String key = entry.getKey();
+			Collection<ConfigAttribute> atts = new ArrayList<ConfigAttribute>();
+			atts = SecurityConfig.createListFromCommaDelimitedString(entry.getValue());
+			map.put(new AntPathRequestMatcher(key), atts);
+		}
+
+		return map;
+	}
+
+	/**
+	 * 加载资源-2
+	 * 
+	 * @return
+	 */
+	private Map<String, String> loadResource() {
+
+		// raMap = ResourcePathAndAuthorityMap
+		Map<String, String> raMap = new LinkedHashMap<String, String>();
+
+		// 从数据库加载资源映射
 		List<Map<String, String>> list = this.adminResourceMapper.loadResourcesMapping();
-		Iterator<Map<String, String>> it = list.iterator();
-		while (it.hasNext()) {
-			Map<String, String> rs = it.next();
+
+		for (Map<String, String> rs : list) {
+
 			String resourcePath = rs.get("URL");
 			String authority = rs.get("AUTHORITY");
 
-			if (map.containsKey(resourcePath)) {
-				String mark = map.get("URL");
-				map.put(resourcePath, mark + "," + authority);
-			} else {
-				map.put(resourcePath, authority);
+			if (raMap.containsKey(resourcePath)) { // 如果 map 已经包含键，则通过 ',' 追加权限
+				String mark = raMap.get("URL");
+				raMap.put(resourcePath, mark + "," + authority);
+			} else { // 否则新增键值
+				raMap.put(resourcePath, authority);
 			}
 		}
 
@@ -177,27 +180,12 @@ public class URLFilterInvocationSecurityMetadataSource
 		// //用权限的getUrl() 作为map的key，用ConfigAttribute的集合作为 value，
 		// map.put(permission.getUrl(), array);
 
-		return map;
+		return raMap;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * 设置完请求 Map 集合后，日志输出资源权限列表-3
 	 */
-	protected Map<RequestMatcher, Collection<ConfigAttribute>> bindRequestMap() {
-		Map<RequestMatcher, Collection<ConfigAttribute>> map = new LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>>();
-
-		Map<String, String> resMap = this.loadResuorce();
-		for (Map.Entry<String, String> entry : resMap.entrySet()) {
-			String key = entry.getKey();
-			Collection<ConfigAttribute> atts = new ArrayList<ConfigAttribute>();
-			atts = SecurityConfig.createListFromCommaDelimitedString(entry.getValue());
-			map.put(new AntPathRequestMatcher(key), atts);
-		}
-
-		return map;
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -206,12 +194,36 @@ public class URLFilterInvocationSecurityMetadataSource
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		this.requestMap = this.bindRequestMap();
-		logger.info("资源权限列表" + this.requestMap);
+		logger.info("资源权限集合：" + this.requestMap);
 	}
 
+	/**
+	 * 获取所有配置属性-4
+	 */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.springframework.security.access.SecurityMetadataSource#
+	 * getAllConfigAttributes()
+	 */
+	@Override
+	public Collection<ConfigAttribute> getAllConfigAttributes() {
+		Set<ConfigAttribute> allAttributes = new HashSet<ConfigAttribute>();
+
+		for (Map.Entry<RequestMatcher, Collection<ConfigAttribute>> entry : requestMap.entrySet()) {
+			allAttributes.addAll(entry.getValue());
+		}
+
+		return allAttributes;
+	}
+
+	/**
+	 * 刷新资源 Map 集合
+	 */
 	public void refreshResuorceMap() {
 		this.requestMap = this.bindRequestMap();
 	}
+	
 	/**
 	 * 加载权限表中所有权限
 	 */

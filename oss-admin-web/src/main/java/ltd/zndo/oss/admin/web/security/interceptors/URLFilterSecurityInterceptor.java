@@ -17,7 +17,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Service;
 
-import ltd.zndo.oss.admin.service.security.impl.URLAccessDecisionManager;
+import ltd.zndo.oss.admin.service.security.impl.AdminAccessDecisionManager;
 
 @Service
 public class URLFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
@@ -29,7 +29,7 @@ public class URLFilterSecurityInterceptor extends AbstractSecurityInterceptor im
 	private FilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource;
 
 	@Autowired
-	public void setURLAccessDecisionManager(URLAccessDecisionManager urlAccessDecisionManager) {
+	public void setURLAccessDecisionManager(AdminAccessDecisionManager urlAccessDecisionManager) {
 		super.setAccessDecisionManager(urlAccessDecisionManager);
 	}
 
